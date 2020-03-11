@@ -10,7 +10,7 @@ public class MemberDTO {
 	
 
 	// 회원가입 객체
-	public MemberDTO(String id, String pw, String name, String email) {
+	public MemberDTO(String id, String pw, String nm, String email) {
 
 		this.id = id;
 		this.pw = pw;
