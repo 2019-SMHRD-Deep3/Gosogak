@@ -122,7 +122,7 @@ public class MemberDAO {
 		try {
 			getConnection();
 
-			String sql = "update MEMBER set pw=?,nm=?,email=? where id=?";
+			String sql = "update MEMBER set MEMBER_PW=?,MEMBER_NM=?,MEMBER_EMAIL=? where MEMBER_ID=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getPw());
 			psmt.setString(2, dto.getNm());
