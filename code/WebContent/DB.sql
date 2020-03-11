@@ -118,6 +118,8 @@ VALUES('test','1111','±è¿¹½Ã','test@test.com','user');
 INSERT INTO MEMBER
 VALUES('manager','1111','±è°ü¸®','test@test.com','manage');
 
+select * from MEMBER
+
 --INSERT INTO ANALYSIS_DETAIL
 --VALUES(anal_detail_seq.nextval,1,'³Ê',0,1,0);
 --INSERT INTO ANALYSIS_DETAIL

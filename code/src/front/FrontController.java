@@ -32,12 +32,12 @@ public class FrontController extends HttpServlet {
 		/* 회원가입 기능 */
 		if (resultURL.equals("JoinService.do")) {
 			iCommand = new JoinCon();
-			System.out.println("- 회원가입 성공" + "\n");
+//			System.out.println("- 회원가입 성공" + "\n");
 
 			/* 로그인 기능 */
 		} else if (resultURL.equals("LoginService.do")) {
 			iCommand = new LoginCon();
-			System.out.println("- 로그인 성공");
+//			System.out.println("- 로그인 성공");
 		}
 		
 		
