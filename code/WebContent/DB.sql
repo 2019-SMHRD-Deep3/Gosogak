@@ -14,9 +14,9 @@ DROP SEQUENCE serv_seq;
 DROP SEQUENCE anal_result_seq;
 --DROP SEQUENCE anal_detail_seq;
 DROP SEQUENCE couns_seq;
-
+insert into MEMBER values('test','test','test','test','user');
 -- 테이블 생성
-
+select * from MEMBER
 CREATE TABLE MEMBER(
                 MEMBER_ID VARCHAR2(20) PRIMARY KEY,
                 MEMBER_PW VARCHAR2(20),

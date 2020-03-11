@@ -5,16 +5,22 @@ public class MemberDTO {
 	private String pw;
 	private String name;
 	private String email;
-	
+	private String grade;
 	
 	// 회원가입 객체
 	public MemberDTO(String id, String pw, String name, String email) {
-		super();
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
 		this.email = email;
 	}
+	
+	// 로그인
+	public MemberDTO(String id, String pw) {
+		this.id = id;
+		this.pw = pw;
+	}
+		
 	public String getId() {
 		return id;
 	}
@@ -38,6 +44,14 @@ public class MemberDTO {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 	
 	

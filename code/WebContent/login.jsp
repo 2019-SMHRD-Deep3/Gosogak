@@ -73,10 +73,10 @@
 				<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
 					<form action="JoinService.do" method="post">
 						<p>Create An Account</p>
-						<input name="email" type="text"  class="form-control input-lg" placeholder="Email을 입력하세요"><br>
-						<input name="pw" type="password"  class="form-control input-lg" placeholder="PW를 입력하세요"><br>
-						<input name="tel" type="text"  class="form-control input-lg" placeholder="전화번호를 입력하세요"><br>
-						<input name="address"type="text"  class="form-control input-lg" placeholder="집주소를 입력하세요"><br>
+						<input name="id" type="text"  class="form-control input-lg" placeholder="아이디를 입력하세요"><br>
+						<input name="pw" type="password"  class="form-control input-lg" placeholder="비밀번호를 입력하세요"><br>
+						<input name="name" type="text"  class="form-control input-lg" placeholder="이름을 입력하세요"><br>
+						<input name="email"type="text"  class="form-control input-lg" placeholder="EMAIL을 입력하세요"><br>
 						<button type="submit" class="btn btn-primary">JoinUs</button>
 					</form>
 				</div>
