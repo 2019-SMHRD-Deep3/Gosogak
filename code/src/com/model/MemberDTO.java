@@ -8,40 +8,23 @@ public class MemberDTO {
 	private String grade;
 
 	
+
+	// 회원가입 객체
+	public MemberDTO(String id, String pw, String name, String email) {
+
+		this.id = id;
+		this.pw = pw;
+		this.nm = nm;
+		this.email = email;
+	}
+
 	
-	public MemberDTO(String id, String pw, String nm, String email) {
-		super();
-		this.id = id;
-		this.pw = pw;
-		this.nm = nm;
-		this.email = email;
-	}
-
-
-	public MemberDTO(String id, String pw, String nm, String email, String grade) {
-		super();
-		this.id = id;
-		this.pw = pw;
-		this.nm = nm;
-		this.email = email;
-		this.grade = grade;
-	}
-
-
+	// 로그인
 	public MemberDTO(String id, String pw) {
-		super();
 		this.id = id;
 		this.pw = pw;
 	}
-	
-
-	public MemberDTO(String nm, String email, String grade) {
-		super();
-		this.nm = nm;
-		this.email = email;
-		this.grade = grade;
-	}
-
+		
 
 	public String getId() {
 		return id;
@@ -87,9 +70,9 @@ public class MemberDTO {
 		return grade;
 	}
 
-
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
-
+	
+	
 }

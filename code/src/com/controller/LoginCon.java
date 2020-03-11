@@ -14,23 +14,25 @@ public class LoginCon implements ICommand {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		String moveURL = null;
-		String ID = request.getParameter("ID");
-		String PW = request.getParameter("PW");
+		// response.setCharacterEncoding("EUC-KR");
+		// request.setCharacterEncoding("EUC-KR");
+		// String[] item = request.getParameterValues("item");
+		// int num = Integer.parseInt(request.getParameter("num"));
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
 
-		MemberDTO dto = new MemberDTO(ID, PW);
+		MemberDTO dto = new MemberDTO(id, pw);
 		MemberDAO dao = MemberDAO.getDAO();
-
 		MemberDTO info = dao.login(dto);
+
+		// 로그인 성공시 info에는 email, tel, address
+		// 실패시 null
 		if (info != null) {
-			System.out.println(info.getNm());
-			System.out.println(info.getEmail());
-			System.out.println(info.getGrade()+"\n");
-			
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
 		}
 		moveURL = "index.jsp";
-		
+
 		return moveURL;
 
 	}
