@@ -15,7 +15,14 @@
 		<!-- Style & Common Css --> 
 		<link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/main.css">
-
+<style type="text/css">
+#id{
+	width:40% !important;
+}
+#content{
+	width:
+}
+</style>
     </head>
 	
     <body>
@@ -60,10 +67,13 @@
 					<h2>고 소 각</h2>
 					<form>
 						<fieldset>
-							<div class="col-md-4 col-sm-4 no-pad">
-								<input type="text" class="form-control border-right" placeholder="Skills, Designation, Companies" />
+							<div class="col-md-5 col-sm-5 no-pad">
+								<input type="text" id="id" class="form-control border-right" placeholder="아이디 입력" />
 							</div>
-							<div class="col-md-3 col-sm-3 no-pad">
+							<div class="col-md-4 col-sm-4 no-pad">
+								<input type="text" id="content" class="form-control border-right" placeholder="텍스트 입력" />
+							</div>
+							<!-- <div class="col-md-3 col-sm-3 no-pad">
 								<select class="selectpicker border-right">
 								  <option>Experience</option>
 								  <option>0 Year</option>
@@ -78,8 +88,8 @@
 								  <option>9 Year</option>
 								 <option>10 Year</option>
 								</select>
-							</div>
-							<div class="col-md-3 col-sm-3 no-pad">
+							</div> -->
+							<!-- <div class="col-md-3 col-sm-3 no-pad">
 								<select class="selectpicker">
 								  <option>Select Category</option>
 								  <option>Accounf & Finance</option>
@@ -87,9 +97,9 @@
 								  <option>Marketing</option>
 								  <option>Food & Restaurent</option>
 								</select>
-							</div>
+							</div> -->
 							<div class="col-md-2 col-sm-2 no-pad">
-								<input type="submit" class="btn seub-btn" value="submit" />
+								<input type="submit" class="btn seub-btn" value="분석하기" />
 							</div>
 						</fieldset>
 					</form>
@@ -99,53 +109,83 @@
 		
 		<section class="features">
 			<div class="container">
-				<div class="col-md-4 col-sm-4">
+				<!-- <div class="col-md-4 col-sm-4">
 					<div class="features-content">
 						<span class="box1"><span aria-hidden="true" class="icon-dial"></span></span>
 						<h3>Create An Account</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua.</p>
 					</div>
-				</div>
+				</div> -->
 				
 				<div class="col-md-4 col-sm-4">
 					<div class="features-content">
 						<span class="box1"><span aria-hidden="true" class="icon-search"></span></span>
-						<h3>Search Desired Job</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua.</p>
+						<h3>고소각 서비스</h3>
+						<p>고소각 서비스는 
+                           <a href="https://glaw.scourt.go.kr/wsjo/lawod/sjo190.do?contId=3201160&q=%EC%A0%95%EB%B3%B4%ED%86%B5%EC%8B%A0%EB%A7%9D%EC%9D%B4%EC%9A%A9%EC%B4%89%EC%A7%84%EB%B0%8F%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EB%B2%95%EB%A5%A0&nq=&w=lawod&section=lawod_nm&subw=&subsection=&subId=1&csq=&groups=2,3&category=&outmax=1&msort=&onlycount=&sp=&d1=&d2=&d3=&d4=&d5=&pg=1&p1=&p2=&p3=&p4=02&p5=&p6=&p7=&p8=&p9=&p10=&p11=&p12=&sysCd=&tabGbnCd=&saNo=&joNo=&lawNm=&hanjaYn=N&userSrchHistNo=&poption=&srch=&range=&daewbyn=N&smpryn=N&idgJyul=01&newsimyn=Y&tabId=&save=Y&bubNm=#1583915955660">정보통신망 이용촉진 및 정보보호 등에 관한 법률</a> 근거하여 <br>
+						      머신러닝을 통해 
+						      고소가능 여부를 판단하는 시스템입니다.<br>
+						   
+						     서비스 결과는 참고자료로 사용하시고 <br>
+						     실제 판결 결과는 다를 수도 있으니<br>
+                                                     변호사와 상담을 추천드립니다.</p>
 					</div>
 				</div>
 				
 				<div class="col-md-4 col-sm-4">
 					<div class="features-content">
 						<span class="box1"><span aria-hidden="true" class="icon-printer"></span></span>
-						<h3>Send Your Resume</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua.</p>
+						<h3>악플 고소 성립요건</h3>
+						<p>1. 목적<br>
+단순한 조롱으로 끝나는 것이 아니라, 상대의 사회적 평판이 떨어질 정도의 표현이어야 합니다.
+ 실질적으로 명예에 해가 되지 않았어도 무관하고 그 수단이 언어, 발화에만 적용하는 것이 아니라 문서, 동작, 특정 행위 등 모두 포함됩니다.<br>
+
+2. 특정 피해자가 존재<br>
+형사사건 처리 과정에서는 모욕을 한 사람과 당한 사람이 확실하게 정해져 있어야 합니다.
+누군가가 비방을 하는 것이 자신을 향한 것이 아니라, 그것을 증명할 수 없는 상황이라면 죄를 적용하기 어렵습니다.
+하지만, 실명을 거론하며 특정 인물을 지칭하는 것이 아니지만 제3자가 보았을 때 누군가가 특정이 될 수 있다면 죄가 성립됩니다.<br>
+
+3. 공연성<br>
+다수에게 알려진 것을 말하며, 이때 말하는 다수는 집단이 특정되어 있어도 상관이 없습니다. 따라서 당사자 단둘만 있는 상황에서 벌어진 상황이라면 처벌이 불가능합니다.</p>
 					</div>
-				</div>
+				</div> 
 				
 				<div class="col-md-4 col-sm-4">
 					<div class="features-content">
 						<span class="box1"><span aria-hidden="true" class="icon-dial"></span></span>
-						<h3>Create An Account</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua.</p>
+						<h3>악플러가 받을 수 있는 처벌</h3>
+						<p>1. 모욕죄<br>
+상대방에 대하여 욕, 조롱 또는 악평을 가하는 등 구체적인 사실을 적시하지 않고 추상적 판단, 경멸적 감정 표현을 언급할 때 성립될 수 있습니다.
+
+모욕죄에 해당하는 경우 1년 이하의 징역형이나 금고, 200만 원 이하의 벌금형을 받을 수 있습니다.<br>
+
+2. 명예훼손죄<br>
+허위 사실이 아니라 진실한 사실이라도 공공연하게 이야기하는 것이 당사자의 사회적 명예를 훼손하는 것이라면 성립되는 범죄입니다.
+
+명예훼손죄에 해당하는 경우, 만약 진실한 사실을 적시한 경우라면 2년 이하의 징역이나 금고 또는 500만 원 이하의 벌금에 처해지며, 허위의 사실을 적시한 경우 5년 이하의 징역이나 10년 이하의 자격정지 또는 1000만 원 이하의 벌금에 처해지게 됩니다.
+만약 명예훼손 행위와 모욕죄 행위가 동시에 행해지는 경우에는 명예훼손죄만 성립하게 됩니다.
+						</p>
 					</div>
 				</div>
 				
 				<div class="col-md-4 col-sm-4">
 					<div class="features-content">
 						<span class="box1"><span aria-hidden="true" class="icon-search"></span></span>
-						<h3>Search Desired Job</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua.</p>
+						<h3>악플 고소 절차</h3>
+						<p>일반적인 모욕죄와 명예훼손에 해당하는 경우에는 상대방의 인적 사항을 확보하여 명예훼손을 한 사실을 바탕으로 고소장을 작성하여 경찰서에 접수를 하면 됩니다.
+
+하지만 문제는 바로 모욕, 명예를 훼손한 사람이 익명의 아이디를 사용한다면 상대방을 특정하기 힘들기 때문에 악플러 고소 절차를 진행하기 힘들 수 있습니다. 이러한 경우 수사기관에 해당 아이디를 사용한 사람의 인적 사항을 확보, 소환하여 조사하는 수사를 진행하고, 최종적으로 처벌을 받을 수 있도록 하여야 합니다.
+법적 대응을 하고자 할 때는 사건의 객관적인 증거와 정황, 그리고 법적으로 어떤 것에 해당하는지를 정확히 아는 법적 지식이 필요합니다. 본인의 힘으로 판단하고자 하면 불분명함 때문에 손해를 입을 수 있으므로 변호인과 조력하여 해당 내용을 검토하여 성립 요건이 해당이 되는지, 전문적으로 파헤쳐 볼 필요가 있습니다.</p>
 					</div>
-				</div>
+				</div> -->
 				
-				<div class="col-md-4 col-sm-4">
+				<!-- <div class="col-md-4 col-sm-4">
 					<div class="features-content">
 						<span class="box1"><span aria-hidden="true" class="icon-printer"></span></span>
 						<h3>Send Your Resume</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua.</p>
 					</div>
-				</div>
+				</div> -->
 			
 			</div>
 		</section>
