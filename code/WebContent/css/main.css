@@ -959,7 +959,7 @@ section.login-wrapper p a {
     color: #da0833;
 }
 section.login-wrapper p{
-margin-top:20px;
+	margin-top:20px;
 }
 section.login-wrapper label, section.login-wrapper label a {
     font-weight: 400;
@@ -968,6 +968,25 @@ section.login-wrapper label, section.login-wrapper label a {
 	color:#636e7b;
 }
 section.login-wrapper img {
+    margin: 20px auto;
+}
+/* Join style */
+section.join-wrapper {
+    text-align: center;
+}
+section.join-wrapper p a {
+    color: #da0833;
+}
+section.join-wrapper p{
+margin-top:20px;
+}
+section.join-wrapper label, section.join-wrapper label a {
+    font-weight: 400;
+    display: block;
+    text-align: left;
+	color:#636e7b;
+}
+section.join-wrapper img {
     margin: 20px auto;
 }
 /*-------------------Inner page Start-----------------------*/

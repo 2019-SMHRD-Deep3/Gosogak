@@ -150,7 +150,7 @@
 			</div>
 		</section>
 		
-		<section class="counter">
+		<!-- <section class="counter">
 			<div class="container">
 				<div class="col-md-3 col-sm-3">
 					<div class="counter-text">
@@ -478,7 +478,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 
 		<section class="newsletter">

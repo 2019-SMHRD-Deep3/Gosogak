@@ -57,19 +57,31 @@
 		<section class="login-wrapper">
 			<div class="container">
 				<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-					<form>
+					<form action="LoginService.do">
 						<img class="img-responsive" alt="logo" src="img/logo.png">
 						<input type="text" class="form-control input-lg" placeholder="User Name">
 						<input type="password" class="form-control input-lg" placeholder="Password">
-						<label><a href="">Forget Password?</a></label>
 						<button type="submit" class="btn btn-primary">Login</button>
-						<p>Have't Any Account <a href="">Create An Account</a></p>
+						
 					</form>
 				</div>
 			</div>
 		</section>
 		<!-- login section End -->	
-		
+		<section class="join-wrapper">
+			<div class="container">	
+				<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
+					<form action="JoinService.do" method="post">
+						<p>Create An Account</p>
+						<input name="email" type="text"  class="form-control input-lg" placeholder="Email을 입력하세요"><br>
+						<input name="pw" type="password"  class="form-control input-lg" placeholder="PW를 입력하세요"><br>
+						<input name="tel" type="text"  class="form-control input-lg" placeholder="전화번호를 입력하세요"><br>
+						<input name="address"type="text"  class="form-control input-lg" placeholder="집주소를 입력하세요"><br>
+						<button type="submit" class="btn btn-primary">JoinUs</button>
+					</form>
+				</div>
+			</div>
+		</section>			
 		<!-- footer start -->
 		<footer>
 			<div class="container">
