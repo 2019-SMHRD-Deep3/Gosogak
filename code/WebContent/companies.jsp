@@ -22,9 +22,8 @@
 <body>
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
-		String id=null;
 	%>
-	
+
 	<!-- Navigation Start  -->
 	<nav class="navbar navbar-default navbar-sticky bootsnav">
 
@@ -49,7 +48,7 @@
 						if (info == null) {
 					%>
 					<li><a href="login.jsp">로그인</a></li>
-					
+
 					<%
 						} else {
 					%>
@@ -91,38 +90,69 @@
 
 	<script type="text/javascript" src=js/jquery.min.js></script>
 	<script language=javascript>
-	 var check=confirm('로그인이 필요한 서비스입니다.');
+	 
 		$(function() {
 			$(".row.heading").hide();
 		});
-		if ('<%=id%>' == null) {
+		if ('<%=info%>
+		' == 'null') {
 			$(function() {
 				$(".btn.brows-btn").on("click", function() {
-					//alert(check? :);
+					alert('로그인이 필요한 서비스입니다.');
 				});
 			});
 		} else {
 			$(function() {
 				$(".btn.brows-btn").on("click", function() {
+					$(".btn.brows-btn").hide()
 					$(".row.heading").slideDown()
 				});
 			});
 		}
 	</script>
 	<section class="jobs">
+
+		<section class="profile-detail">
+			<div class="container">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="basic-information">
+							<div class="col-md-9 col-sm-9">
+								<div class="profile-content">
+									<h2>
+										Microsoft<span>Internet and computer software</span>
+									</h2>
+									<p>Now Hiring(102)</p>
+									<ul class="information">
+										<li><span>Address:</span>Menlo Park, CA</li>
+										<li><span>Website:</span>Google.com</li>
+										<li><span>Employee:</span>50,000 - 70,000 employer</li>
+										<li><span>Mail:</span>info@google.com</li>
+										<li><span>From:</span>1998</li>
+									</ul>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<i class="fa fa-user fa-fw"></i> About Microsoft
+								</div>
+								<!-- /.panel-heading -->
+								<div class="panel-body">
+									<p>The front end is the part that users see and interact
+										with, includes the User Interface, the animations, and usually
+										a bunch of logic to talk to the backend. It is the visual bit
+										that the user interacts with.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<div class="row">
-			<%-- <%
-				if (info == null) {
-			%>
-			<input type="button" class="btn brows-btn" value="자세히 보기"
-				onclick="location.href='login.jsp'" />
-			<%
-				} else {
-			%> --%>
 			<input type="button" class="btn brows-btn" value="자세히 보기" />
-			<%-- <%
-				}
-			%> --%>
+
 		</div>
 
 		<div class="row heading">
