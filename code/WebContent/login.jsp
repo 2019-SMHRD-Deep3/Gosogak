@@ -59,10 +59,9 @@
 				<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
 					<form action="LoginService.do">
 						<img class="img-responsive" alt="logo" src="img/logo.png">
-						<input type="text" class="form-control input-lg" placeholder="User Name">
-						<input type="password" class="form-control input-lg" placeholder="Password">
+						<input type="text" class="form-control input-lg" placeholder="User Name" name="id">
+						<input type="password" class="form-control input-lg" placeholder="Password" name="pw">
 						<button type="submit" class="btn btn-primary">Login</button>
-						
 					</form>
 				</div>
 			</div>

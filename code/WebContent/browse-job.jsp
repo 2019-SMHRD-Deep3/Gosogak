@@ -1,3 +1,4 @@
+<%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -20,7 +21,7 @@
     </head>
 	
     <body>
-
+	<% MemberDTO info = (MemberDTO)session.getAttribute("info"); %>
 		<!-- Navigation Start  -->
 		<nav class="navbar navbar-default navbar-sticky bootsnav">
 
@@ -38,7 +39,12 @@
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 							<li><a href="index.jsp">메인 화면</a></li> 
-							<li><a href="login.jsp">로그인</a></li>
+							<% if(info == null){ %>
+								<li><a href="login.jsp">로그인</a></li>
+								<%}else{ %>
+								<li><a href="LogoutService.do">로그아웃</a></li>
+								<li><%= info.getNm() %>님 환영합니다.</li>
+								<%} %>
 							<li><a href="companies.jsp">분석 결과</a></li> 
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">메뉴</a>
