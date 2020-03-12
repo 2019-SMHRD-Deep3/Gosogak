@@ -20,7 +20,7 @@ public class LoginCon implements ICommand {
 		// int num = Integer.parseInt(request.getParameter("num"));
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		
+
 		MemberDTO dto = new MemberDTO(id, pw);
 		MemberDAO dao = MemberDAO.getDAO();
 		MemberDTO info = dao.login(dto);
@@ -29,7 +29,11 @@ public class LoginCon implements ICommand {
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
 		}
-		moveURL = "index.jsp";
+		if (request.getParameter("detail") == null) {
+			moveURL = "index.jsp";
+		} else {
+			moveURL = "companies.jsp";
+		}
 
 		return moveURL;
 

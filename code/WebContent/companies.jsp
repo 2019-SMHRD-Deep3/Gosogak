@@ -123,12 +123,11 @@
 
 	<section class="inner-banner"
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
-		<h5 id=result>분석결과</h5>
 		<div class="container">
 			<div class="caption">
-				<p>
+				<!-- <p>
 					분석결과 <span>202 New job</span>
-				</p>
+				</p> -->
 				<h2>고소 가능 / 고소 불가능</h2>
 			</div>
 		</div>
@@ -169,7 +168,7 @@
 			<form action="login.jsp">
 			<%} %>
 			<p align=center>자세한 분석결과를 보려면  <자세히 보기> 를 눌러주세요</p>
-				<button type="submit" class="btn brows-btn" name="detail">자세히 보기</button>
+				<button type="submit" class="btn brows-btn" name="detail" value="abc">자세히 보기</button>
 			</form>
 		</div>
 
