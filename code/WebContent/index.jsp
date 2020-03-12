@@ -1,3 +1,4 @@
+<%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -45,7 +46,7 @@
     </head>
 	
     <body>
-	
+	<% MemberDTO info = (MemberDTO)session.getAttribute("info"); %>
 		<!-- Navigation Start  -->
 		<nav class="navbar navbar-default navbar-sticky bootsnav">
 
@@ -62,8 +63,12 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-							<li><a href="index.jsp">Home</a></li> 
-							<li><a href="login.jsp">Login</a></li>
+							<li><a href="index.jsp">Home</a></li>
+							<% if(info == null){ %>
+								<li><a href="login.jsp">Login</a></li>
+								<%}else{ %>
+								<li><a href="LogoutService.do">Logout</a></li>
+								<%} %> 
 							<li><a href="companies.jsp">Companies</a></li> 
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse</a>
