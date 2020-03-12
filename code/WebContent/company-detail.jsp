@@ -84,7 +84,25 @@
 		</div>
 	</section>
 
+	<!-- 자세히 보기 버튼을 클릭할 때 -->
 
+	<script type="text/javascript" src=js/jquery.min.js></script>
+	<script language=javascript>
+		if ('<%=info%>' == 'null') {
+			$(function() {
+				$(".btn.brows-btn").on("click", function() {
+					var check = confirm('로그인이 필요한 서비스입니다.');
+					if (check) {
+						location.href = "login.jsp";
+					}
+				});
+			});
+		} else {
+			$(function() {
+				location.href = "postWrite.jsp";
+			});
+		}
+	</script>
 	<section class="profile-detail">
 
 
@@ -124,7 +142,11 @@
 									</c:forEach>
 								</table>
 							</div>
-							<button><a href="postWrite.jsp">글쓰기</a></button>
+							<%if(info==null) {%>
+							<form action="login.jsp">
+							<%} %>
+							<button type="submit" class="btn brows-btn" name="detail">글쓰기</button>
+							</form>
 							<!-- 페이지 넘버 부분 -->
 							<%-- <br>
 							<div id="pageForm">
