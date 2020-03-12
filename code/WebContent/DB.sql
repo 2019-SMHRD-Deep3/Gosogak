@@ -22,7 +22,6 @@ DROP SEQUENCE serv_seq;
 DROP SEQUENCE anal_result_seq;
 --DROP SEQUENCE anal_detail_seq;
 DROP SEQUENCE couns_seq;
-insert into MEMBER values('test','test','test','test','user');
 -- 테이블 생성
 select * from MEMBER
 CREATE TABLE MEMBER(
@@ -48,6 +47,7 @@ CREATE TABLE ANALYSIS_RESULT(
                 
 CREATE TABLE POST(
                 POST_CD NUMBER(20) PRIMARY KEY,
+                POST_TITLE VARCHAR2(200),
                 POST_CONTENT VARCHAR2(2000),
                 POST_DT DATE,
                 MEMBER_ID VARCHAR2(20),
@@ -141,8 +141,8 @@ INSERT INTO ANALYSIS_RESULT
 VALUES(anal_result_seq.nextval,'너는 바보야',0);
 
 INSERT INTO POST
-VALUES(post_seq.nextval, '테스트용 더미 게시글 입니다. 게시글의 내용이 들어갑니다.',sysdate,'test','1');
-
+VALUES(post_seq.nextval,'테스트용 제목입니다.', '테스트용 더미 게시글 입니다. 게시글의 내용이 들어갑니다.',sysdate,'test','1');
+select * from POST;
 INSERT INTO REPLY
 VALUES(reply_seq.nextval,1,'test','테스트용 더미 댓글 입니다. 댓글의 내용이 들어갑니다.');
 
