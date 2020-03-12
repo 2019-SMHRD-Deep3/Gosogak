@@ -462,5 +462,10 @@ h6{
 p{
 	margin-bottom:10px;
 }
+.info {
+	height:300px;
+	width:300px;
+}
+
 }
 

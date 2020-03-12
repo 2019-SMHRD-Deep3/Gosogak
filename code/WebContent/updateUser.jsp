@@ -104,6 +104,11 @@
 									<button type="submit" class="btn btn-primary">Login</button>
 								</form>
 							</div>
+							<td>
+						<div class="row heading">
+							<span><h2>상담내역</h2></span> <span><p>없음</p></span>
+						</div>
+					</td>
 							<% } else{ %>
 							<form action="UpdateUserService.do" method="post">
 						<input name="pw" type="password"  class="form-control input-lg" placeholder="비밀번호를 입력하세요"><br>
@@ -115,7 +120,9 @@
 					</td>
 					<td>
 						<div class="row heading">
-							<span><h2>상담내역</h2></span> <span><p>게시글</p></span>
+							<span><h2>상담내역</h2></span>
+							<%-- <% if %> --%>
+							 <span><p>게시글</p></span>
 						</div>
 					</td>
 				</tr>

@@ -1,3 +1,4 @@
+<%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -19,7 +20,6 @@
     </head>
 	
     <body>
-	
 		<!-- Navigation Start  -->
 		<nav class="navbar navbar-default navbar-sticky bootsnav">
 
@@ -140,7 +140,9 @@
 			 <p>&copy;Copyright 2018 Jober Desk | Design By <a href="https://themezhub.com/">ThemezHub</a></p>
 			</div>
 		</footer>
-		 
+		 <script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+
+
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
