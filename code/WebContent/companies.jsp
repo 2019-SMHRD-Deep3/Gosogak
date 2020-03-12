@@ -42,7 +42,7 @@
 .btn2:hover{
 background:#da0833;
 }
-h5{
+#warning{
 text-align:center;
 color:red;
 margin-top:1%;
@@ -111,11 +111,11 @@ margin-bottom:50px;
 	<!-- Navigation End  -->
 
 	<!-- Main jumbotron for a primary marketing message or call to action -->
-	<div><h5>※ 경 고 : 위 서비스를 악용할 시 피해가 갈 수 있으니 주의하시기 바랍니다. ※</h5></div>
+	<div><h5 id=warning>※ 경 고 : 위 서비스를 악용할 시 피해가 갈 수 있으니 주의하시기 바랍니다. ※</h5></div>
 
 	<section class="inner-banner"
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
-		<div><h1>가나다라마바사</h1></div>
+		<h5 id=result>분석결과</h5>
 		<div class="container">
 			<div class="caption">
 				<p>
@@ -154,8 +154,7 @@ margin-bottom:50px;
 	<section>
 		<div class="row heading">
 			<h2>Find Popular Jobs</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-				do</p>
+			<p>자세한 분석결과를 보려면 <자세히 보기>를 눌러주세요</p>
 		</div>
 		<div class="row">
 			<input type="button" class="btn brows-btn" value="자세히 보기" />
