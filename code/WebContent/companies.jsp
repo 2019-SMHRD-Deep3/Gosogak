@@ -20,38 +20,42 @@
 
 <style>
 .btn2 {
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    background: gray;
-    color: #ffffff;
-    text-transform: uppercase;
-    text-shadow: none;
-    line-height: 1.2;
-    margin: 20px auto;
-    margin-left:20px;
-    margin-right:20px;
-    padding: 14px 25px;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background: gray;
+	color: #ffffff;
+	text-transform: uppercase;
+	text-shadow: none;
+	line-height: 1.2;
+	margin: 20px auto;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 14px 25px;
 }
-.btn2:hover{
-background:#da0833;
+
+.btn2:hover {
+	background: #da0833;
 }
-#warning{
-text-align:center;
-color:red;
-margin-top:1%;
+
+#warning {
+	text-align: center;
+	color: red;
+	margin-top: 1%;
 }
-.inner-banner h1{
-margin-top:-5%;
+
+.result {
+	margin-top: -50%;
 }
-.caption p{
-margin-bottom:50px;
+
+.caption p {
+	margin-bottom: 50px;
 }
 </style>
 </head>
@@ -111,7 +115,9 @@ margin-bottom:50px;
 	<!-- Navigation End  -->
 
 	<!-- Main jumbotron for a primary marketing message or call to action -->
-	<div><h5 id=warning>※ 경 고 : 위 서비스를 악용할 시 피해가 갈 수 있으니 주의하시기 바랍니다. ※</h5></div>
+	<div>
+		<h5 id=warning>※ 경 고 : 위 서비스를 악용할 시 피해가 갈 수 있으니 주의하시기 바랍니다. ※</h5>
+	</div>
 
 	<section class="inner-banner"
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
@@ -136,9 +142,9 @@ margin-bottom:50px;
 		if ('<%=info%>' == 'null') {
 			$(function() {
 				$(".btn.brows-btn").on("click", function() {
-					var check=confirm('로그인이 필요한 서비스입니다.');
-					if(check){
-						location.href="login.jsp";
+					var check = confirm('로그인이 필요한 서비스입니다.');
+					if (check) {
+						location.href = "login.jsp";
 					}
 				});
 			});
@@ -154,55 +160,60 @@ margin-bottom:50px;
 	<section>
 		<div class="row heading">
 			<h2>Find Popular Jobs</h2>
-			<p>자세한 분석결과를 보려면 <자세히 보기>를 눌러주세요</p>
+			<p>
+				자세한 분석결과를 보려면
+				<자세히 보기>를 눌러주세요
+			</p>
 		</div>
 		<div class="row">
-			<input type="button" class="btn brows-btn" value="자세히 보기" />
-
+			<form action="login.jsp">
+				<button type="submit" class="btn brows-btn" value="자세히 보기"
+					name="detail" />
+			</form>
 		</div>
 
-			<section class="profile-detail">
-				<div class="container">
-					<div class="col-md-12">
-						<div class="row">
-							<div class="basic-information">
-								<div class="col-md-9 col-sm-9">
-									<div class="profile-content">
-										<h2>
-											Microsoft<span>Internet and computer software</span>
-										</h2>
-										<p>Now Hiring(102)</p>
-										<ul class="information">
-											<li><span>Address:</span>Menlo Park, CA</li>
-											<li><span>Website:</span>Google.com</li>
-											<li><span>Employee:</span>50,000 - 70,000 employer</li>
-											<li><span>Mail:</span>info@google.com</li>
-											<li><span>From:</span>1998</li>
-										</ul>
-									</div>
+		<section class="profile-detail">
+			<div class="container">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="basic-information">
+							<div class="col-md-9 col-sm-9">
+								<div class="profile-content">
+									<h2>
+										Microsoft<span>Internet and computer software</span>
+									</h2>
+									<p>Now Hiring(102)</p>
+									<ul class="information">
+										<li><span>Address:</span>Menlo Park, CA</li>
+										<li><span>Website:</span>Google.com</li>
+										<li><span>Employee:</span>50,000 - 70,000 employer</li>
+										<li><span>Mail:</span>info@google.com</li>
+										<li><span>From:</span>1998</li>
+									</ul>
 								</div>
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<i class="fa fa-user fa-fw"></i> About Microsoft
-									</div>
-									<!-- /.panel-heading -->
-									<div class="panel-body">
-										<p>The front end is the part that users see and interact
-											with, includes the User Interface, the animations, and
-											usually a bunch of logic to talk to the backend. It is the
-											visual bit that the user interacts with.</p>
-									</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<i class="fa fa-user fa-fw"></i> About Microsoft
+								</div>
+								<!-- /.panel-heading -->
+								<div class="panel-body">
+									<p>The front end is the part that users see and interact
+										with, includes the User Interface, the animations, and usually
+										a bunch of logic to talk to the backend. It is the visual bit
+										that the user interacts with.</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			<section align = center>
-			<input type="button" class="btn2" value="게시글로 공유" />
-			<input type="button" class="btn2" value="1 : 1 상담 매칭" />
-		</section>
+			</div>
+			<section align=center>
+				<input type="button" class="btn2" value="게시글로 공유" /> <input
+					type="button" class="btn2" value="1 : 1 상담 매칭" />
 			</section>
-		
+		</section>
+
 
 
 		<!-- <div class="container">
