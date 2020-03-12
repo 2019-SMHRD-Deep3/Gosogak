@@ -63,6 +63,8 @@
 <body>
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
+		request.setCharacterEncoding("EUC-KR");
+	    response.setCharacterEncoding("euc-kr");
 	%>
 
 	<!-- Navigation Start  -->
@@ -159,14 +161,14 @@
 	</script>
 	<section>
 		<div class="row heading">
-			<h2>Find Popular Jobs</h2>
+			<h2><%=request.getParameter("text") %></h2>
 			
 		</div>
 		<div class="row">
 		<%if(info==null) {%>
 			<form action="login.jsp">
 			<%} %>
-			<p>자세한 분석결과를 보려면 <자세히 보기>를 눌러주세요</p>
+			<p align=center>자세한 분석결과를 보려면  <자세히 보기> 를 눌러주세요</p>
 				<button type="submit" class="btn brows-btn" name="detail">자세히 보기</button>
 			</form>
 		</div>

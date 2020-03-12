@@ -56,7 +56,6 @@
 }
 </style>
     </head>
-	
     <body>
 	<% MemberDTO info = (MemberDTO)session.getAttribute("info"); %>
 		<!-- Navigation Start  -->
@@ -102,13 +101,13 @@
 			<div class="container">
 				<div class="caption">
 					<h2>고 소 각</h2>
-					<form>
+					<form action="companies.jsp" method="post">
 						<fieldset>
 							<div class="col-md-5 col-sm-5 no-pad">
-								<input type="text" id="id" class="form-control border-right" placeholder="아이디 입력" />
+								<input type="text" id="id" name="id" class="form-control border-right" placeholder="아이디 입력" />
 							</div>
 							 <div class="col-md-3 col-sm-3 no-pad">
-								<select class="selectpicker">
+								<select class="selectpicker" name="selectpicker">
 								  <option>사이트 형식</option>
 								  <option>네이버블로그</option>
 								  <option>인스타그램</option>
@@ -118,7 +117,7 @@
 								</select>
 							</div>
 							<div class="col-md-4 col-sm-4 no-pad" id="content">
-								<input type="text" class="form-control border-right" placeholder="텍스트 입력" />
+								<input type="text" name="text" class="form-control border-right" placeholder="텍스트 입력" />
 							</div>
 							<!-- <div class="col-md-3 col-sm-3 no-pad">
 								<select class="selectpicker border-right">
