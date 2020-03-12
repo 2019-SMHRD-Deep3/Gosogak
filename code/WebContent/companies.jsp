@@ -42,6 +42,17 @@
 .btn2:hover{
 background:#da0833;
 }
+h5{
+text-align:center;
+color:red;
+margin-top:1%;
+}
+.inner-banner h1{
+margin-top:-5%;
+}
+.caption p{
+margin-bottom:50px;
+}
 </style>
 </head>
 
@@ -100,14 +111,17 @@ background:#da0833;
 	<!-- Navigation End  -->
 
 	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<div><h5>※ 경 고 : 위 서비스를 악용할 시 피해가 갈 수 있으니 주의하시기 바랍니다. ※</h5></div>
+
 	<section class="inner-banner"
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
+		<div><h1>가나다라마바사</h1></div>
 		<div class="container">
 			<div class="caption">
-				<h2>고소 가능 / 고소 불가능</h2>
 				<p>
-					Get your Popular jobs <span>202 New job</span>
+					분석결과 <span>202 New job</span>
 				</p>
+				<h2>고소 가능 / 고소 불가능</h2>
 			</div>
 		</div>
 	</section>
@@ -117,19 +131,22 @@ background:#da0833;
 	<script type="text/javascript" src=js/jquery.min.js></script>
 	<script language=javascript>
 		$(function() {
-			$(".jobs").hide();
+			$(".profile-detail").hide();
 		});
 		if ('<%=info%>' == 'null') {
 			$(function() {
 				$(".btn.brows-btn").on("click", function() {
-					alert('로그인이 필요한 서비스입니다.');
+					var check=confirm('로그인이 필요한 서비스입니다.');
+					if(check){
+						location.href="login.jsp";
+					}
 				});
 			});
 		} else {
 			$(function() {
 				$(".btn.brows-btn").on("click", function() {
 					$(".btn.brows-btn").hide()
-					$(".jobs").slideDown()
+					$(".profile-detail").slideDown()
 				});
 			});
 		}
@@ -144,7 +161,6 @@ background:#da0833;
 			<input type="button" class="btn brows-btn" value="자세히 보기" />
 
 		</div>
-		<section class="jobs">
 
 			<section class="profile-detail">
 				<div class="container">
@@ -182,12 +198,12 @@ background:#da0833;
 						</div>
 					</div>
 				</div>
-			</section>
-			<div align = center>
+			<section align = center>
 			<input type="button" class="btn2" value="게시글로 공유" />
 			<input type="button" class="btn2" value="1 : 1 상담 매칭" />
-		</div>
 		</section>
+			</section>
+		
 
 
 		<!-- <div class="container">
