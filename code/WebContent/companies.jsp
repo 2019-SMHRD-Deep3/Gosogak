@@ -160,15 +160,14 @@
 	<section>
 		<div class="row heading">
 			<h2>Find Popular Jobs</h2>
-			<p>
-				자세한 분석결과를 보려면
-				<자세히 보기>를 눌러주세요
-			</p>
+			
 		</div>
 		<div class="row">
+		<%if(info==null) {%>
 			<form action="login.jsp">
-				<button type="submit" class="btn brows-btn" value="자세히 보기"
-					name="detail" />
+			<%} %>
+			<p>자세한 분석결과를 보려면 <자세히 보기>를 눌러주세요</p>
+				<button type="submit" class="btn brows-btn" name="detail">자세히 보기</button>
 			</form>
 		</div>
 
