@@ -20,8 +20,27 @@
 	width:40% !important;
 }
 #content{
-	width:
+	width:180% !important;
+	margin-left: -65%;
 }
+.btn{
+	padding-right: 15px;
+	margin-left: 50% !important;
+}
+.link:hover{
+	text-decoration: underline; color: blue;
+}	
+.link{
+	font-weight: bold; 
+}
+.warning{
+	text-align: center;	
+}
+.warning1{
+	color: red;
+    margin-top: 2%;	
+}
+
 </style>
     </head>
 	
@@ -106,6 +125,28 @@
 				</div>
 			</div>
 		</section>
+			<div class="warning">
+				<h5 class="warning1">※  경 고 :  위 서비스를 악용할 시 피해가 갈 수 있으니 주의하시기 바랍니다.  ※</h5>
+			</div>
+		
+			
+		<section class="newsletter">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
+					<h2>Want More Job & Latest Job? </h2>
+					<p>Subscribe to our mailing list to receive an update when new Job arrive!</p>
+					
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Type Your Email Address...">
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default">subscribe!</button>
+						</span>
+					</div>
+					</div>
+				</div>
+			</div>
+		</section>
 		
 		<section class="features">
 			<div class="container">
@@ -122,7 +163,7 @@
 						<span class="box1"><span aria-hidden="true" class="icon-search"></span></span>
 						<h3>고소각 서비스</h3>
 						<p>고소각 서비스는 
-                           <a href="https://glaw.scourt.go.kr/wsjo/lawod/sjo190.do?contId=3201160&q=%EC%A0%95%EB%B3%B4%ED%86%B5%EC%8B%A0%EB%A7%9D%EC%9D%B4%EC%9A%A9%EC%B4%89%EC%A7%84%EB%B0%8F%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EB%B2%95%EB%A5%A0&nq=&w=lawod&section=lawod_nm&subw=&subsection=&subId=1&csq=&groups=2,3&category=&outmax=1&msort=&onlycount=&sp=&d1=&d2=&d3=&d4=&d5=&pg=1&p1=&p2=&p3=&p4=02&p5=&p6=&p7=&p8=&p9=&p10=&p11=&p12=&sysCd=&tabGbnCd=&saNo=&joNo=&lawNm=&hanjaYn=N&userSrchHistNo=&poption=&srch=&range=&daewbyn=N&smpryn=N&idgJyul=01&newsimyn=Y&tabId=&save=Y&bubNm=#1583915955660">정보통신망 이용촉진 및 정보보호 등에 관한 법률</a> 근거하여 <br>
+                           <a class="link" href="https://glaw.scourt.go.kr/wsjo/lawod/sjo190.do?contId=3201160&q=%EC%A0%95%EB%B3%B4%ED%86%B5%EC%8B%A0%EB%A7%9D%EC%9D%B4%EC%9A%A9%EC%B4%89%EC%A7%84%EB%B0%8F%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EB%B2%95%EB%A5%A0&nq=&w=lawod&section=lawod_nm&subw=&subsection=&subId=1&csq=&groups=2,3&category=&outmax=1&msort=&onlycount=&sp=&d1=&d2=&d3=&d4=&d5=&pg=1&p1=&p2=&p3=&p4=02&p5=&p6=&p7=&p8=&p9=&p10=&p11=&p12=&sysCd=&tabGbnCd=&saNo=&joNo=&lawNm=&hanjaYn=N&userSrchHistNo=&poption=&srch=&range=&daewbyn=N&smpryn=N&idgJyul=01&newsimyn=Y&tabId=&save=Y&bubNm=#1583915955660"><정보통신망 이용촉진 및 정보보호 등에 관한 법률></a> 근거하여 <br>
 						      머신러닝을 통해 
 						      고소가능 여부를 판단하는 시스템입니다.<br>
 						   
@@ -137,17 +178,17 @@
 						<span class="box1"><span aria-hidden="true" class="icon-printer"></span></span>
 						<h3>악플 고소 성립요건</h3>
 						<p>1. 목적<br>
-단순한 조롱으로 끝나는 것이 아니라, 상대의 사회적 평판이 떨어질 정도의 표현이어야 합니다.
- 실질적으로 명예에 해가 되지 않았어도 무관하고 그 수단이 언어, 발화에만 적용하는 것이 아니라 문서, 동작, 특정 행위 등 모두 포함됩니다.<br>
+	상대의 사회적 평판이 떨어질 정도의 표현(단순한 조롱 X)
+ 	실질적으로 명예에 해가 되지 않았어도 무관 
+ 	문서, 동작, 특정 행위 등 모두 포함됩니다.<br>
 
-2. 특정 피해자가 존재<br>
+	2. 특정 피해자가 존재<br>
 형사사건 처리 과정에서는 모욕을 한 사람과 당한 사람이 확실하게 정해져 있어야 합니다.
-누군가가 비방을 하는 것이 자신을 향한 것이 아니라, 그것을 증명할 수 없는 상황이라면 죄를 적용하기 어렵습니다.
-하지만, 실명을 거론하며 특정 인물을 지칭하는 것이 아니지만 제3자가 보았을 때 누군가가 특정이 될 수 있다면 죄가 성립됩니다.<br>
+실명을 거론하며 특정 인물을 지칭하는 것이 아니지만 제3자가 보았을 때 누군가가 특정이 될 수 있다면 죄가 성립됩니다.<br>
 
-3. 공연성<br>
-다수에게 알려진 것을 말하며, 이때 말하는 다수는 집단이 특정되어 있어도 상관이 없습니다. 따라서 당사자 단둘만 있는 상황에서 벌어진 상황이라면 처벌이 불가능합니다.</p>
-					</div>
+	3. 공연성<br>
+	다수에게 알려진 것</p>
+					</div><br>
 				</div> 
 				
 				<div class="col-md-4 col-sm-4">
@@ -177,7 +218,7 @@
 하지만 문제는 바로 모욕, 명예를 훼손한 사람이 익명의 아이디를 사용한다면 상대방을 특정하기 힘들기 때문에 악플러 고소 절차를 진행하기 힘들 수 있습니다. 이러한 경우 수사기관에 해당 아이디를 사용한 사람의 인적 사항을 확보, 소환하여 조사하는 수사를 진행하고, 최종적으로 처벌을 받을 수 있도록 하여야 합니다.
 법적 대응을 하고자 할 때는 사건의 객관적인 증거와 정황, 그리고 법적으로 어떤 것에 해당하는지를 정확히 아는 법적 지식이 필요합니다. 본인의 힘으로 판단하고자 하면 불분명함 때문에 손해를 입을 수 있으므로 변호인과 조력하여 해당 내용을 검토하여 성립 요건이 해당이 되는지, 전문적으로 파헤쳐 볼 필요가 있습니다.</p>
 					</div>
-				</div> -->
+				</div> 
 				
 				<!-- <div class="col-md-4 col-sm-4">
 					<div class="features-content">
@@ -521,22 +562,6 @@
 		</section> -->
 
 
-		<section class="newsletter">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
-					<h2>Want More Job & Latest Job? </h2>
-					<p>Subscribe to our mailing list to receive an update when new Job arrive!</p>
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Type Your Email Address...">
-						<span class="input-group-btn">
-							<button type="button" class="btn btn-default">subscribe!</button>
-						</span>
-					</div>
-					</div>
-				</div>
-			</div>
-		</section>
 			
 		<!-- footer start -->
 		<footer>
