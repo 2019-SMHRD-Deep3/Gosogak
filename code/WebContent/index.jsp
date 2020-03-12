@@ -68,6 +68,7 @@
 								<li><a href="login.jsp">로그인</a></li>
 								<%}else{ %>
 								<li><a href="LogoutService.do">로그아웃</a></li>
+								<li><%= info.getNm() %>님 환영합니다.</li>
 								<%} %> 
 							<li><a href="companies.jsp">분석 결과</a></li> 
 							<li class="dropdown">
