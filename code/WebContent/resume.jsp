@@ -76,7 +76,7 @@
 					<div class="row">
 						<div class="basic-information">
 							<div class="col-md-3 col-sm-3">
-							 <img src="img/user.jpg" alt="" class="img-responsive">
+							 <img src="img/intea.PNG" alt="" class="img-responsive">
 							</div>
 							<div class="col-md-9 col-sm-9">
 								<div class="profile-content">
