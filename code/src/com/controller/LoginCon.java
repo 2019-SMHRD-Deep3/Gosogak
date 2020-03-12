@@ -25,8 +25,6 @@ public class LoginCon implements ICommand {
 		MemberDAO dao = MemberDAO.getDAO();
 		MemberDTO info = dao.login(dto);
 
-		// 로그인 성공시 info에는 email, tel, address
-		// 실패시 null
 		if (info != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
