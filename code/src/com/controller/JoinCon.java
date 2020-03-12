@@ -16,14 +16,14 @@ public class JoinCon implements ICommand{
 		String moveURL = null;
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		String name = request.getParameter("name");
+		String name = request.getParameter("nm");
 		String email = request.getParameter("email");
 		
 		MemberDTO dto = new MemberDTO(id, pw, name, email);
 		MemberDAO dao = MemberDAO.getDAO();
 		dao.join(dto);
 		
-		moveURL = "login.jsp";
+		moveURL = "index.jsp";
 		
 		return moveURL;
 	}

@@ -1,26 +1,26 @@
+<%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 
 <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Jober Desk | Responsive Job Portal Template</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-		
-        <!-- All Plugin Css --> 
-		<link rel="stylesheet" href="css/plugins.css">
-		
-		<!-- Style & Common Css --> 
-		<link rel="stylesheet" href="css/common.css">
-        <link rel="stylesheet" href="css/main.css">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Jober Desk | Responsive Job Portal Template</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    </head>
-	
-    <body>
-	
+<!-- All Plugin Css -->
+<link rel="stylesheet" href="css/plugins.css">
+
+<!-- Style & Common Css -->
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/main.css">
+</head>
+
+		<body>
+	<% MemberDTO info = (MemberDTO)session.getAttribute("info"); %>
 		<!-- Navigation Start  -->
 		<nav class="navbar navbar-default navbar-sticky bootsnav">
 
@@ -37,8 +37,13 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-							<li><a href="index.jsp">메인 화면</a></li> 
-							<li><a href="login.jsp">로그인</a></li>
+							<li><a href="index.jsp">메인 화면</a></li>
+							<% if(info == null){ %>
+								<li><a href="login.jsp">로그인</a></li>
+								<%}else{ %>
+								<li><a href="LogoutService.do">로그아웃</a></li>
+								<li><%= info.getNm() %>님 환영합니다.</li>
+								<%} %> 
 							<li><a href="companies.jsp">분석 결과</a></li> 
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">메뉴</a>
@@ -58,14 +63,56 @@
 	<section class="inner-banner" style="backend:#242c36 url(https://via.placeholder.com/1920x600)no-repeat;">
 		<div class="container">
 			<div class="caption">
-				<h2>Get your jobs</h2>
-				<p>Get your Popular jobs <span>202 New job</span></p>
+				<h2>고소 가능 / 고소 불가능</h2>
+				<p>
+					Get your Popular jobs <span>202 New job</span>
+				</p>
 			</div>
 		</div>
 	</section>
-	
+
+	<!-- 자세히 보기 버튼을 클릭할 때 -->
+
+	<script type="text/javascript" src=js/jquery.min.js></script>
+	<script>
+		$(function() {
+			$(".row.heading").hide();
+			$(".btn.brows-btn").on("click", function() {
+				$(".row.heading").slideDown()
+			});
+			btn1.addEventListener('click',function(){
+				alert('반갑습니다.');
+			});
+
+		});
+	</script>
+	<%
+		String user = "ab";
+	%>
 	<section class="jobs">
-		<div class="container">
+		<div class="row">
+			<%
+				if (user != null) {
+			%>
+			<input type="button" class="btn brows-btn" value="자세히 보기"
+				onclick="location.href='login.jsp'" />
+			<%
+				} else {
+			%>
+			<input type="button" class="btn brows-btn" value="자세히 보기" />
+			<%
+				}
+			%>
+		</div>
+
+		<div class="row heading">
+			<h2>Find Popular Jobs</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+				do</p>
+		</div>
+
+
+		<!-- <div class="container">
 			<div class="row heading">
 				<h2>Find Popular Jobs</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
@@ -154,13 +201,13 @@
 			<div class="row">
 				<input type="button" class="btn brows-btn" value="Brows All Jobs" />
 			</div>
-		</div>
+		</div> -->
 	</section>
 
 
 
-		<!-- footer start -->
-		<footer>
+	<!-- footer start -->
+	<!-- <footer>
 			<div class="container">
 				<div class="col-md-3 col-sm-6">
 					<h4>Featured Job</h4>
@@ -217,12 +264,12 @@
 			<div class="copy-right">
 			 <p>&copy;Copyright 2018 Jober Desk | Design By <a href="https://themezhub.com/">ThemezHub</a></p>
 			</div>
-		</footer>
-		 
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-		<script src="js/bootsnav.js"></script>
-		<script src="js/main.js"></script>
-    </body>
+		</footer> -->
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script src="js/bootsnav.js"></script>
+	<script src="js/main.js"></script>
+</body>
 </html>
