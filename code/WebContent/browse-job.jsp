@@ -3,7 +3,7 @@
 <%@page import="com.model.PostDAO"%>
 <%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-   pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 
 <html class="no-js" lang="en">
@@ -21,76 +21,123 @@
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/main.css">
 
+<style>
+.basic-information{
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    padding: 30px 30px 20px;
+    -webkit-box-shadow: 0 5px 25px 0 rgba(0,0,0,.07);
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,.07);
+	border: 1px solid #eaecf1;
+	display: table;
+    width: 50%;
+    float: left;
+}
+
+</style>
+
 </head>
 
 <body>
-   <%
+	<%
       MemberDTO info = (MemberDTO) session.getAttribute("info");
    
    %>
-   <!-- Navigation Start  -->
-   <nav class="navbar navbar-default navbar-sticky bootsnav">
+	<!-- Navigation Start  -->
+	<nav class="navbar navbar-default navbar-sticky bootsnav">
 
-      <div class="container">
-         <!-- Start Header Navigation -->
-         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-               data-target="#navbar-menu">
-               <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-               class="logo" alt=""></a>
-         </div>
-         <!-- End Header Navigation -->
+		<div class="container">
+			<!-- Start Header Navigation -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#navbar-menu">
+					<i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
+					class="logo" alt=""></a>
+			</div>
+			<!-- End Header Navigation -->
 
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse" id="navbar-menu">
-            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
-               data-out="fadeOutUp">
-               <li><a href="index.jsp">메인 화면</a></li>
-               <%
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbar-menu">
+				<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
+					data-out="fadeOutUp">
+					<li><a href="index.jsp">메인 화면</a></li>
+					<%
                   if (info == null) {
                %>
-               <li><a href="login.jsp">로그인</a></li>
-               <%
+					<li><a href="login.jsp">로그인</a></li>
+					<%
                   } else {
                %>
-               <li><a href="LogoutService.do">로그아웃</a></li>
-               <%-- <li><%= info.getNm() %>님 환영합니다.</li> --%>
-               <%
+					<li><a href="LogoutService.do">로그아웃</a></li>
+					<%-- <li><%= info.getNm() %>님 환영합니다.</li> --%>
+					<%
                   }
                %>
-               <li><a href="companies.jsp">분석 결과</a></li>
-               <li class="dropdown"><a href="#" class="dropdown-toggle"
-                  data-toggle="dropdown">메뉴</a>
-                  <ul class="dropdown-menu animated fadeOutUp"
-                     style="display: none; opacity: 1;">
-                     <li class="active"><a href="browse-job.jsp">내 정보</a></li>
-                     <li><a href="company-detail.jsp">커뮤니티</a></li>
-                     <li><a href="resume.jsp">상담 신청</a></li>
-                  </ul></li>
-            </ul>
-         </div>
-         <!-- /.navbar-collapse -->
-      </div>
-   </nav>
-   <!-- Navigation End  -->
+					<li><a href="companies.jsp">분석 결과</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">메뉴</a>
+						<ul class="dropdown-menu animated fadeOutUp"
+							style="display: none; opacity: 1;">
+							<li class="active"><a href="browse-job.jsp">내 정보</a></li>
+							<li><a href="company-detail.jsp">커뮤니티</a></li>
+							<li><a href="resume.jsp">상담 신청</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+	</nav>
+	<!-- Navigation End  -->
 
-   <!-- Inner Banner -->
-   <section class="inner-banner"
-      style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
-      <div class="container">
-         <div class="caption">
-            <h2>Get your jobs</h2>
-            <p>
-               Get your Popular jobs <span>202 New job</span>
-            </p>
-         </div>
-      </div>
-   </section>
+	<!-- Inner Banner -->
+	<section class="inner-banner"
+		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
+		<div class="container">
+			<div class="caption">
+				<h2>내정보/분석리스트</h2>
+				<p>
+					<span>내정보/분석리스트</span>
+				</p>
+			</div>
+		</div>
+	</section>
 
-   <section class="jobs">
-      <div class="container">
+
+
+<!-- 	<section class="profile-detail" > -->
+<section>
+ 		<div class="container"> 
+<!-- 			<div class="col-md-12">
+				<div class="row"> -->
+					<div class="basic-information" >
+						<ul class="information">
+							<h3>나의정보</h3>
+							<li><span>Id:</span></li>
+							<li><span>Name:</span></li>
+							<li><span>E-mail:</span></li>
+							<li><span>Grade:</span></li>
+						</ul>
+					</div>
+					
+					<div class="basic-information">
+						<ul class="information">
+							<h3>분석정보</h3>
+							<li><span></span></li>
+							<li><span></span></li>
+							<li><span></span></li>
+							<li><span></span></li>
+						</ul>
+					</div>
+	<!-- 			</div> -->
+			<!-- </div> -->
+		</div> 
+<!-- 	</section> -->
+</section>
+
+	<%--  <div class="container">
          <table class="info">
             <tr>
                <td>
@@ -136,13 +183,13 @@
                                     <%= list.get(i).getPost_content() %>
                                     <%= list.get(i).getPost_dt() %>
                                     </li><%}} %>
-                                    <%-- <a href="deleteMessageService.do?num=<%= list.get(i).getPost_cd() %>">삭제</a> --%>
-                              <%-- <li><a href="deleteMessageAllService.do" class="button next scrolly">전체삭제하기</a></li><%} %> --%>
+                                    <a href="deleteMessageService.do?num=<%= list.get(i).getPost_cd() %>">삭제</a>
+                              <li><a href="deleteMessageAllService.do" class="button next scrolly">전체삭제하기</a></li><%} %>
                   </div>
                </td>
             </tr>
-         </table>
-         <!-- <div class="row top-pad">
+         </table> --%>
+	<!-- <div class="row top-pad">
                <div class="filter">
                   <div class="col-md-2 col-sm-3">
                      <p>Search By:</p>
@@ -424,77 +471,77 @@
                <input type="button" class="btn brows-btn" value="Brows All Jobs" />
             </div>
          </div> -->
-   </section>
+	</section>
 
 
-   <!-- footer start -->
-   <footer>
-      <div class="container">
-         <div class="col-md-3 col-sm-6">
-            <h4>Featured Job</h4>
-            <ul>
-               <li><a href="#">Browse Jobs</a></li>
-               <li><a href="#">Premium MBA Jobs</a></li>
-               <li><a href="#">Access Database</a></li>
-               <li><a href="#">Manage Responses</a></li>
-               <li><a href="#">Report a Problem</a></li>
-               <li><a href="#">Mobile Site</a></li>
-               <li><a href="#">Jobs by Skill</a></li>
-            </ul>
-         </div>
+	<!-- footer start -->
+	<footer>
+		<div class="container">
+			<div class="col-md-3 col-sm-6">
+				<h4>Featured Job</h4>
+				<ul>
+					<li><a href="#">Browse Jobs</a></li>
+					<li><a href="#">Premium MBA Jobs</a></li>
+					<li><a href="#">Access Database</a></li>
+					<li><a href="#">Manage Responses</a></li>
+					<li><a href="#">Report a Problem</a></li>
+					<li><a href="#">Mobile Site</a></li>
+					<li><a href="#">Jobs by Skill</a></li>
+				</ul>
+			</div>
 
-         <div class="col-md-3 col-sm-6">
-            <h4>Latest Job</h4>
-            <ul>
-               <li><a href="#">Browse Jobs</a></li>
-               <li><a href="#">Premium MBA Jobs</a></li>
-               <li><a href="#">Access Database</a></li>
-               <li><a href="#">Manage Responses</a></li>
-               <li><a href="#">Report a Problem</a></li>
-               <li><a href="#">Mobile Site</a></li>
-               <li><a href="#">Jobs by Skill</a></li>
-            </ul>
-         </div>
+			<div class="col-md-3 col-sm-6">
+				<h4>Latest Job</h4>
+				<ul>
+					<li><a href="#">Browse Jobs</a></li>
+					<li><a href="#">Premium MBA Jobs</a></li>
+					<li><a href="#">Access Database</a></li>
+					<li><a href="#">Manage Responses</a></li>
+					<li><a href="#">Report a Problem</a></li>
+					<li><a href="#">Mobile Site</a></li>
+					<li><a href="#">Jobs by Skill</a></li>
+				</ul>
+			</div>
 
-         <div class="col-md-3 col-sm-6">
-            <h4>Reach Us</h4>
-            <address>
-               <ul>
-                  <li>1201, Murakeu Market, QUCH07<br> United Kingdon
-                  </li>
-                  <li>Email: Support@job.com</li>
-                  <li>Call: 044 123 458 65879</li>
-                  <li>Skype: job@skype</li>
-                  <li>FAX: 123 456 85</li>
-               </ul>
-            </address>
-         </div>
+			<div class="col-md-3 col-sm-6">
+				<h4>Reach Us</h4>
+				<address>
+					<ul>
+						<li>1201, Murakeu Market, QUCH07<br> United Kingdon
+						</li>
+						<li>Email: Support@job.com</li>
+						<li>Call: 044 123 458 65879</li>
+						<li>Skype: job@skype</li>
+						<li>FAX: 123 456 85</li>
+					</ul>
+				</address>
+			</div>
 
-         <div class="col-md-3 col-sm-6">
-            <h4>Drop A Mail</h4>
-            <form>
-               <input type="text" class="form-control input-lg"
-                  placeholder="Your Name"> <input type="text"
-                  class="form-control input-lg" placeholder="Email...">
-               <textarea class="form-control" placeholder="Message"></textarea>
-               <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-         </div>
+			<div class="col-md-3 col-sm-6">
+				<h4>Drop A Mail</h4>
+				<form>
+					<input type="text" class="form-control input-lg"
+						placeholder="Your Name"> <input type="text"
+						class="form-control input-lg" placeholder="Email...">
+					<textarea class="form-control" placeholder="Message"></textarea>
+					<button type="submit" class="btn btn-primary">Login</button>
+				</form>
+			</div>
 
 
-      </div>
-      <div class="copy-right">
-         <p>
-            &copy;Copyright 2018 Jober Desk | Design By <a
-               href="https://themezhub.com/">ThemezHub</a>
-         </p>
-      </div>
-   </footer>
+		</div>
+		<div class="copy-right">
+			<p>
+				&copy;Copyright 2018 Jober Desk | Design By <a
+					href="https://themezhub.com/">ThemezHub</a>
+			</p>
+		</div>
+	</footer>
 
-   <script type="text/javascript" src="js/jquery.min.js"></script>
-   <script src="js/bootstrap.min.js"></script>
-   <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-   <script src="js/bootsnav.js"></script>
-   <script src="js/main.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script src="js/bootsnav.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
