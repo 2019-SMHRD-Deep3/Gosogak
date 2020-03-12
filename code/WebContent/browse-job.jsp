@@ -1,3 +1,6 @@
+<%@page import="com.model.PostDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.PostDAO"%>
 <%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
@@ -23,6 +26,7 @@
 <body>
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
+	
 	%>
 	<!-- Navigation Start  -->
 	<nav class="navbar navbar-default navbar-sticky bootsnav">
@@ -114,12 +118,26 @@
 							<%
 								}
 							%>
-							<span><a href="updateUser.jsp"><p>정보수정</p></a></span>
+							<span>
+							<button onclick="window.location.href='updateUser.jsp'">정보수정</button>
+							</span>
 						</div>
 					</td>
 					<td>
 						<div class="row heading">
-							<span><h2>상담내역</h2></span> <span><p>게시글</p></span>
+							<span><h2>상담내역</h2></span>
+							<% if(info == null){ %>
+							<span><p>없음</p></span>
+							<% } else{ PostDAO dao = new PostDAO();
+											ArrayList<PostDTO> list = dao.selectPost(info.getId());
+											for(int i=list.size()-1; i>=0; i--){%>
+												<li><%= list.get(i).getPost_cd() %>:
+												<%= list.get(i).getPost_title() %>
+												<%= list.get(i).getPost_content() %>
+												<%= list.get(i).getPost_dt() %>
+												</li><%}} %>
+												<%-- <a href="deleteMessageService.do?num=<%= list.get(i).getPost_cd() %>">삭제</a> --%>
+										<%-- <li><a href="deleteMessageAllService.do" class="button next scrolly">전체삭제하기</a></li><%} %> --%>
 						</div>
 					</td>
 				</tr>

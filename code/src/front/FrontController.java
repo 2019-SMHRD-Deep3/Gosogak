@@ -31,6 +31,7 @@ private static final long serialVersionUID = 1L;
 		map.put("LogoutService.do", new LogoutCon());
 		map.put("UpdateUserService.do", new UpdateUserCon());
 		//map.put("UpdateManagerService.do", new UpdateManagerCon());
+		//map.put("InsertPostService.do", new InsertPostCon());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)

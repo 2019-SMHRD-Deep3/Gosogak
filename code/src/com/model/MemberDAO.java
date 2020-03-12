@@ -75,7 +75,7 @@ public class MemberDAO {
 		}
 		return cnt;
 	}
-	
+		
 	public MemberDTO login(MemberDTO dto) {
 		MemberDTO info = null;
 		
