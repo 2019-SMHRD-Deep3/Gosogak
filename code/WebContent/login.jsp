@@ -36,15 +36,15 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-							<li><a href="index.jsp">Home</a></li> 
-							<li><a href="login.jsp">Login</a></li>
-							<li><a href="companies.jsp">Companies</a></li> 
+							<li><a href="index.jsp">메인 화면</a></li> 
+							<li><a href="login.jsp">로그인</a></li>
+							<li><a href="companies.jsp">분석 결과</a></li> 
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse</a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">메뉴</a>
 								<ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
-									<li class="active"><a href="browse-job.jsp">Browse Jobs</a></li>
-									<li><a href="company-detail.jsp">Job Detail</a></li>
-									<li><a href="resume.jsp">Resume Detail</a></li>
+									<li class="active"><a href="browse-job.jsp">내 정보</a></li>
+									<li><a href="company-detail.jsp">커뮤니티</a></li>
+									<li><a href="resume.jsp">상담 신청</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -73,17 +73,10 @@
 				<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
 					<form action="JoinService.do" method="post">
 						<p>Create An Account</p>
-<<<<<<< HEAD
 						<input name="id" type="text"  class="form-control input-lg" placeholder="id을 입력하세요"><br>
 						<input name="pw" type="password"  class="form-control input-lg" placeholder="pw를 입력하세요"><br>
 						<input name="nm" type="text"  class="form-control input-lg" placeholder="name을 입력하세요"><br>
 						<input name="email"type="text"  class="form-control input-lg" placeholder="email을 입력하세요"><br>
-=======
-						<input name="id" type="text"  class="form-control input-lg" placeholder="아이디를 입력하세요"><br>
-						<input name="pw" type="password"  class="form-control input-lg" placeholder="비밀번호를 입력하세요"><br>
-						<input name="name" type="text"  class="form-control input-lg" placeholder="이름을 입력하세요"><br>
-						<input name="email"type="text"  class="form-control input-lg" placeholder="EMAIL을 입력하세요"><br>
->>>>>>> branch 'master' of https://github.com/2019-SMHRD-Deep3/Gosogak.git
 						<button type="submit" class="btn btn-primary">JoinUs</button>
 					</form>
 				</div>
