@@ -80,6 +80,7 @@ public class MemberDAO {
 		MemberDTO info = null;
 		
 		String l_id = null;
+		String l_pw = null;
 		String l_name = null;
 		String l_email = null;
 		String l_grade = null;
@@ -99,12 +100,18 @@ public class MemberDAO {
 				// rs.getString(2);
 				// rs.getString(3);
 				l_id = rs.getString("MEMBER_ID");
+				l_pw = rs.getString("MEMBER_PW");
 				l_name = rs.getString("MEMBER_NM");
 				l_email = rs.getString("MEMBER_EMAIL");
 				l_grade = rs.getString("MEMBER_GRADE");
 				
-				info = new MemberDTO(l_id,l_name,l_email,l_grade);
-				
+//				System.out.println(l_id);
+//				System.out.println(l_name);
+//				System.out.println(l_email);
+//				System.out.println(l_grade);
+				info = new MemberDTO(l_id,l_pw,l_name,l_email,l_grade);
+//				System.out.println(info.getId());
+//				System.out.println(info.getGrade());
 			}
 
 		} catch (SQLException e) {
@@ -116,12 +123,12 @@ public class MemberDAO {
 		return info;
 	}
 	
-	public int update(MemberDTO dto) {
+	public int updateUser(MemberDTO dto) {
 		int cnt = 0;
+		
 		
 		try {
 			getConnection();
-
 			String sql = "update MEMBER set MEMBER_PW=?,MEMBER_NM=?,MEMBER_EMAIL=? where MEMBER_ID=?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getPw());
@@ -130,7 +137,6 @@ public class MemberDAO {
 			psmt.setString(4, dto.getId());
 			
 			cnt = psmt.executeUpdate();
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

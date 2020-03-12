@@ -24,7 +24,23 @@ public class MemberDTO {
 		this.id = id;
 		this.pw = pw;
 	}
-		
+	
+	// 로그인 세션
+	public MemberDTO(String id, String pw, String nm, String email, String grade) {
+
+		this.id = id;
+		this.pw = pw;
+		this.nm = nm;
+		this.email = email;
+		this.grade = grade;
+	}
+	
+	// 일반사용자 정보 수정
+	public MemberDTO(String pw, String nm, String email) {
+		this.pw = pw;
+		this.nm = nm;
+		this.email = email;
+	}
 
 	public String getId() {
 		return id;
