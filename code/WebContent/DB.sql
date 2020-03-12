@@ -1,3 +1,11 @@
+-- DB 계정 생성 (SQL 커맨드라인에서 수행)
+conn sys as sysdba
+create user gosogak identified by gosogak;
+grant dba to gosogak;
+-- 접속 테스트
+conn gosogak/gosogak
+
+
 -- 기존 테이블 삭제
 DROP TABLE COUNSELING;
 DROP TABLE SERVICE;
