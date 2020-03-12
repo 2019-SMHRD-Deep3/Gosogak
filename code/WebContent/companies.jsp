@@ -18,29 +18,51 @@
 <link rel="stylesheet" href="css/main.css">
 </head>
 
+<body>
 
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="navbar-menu">
-					<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-							<li><a href="index.jsp">메인 화면</a></li> 
-							<li><a href="login.jsp">로그인</a></li>
-							<li><a href="companies.jsp">분석 결과</a></li> 
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">메뉴</a>
-								<ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
-									<li class="active"><a href="browse-job.jsp">내 정보</a></li>
-									<li><a href="company-detail.jsp">커뮤니티</a></li>
-									<li><a href="resume.jsp">상담 신청</a></li>
-								</ul>
-							</li>
-						</ul>
-				</div><!-- /.navbar-collapse -->
-			</div>   
-		</nav>
-		<!-- Navigation End  -->
-	
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-	<section class="inner-banner" style="backend:#242c36 url(https://via.placeholder.com/1920x600)no-repeat;">
+
+
+
+	<!-- Navigation Start  -->
+	<nav class="navbar navbar-default navbar-sticky bootsnav">
+
+		<div class="container">
+			<!-- Start Header Navigation -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#navbar-menu">
+					<i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
+					class="logo" alt=""></a>
+			</div>
+			<!-- End Header Navigation -->
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbar-menu">
+				<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
+					data-out="fadeOutUp">
+					<li><a href="index.jsp">메인 화면</a></li>
+					<li><a href="login.jsp">로그인</a></li>
+					<li><a href="companies.jsp">분석 결과</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">메뉴</a>
+						<ul class="dropdown-menu animated fadeOutUp"
+							style="display: none; opacity: 1;">
+							<li class="active"><a href="browse-job.jsp">내 정보</a></li>
+							<li><a href="company-detail.jsp">커뮤니티</a></li>
+							<li><a href="resume.jsp">상담 신청</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+	</nav>
+	<!-- Navigation End  -->
+
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<section class="inner-banner"
+		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
 		<div class="container">
 			<div class="caption">
 				<h2>고소 가능 / 고소 불가능</h2>
@@ -51,19 +73,23 @@
 		</div>
 	</section>
 
-	<script type="text/javascript" src=js/jquery-3.4.1.min.js></script>
-	<script>
+	<!-- 자세히 보기 버튼을 클릭할 때 -->
 
-		$(function(){
-		
-			$(".btn").on("click", function() {
-				$("#showhide").slideUp(1000, "linear")
+	<script type="text/javascript" src=js/jquery.min.js></script>
+	<script>
+		$(function() {
+			$(".row.heading").hide();
+			$(".btn.brows-btn").on("click", function() {
+				$(".row.heading").slideDown()
 			});
+			btn1.addEventListener('click',function(){
+				alert('반갑습니다.');
+			});
+
 		});
 	</script>
-	<!-- 자세히 보기 버튼을 클릭할 때 -->
 	<%
-		String user = null;
+		String user = "ab";
 	%>
 	<section class="jobs">
 		<div class="row">
@@ -80,9 +106,11 @@
 				}
 			%>
 		</div>
-		<div id="hidehide">하이하이</div>
-		<div id="showhide">
+
+		<div class="row heading">
 			<h2>Find Popular Jobs</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+				do</p>
 		</div>
 
 
