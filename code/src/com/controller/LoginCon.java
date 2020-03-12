@@ -20,18 +20,20 @@ public class LoginCon implements ICommand {
 		// int num = Integer.parseInt(request.getParameter("num"));
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		
+
 		MemberDTO dto = new MemberDTO(id, pw);
 		MemberDAO dao = MemberDAO.getDAO();
 		MemberDTO info = dao.login(dto);
 
-		// 로그인 성공시 info에는 email, tel, address
-		// 실패시 null
 		if (info != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
 		}
-		moveURL = "index.jsp";
+		if (request.getParameter("detail") == null) {
+			moveURL = "index.jsp";
+		} else {
+			moveURL = "companies.jsp";
+		}
 
 		return moveURL;
 

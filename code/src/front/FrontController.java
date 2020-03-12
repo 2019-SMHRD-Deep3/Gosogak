@@ -14,6 +14,7 @@ import com.controller.LoginCon;
 import com.controller.JoinCon;
 import com.controller.LoginCon;
 import com.controller.LogoutCon;
+import com.controller.UpdateUserCon;
 
 /**
  * Servlet implementation class FrontController
@@ -28,7 +29,9 @@ private static final long serialVersionUID = 1L;
 		map.put("JoinService.do", new JoinCon());
 		map.put("LoginService.do", new LoginCon());
 		map.put("LogoutService.do", new LogoutCon());
-		//map.put("updateService.do", new updateCon());
+		map.put("UpdateUserService.do", new UpdateUserCon());
+		//map.put("UpdateManagerService.do", new UpdateManagerCon());
+		//map.put("InsertPostService.do", new InsertPostCon());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)

@@ -1,3 +1,4 @@
+<%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -19,7 +20,6 @@
     </head>
 	
     <body>
-	
 		<!-- Navigation Start  -->
 		<nav class="navbar navbar-default navbar-sticky bootsnav">
 
@@ -61,7 +61,11 @@
 						<img class="img-responsive" alt="logo" src="img/logo.png">
 						<input type="text" class="form-control input-lg" placeholder="User Name" name="id">
 						<input type="password" class="form-control input-lg" placeholder="Password" name="pw">
+						<%if(request.getParameter("detail")==null){ %>
 						<button type="submit" class="btn btn-primary">Login</button>
+						<%}else{ %>
+						<button type="submit" class="btn btn-primary" name="detail" value="abc">Login</button>
+						<%} %>
 					</form>
 				</div>
 			</div>
@@ -140,7 +144,9 @@
 			 <p>&copy;Copyright 2018 Jober Desk | Design By <a href="https://themezhub.com/">ThemezHub</a></p>
 			</div>
 		</footer>
-		 
+		<!--  <script type="text/javascript" src="../js/jquery-3.2.1.js"></script> -->
+
+
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
