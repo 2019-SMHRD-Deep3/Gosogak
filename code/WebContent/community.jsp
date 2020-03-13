@@ -1,3 +1,6 @@
+<%@page import="com.model.PostDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.PostDAO"%>
 <%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
@@ -88,7 +91,8 @@
 
 	<script type="text/javascript" src=js/jquery.min.js></script>
 	<script language=javascript>
-		if ('<%=info%>' == 'null') {
+		if ('<%=info%>
+		' == 'null') {
 			$(function() {
 				$(".btn.brows-btn").on("click", function() {
 					var check = confirm('로그인이 필요한 서비스입니다.');
@@ -99,7 +103,7 @@
 			});
 		} else {
 			$(function() {
-				$(".btn.brows-btn").on("click",function(){
+				$(".btn.brows-btn").on("click", function() {
 					location.href = "postWrite.jsp";
 				})
 			});
@@ -134,20 +138,32 @@
 										<td>작성자</td>
 										<td>작성일</td>
 									</tr>
+									<%
+										PostDAO dao = new PostDAO();
+										ArrayList<PostDTO> list = dao.selectAll();
+									%>
 									<c:forEach var="board">
+									
+
 										<tr>
-											<td></td>
-											<td><a href="#"></a></td>
-											<td></td>
-											<td></td>
+										<% for(int i =0; i<list.size(); i++){%>
+											<td><%= i+1 %></td>
+											<td><%= list.get(i).getPost_content()%></td>
+											<td><%= list.get(i).getPost_id()%></td>
+											<td><%= list.get(i).getPost_dt()%></td>
+											<%}%>
 										</tr>
 									</c:forEach>
 								</table>
 							</div>
-							<%if(info==null) {%>
+							<%
+								if (info == null) {
+							%>
 							<form action="login.jsp">
-							<%} %>
-							<button type="submit" class="btn brows-btn" name="detail">글쓰기</button>
+								<%
+									}
+								%>
+								<button type="submit" class="btn brows-btn" name="detail">글쓰기</button>
 							</form>
 							<!-- 페이지 넘버 부분 -->
 							<%-- <br>
@@ -183,7 +199,7 @@
 							</div> --%>
 						</div>
 						<!-- 게시판 영역 종료 -->
-						
+
 						<!-- <div class="col-md-3 col-sm-3">
 							<img src="img/microsoft.png" alt="" class="img-responsive">
 						</div>

@@ -26,6 +26,13 @@ public class PostDTO {
 		this.post_result = post_result;
 	}
 	
+	public PostDTO(int post_cd, String post_title, String post_dt, String post_id) {
+		this.post_cd = post_cd;
+		this.post_title = post_title;
+		this.post_dt = post_dt;
+		this.post_id = post_id;
+	}
+
 	public int getPost_cd() {
 		return post_cd;
 	}
