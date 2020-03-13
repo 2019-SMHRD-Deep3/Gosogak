@@ -91,8 +91,7 @@
 
 	<script type="text/javascript" src=js/jquery.min.js></script>
 	<script language=javascript>
-		if ('<%=info%>
-		' == 'null') {
+		if ('<%=info%>' == 'null') {
 			$(function() {
 				$(".btn.brows-btn").on("click", function() {
 					var check = confirm('로그인이 필요한 서비스입니다.');
@@ -145,20 +144,24 @@
 									<c:forEach var="board">
 									
 
+										
+										<% for(int i =list.size()-1; i>=0; i--){%>
 										<tr>
-										<% for(int i =0; i<list.size(); i++){%>
-											<td><%= i+1 %></td>
+											<td><%= i+1%></td>
+											<td><%= list.get(i).getPost_title()%></td>
 											<td><%= list.get(i).getPost_content()%></td>
 											<td><%= list.get(i).getPost_id()%></td>
 											<td><%= list.get(i).getPost_dt()%></td>
-											<%}%>
 										</tr>
+											<%}%>
+										
 									</c:forEach>
 								</table>
 							</div>
-							<%if(info == null){%>
+
+							<%if(info==null){ %>
 							<form action="login.jsp">
-							<%}%>
+							<%} %>
 							<button type="submit" class="btn brows-btn" name="detail" value="community">글쓰기</button>
 
 							</form>
