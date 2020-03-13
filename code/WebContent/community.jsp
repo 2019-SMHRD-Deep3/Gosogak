@@ -3,7 +3,7 @@
 <%@page import="com.model.PostDAO"%>
 <%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-   pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -23,75 +23,85 @@
 </head>
 
 <body>
-   <%
-      MemberDTO info = (MemberDTO) session.getAttribute("info");
-   %>
-   <!-- Navigation Start  -->
-   <nav class="navbar navbar-default navbar-sticky bootsnav">
+	<%
+		MemberDTO info = (MemberDTO) session.getAttribute("info");
+	%>
+	<!-- Navigation Start  -->
+	<nav class="navbar navbar-default navbar-sticky bootsnav">
 
-      <div class="container">
-         <!-- Start Header Navigation -->
-         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-               data-target="#navbar-menu">
-               <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-               class="logo" alt=""></a>
-         </div>
-         <!-- End Header Navigation -->
+		<div class="container">
+			<!-- Start Header Navigation -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#navbar-menu">
+					<i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
+					class="logo" alt=""></a>
+			</div>
+			<!-- End Header Navigation -->
 
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse" id="navbar-menu">
-            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
-               data-out="fadeOutUp">
-               <li><a href="index.jsp">메인 화면</a></li>
-               <%
-                  if (info == null) {
-               %>
-               <li><a href="login.jsp">로그인</a></li>
-               <%
-                  } else {
-               %>
-               <li><a href="LogoutService.do">로그아웃</a></li>
-               <%
-                  }
-               %>
-               <li><a href="result.jsp">분석 결과</a></li>
-               <li class="dropdown"><a href="#" class="dropdown-toggle"
-                  data-toggle="dropdown">메뉴</a>
-                  <ul class="dropdown-menu animated fadeOutUp"
-                     style="display: none; opacity: 1;">
-                     <li class="active"><a href="myIndex.jsp">내 정보</a></li>
-                     <li><a href="community.jsp">커뮤니티</a></li>
-                     <li><a href="counsel.jsp">상담 신청</a></li>
-                  </ul></li>
-                  <li><div style="float: right; margin-top:15%;margin-right:-50%;"><%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
-					<%}else {%><%} %></div></li>
-            </ul>
-         </div>
-         <!-- /.navbar-collapse -->
-      </div>
-   </nav>
-   <!-- Navigation End  -->
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbar-menu">
+				<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
+					data-out="fadeOutUp">
+					<li><a href="index.jsp">메인 화면</a></li>
+					<%
+						if (info == null) {
+					%>
+					<li><a href="login.jsp">로그인</a></li>
+					<%
+						} else {
+					%>
+					<li><a href="LogoutService.do">로그아웃</a></li>
+					<%
+						}
+					%>
+					<li><a href="result.jsp">분석 결과</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">메뉴</a>
+						<ul class="dropdown-menu animated fadeOutUp"
+							style="display: none; opacity: 1;">
+							<li class="active"><a href="myIndex.jsp">내 정보</a></li>
+							<li><a href="community.jsp">커뮤니티</a></li>
+							<li><a href="counsel.jsp">상담 신청</a></li>
+						</ul></li>
+					<li><div
+							style="float: right; margin-top: 15%; margin-right: -50%;">
+							<%
+								if (info != null) {
+							%><%=info.getNm()%>님 환영합니다.
+							<%
+								} else {
+							%>
+							<%
+								}
+							%>
+						</div></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+	</nav>
+	<!-- Navigation End  -->
 
-   <!-- Main jumbotron for a primary marketing message or call to action -->
-   <section class="inner-banner"
-      style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
-      <div class="container">
-         <div class="caption">
-            <h2>Get your jobs</h2>
-            <p>
-               Get your Popular jobs <span>202 New job</span>
-            </p>
-         </div>
-      </div>
-   </section>
+	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<section class="inner-banner"
+		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
+		<div class="container">
+			<div class="caption">
+				<h2>Get your jobs</h2>
+				<p>
+					Get your Popular jobs <span>202 New job</span>
+				</p>
+			</div>
+		</div>
+	</section>
 
-   <!-- 자세히 보기 버튼을 클릭할 때 -->
+	<!-- 자세히 보기 버튼을 클릭할 때 -->
 
-   <script type="text/javascript" src=js/jquery.min.js></script>
-   <script language=javascript>
+	<script type="text/javascript" src=js/jquery.min.js></script>
+	<script language=javascript>
       if ('<%=info%>' == 'null') {
          $(function() {
             $(".btn.brows-btn").on("click", function() {
@@ -109,65 +119,72 @@
          });
       }
    </script>
-   <section class="profile-detail">
+	<section class="profile-detail">
 
 
 
-      <div class="container">
-         <div class="col-md-12">
-            <div class="row">
-               <div class="basic-information">
-                  <!-- 게시판 영역  시작-->
-                  <div id="wrap">
+		<div class="container">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="basic-information">
+						<!-- 게시판 영역  시작-->
+						<div id="wrap">
 
-                     <!-- 글목록 위 부분-->
-                     <%-- <br>
+							<!-- 글목록 위 부분-->
+							<%-- <br>
                      <div id="topForm">
                         <c:if test="${sessionScope.sessionID!=null}">
                            
                         </c:if>
                      </div> --%>
 
-                     <!-- 게시글 목록 부분 -->
-                     <br>
-                     <div id="board">
-                        <table id="bList" width="800" border="3" bordercolor="lightgray">
-                           <tr heigh="30">
-                              <td>글번호</td>
-                              <td>제목</td>
-                              <td>작성자</td>
-                              <td>작성일</td>
-                           </tr>
-                           <%
-                              PostDAO dao = new PostDAO();
-                              ArrayList<PostDTO> list = dao.selectAll();
-                           %>
-                           <c:forEach var="board">
-                           
+							<!-- 게시글 목록 부분 -->
+							<br>
+							<div id="board">
+								<table id="bList" width="800" border="3" bordercolor="lightgray">
+									<tr heigh="30">
+										<td>글번호</td>
+										<td>제목</td>
+										<td>작성자</td>
+										<td>작성일</td>
+									</tr>
+									<%
+										PostDAO dao = new PostDAO();
+										PostDTO p_info = (PostDTO) session.getAttribute("p_info");
+										ArrayList<PostDTO> list = dao.selectAll();
+									%>
+									<c:forEach var="board">
 
-                              
-                              <% for(int i =list.size()-1; i>=0; i--){%>
-                              <tr>
-                                 <td><%= i+1%></td>
-                                 <td><%= list.get(i).getPost_title()%></td>
-                                 <td><%= list.get(i).getPost_content()%></td>
-                                 <td><%= list.get(i).getPost_id()%></td>
-                                 <td><%= list.get(i).getPost_dt()%></td>
-                              </tr>
-                                 <%}%>
-                              
-                           </c:forEach>
-                        </table>
-                     </div>
+										<%
+											for (int i = list.size() - 1; i >= 0; i--) {
+										%>
+										<tr class="post_read">
+											<td class="post_cd"><%=i + 1%></td>
+											<td class="post_title"><%=list.get(i).getPost_title()%></td>
+											<td class="post_id"><%=list.get(i).getPost_id()%></td>
+											<td class="post_dt"><%=list.get(i).getPost_dt()%></td>
+										</tr>
+										<%
+											}
+										%>
 
-                     <%if(info==null){ %>
-                     <form action="login.jsp">
-                     <%} %>
-                     <button type="submit" class="btn brows-btn" name="detail" value="community">글쓰기</button>
+									</c:forEach>
+								</table>
+							</div>
 
-                     </form>
-                     <!-- 페이지 넘버 부분 -->
-                     <%-- <br>
+							<%
+								if (info == null) {
+							%>
+							<form action="login.jsp">
+								<%
+									}
+								%>
+								<button type="submit" class="btn brows-btn" name="detail"
+									value="community">글쓰기</button>
+
+							</form>
+							<!-- 페이지 넘버 부분 -->
+							<%-- <br>
                      <div id="pageForm">
                         <c:if test="${startPage != 1}">
                            <a href='BoardListAction.bo?page=${startPage-1}'>[ 이전 ]</a>
@@ -198,10 +215,10 @@
                               type="submit" value="검색" />
                         </form>
                      </div> --%>
-                  </div>
-                  <!-- 게시판 영역 종료 -->
+						</div>
+						<!-- 게시판 영역 종료 -->
 
-                  <!-- <div class="col-md-3 col-sm-3">
+						<!-- <div class="col-md-3 col-sm-3">
                      <img src="img/microsoft.png" alt="" class="img-responsive">
                   </div>
                   <div class="col-md-9 col-sm-9">
@@ -337,80 +354,145 @@
                   </div> -->
 
 
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
 
-   <!-- footer start -->
-   <footer>
-      <div class="container">
-         <div class="col-md-3 col-sm-6">
-            <h4>Featured Job</h4>
-            <ul>
-               <li><a href="#">Browse Jobs</a></li>
-               <li><a href="#">Premium MBA Jobs</a></li>
-               <li><a href="#">Access Database</a></li>
-               <li><a href="#">Manage Responses</a></li>
-               <li><a href="#">Report a Problem</a></li>
-               <li><a href="#">Mobile Site</a></li>
-               <li><a href="#">Jobs by Skill</a></li>
-            </ul>
-         </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-         <div class="col-md-3 col-sm-6">
-            <h4>Latest Job</h4>
-            <ul>
-               <li><a href="#">Browse Jobs</a></li>
-               <li><a href="#">Premium MBA Jobs</a></li>
-               <li><a href="#">Access Database</a></li>
-               <li><a href="#">Manage Responses</a></li>
-               <li><a href="#">Report a Problem</a></li>
-               <li><a href="#">Mobile Site</a></li>
-               <li><a href="#">Jobs by Skill</a></li>
-            </ul>
-         </div>
+	<!-- footer start -->
+	<footer>
+		<div class="container">
+			<div class="col-md-3 col-sm-6">
+				<h4>Featured Job</h4>
+				<ul>
+					<li><a href="#">Browse Jobs</a></li>
+					<li><a href="#">Premium MBA Jobs</a></li>
+					<li><a href="#">Access Database</a></li>
+					<li><a href="#">Manage Responses</a></li>
+					<li><a href="#">Report a Problem</a></li>
+					<li><a href="#">Mobile Site</a></li>
+					<li><a href="#">Jobs by Skill</a></li>
+				</ul>
+			</div>
 
-         <div class="col-md-3 col-sm-6">
-            <h4>Reach Us</h4>
-            <address>
-               <ul>
-                  <li>1201, Murakeu Market, QUCH07<br> United Kingdon
-                  </li>
-                  <li>Email: Support@job.com</li>
-                  <li>Call: 044 123 458 65879</li>
-                  <li>Skype: job@skype</li>
-                  <li>FAX: 123 456 85</li>
-               </ul>
-            </address>
-         </div>
+			<div class="col-md-3 col-sm-6">
+				<h4>Latest Job</h4>
+				<ul>
+					<li><a href="#">Browse Jobs</a></li>
+					<li><a href="#">Premium MBA Jobs</a></li>
+					<li><a href="#">Access Database</a></li>
+					<li><a href="#">Manage Responses</a></li>
+					<li><a href="#">Report a Problem</a></li>
+					<li><a href="#">Mobile Site</a></li>
+					<li><a href="#">Jobs by Skill</a></li>
+				</ul>
+			</div>
 
-         <div class="col-md-3 col-sm-6">
-            <h4>Drop A Mail</h4>
-            <form>
-               <input type="text" class="form-control input-lg"
-                  placeholder="Your Name"> <input type="text"
-                  class="form-control input-lg" placeholder="Email...">
-               <textarea class="form-control" placeholder="Message"></textarea>
-               <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-         </div>
+			<div class="col-md-3 col-sm-6">
+				<h4>Reach Us</h4>
+				<address>
+					<ul>
+						<li>1201, Murakeu Market, QUCH07<br> United Kingdon
+						</li>
+						<li>Email: Support@job.com</li>
+						<li>Call: 044 123 458 65879</li>
+						<li>Skype: job@skype</li>
+						<li>FAX: 123 456 85</li>
+					</ul>
+				</address>
+			</div>
+
+			<div class="col-md-3 col-sm-6">
+				<h4>Drop A Mail</h4>
+				<form>
+					<input type="text" class="form-control input-lg"
+						placeholder="Your Name"> <input type="text"
+						class="form-control input-lg" placeholder="Email...">
+					<textarea class="form-control" placeholder="Message"></textarea>
+					<button type="submit" class="btn btn-primary">Login</button>
+				</form>
+			</div>
 
 
-      </div>
-      <div class="copy-right">
-         <p>
-            &copy;Copyright 2018 Jober Desk | Design By <a
-               href="https://themezhub.com/">ThemezHub</a>
-         </p>
-      </div>
-   </footer>
+		</div>
+		<div class="copy-right">
+			<p>
+				&copy;Copyright 2018 Jober Desk | Design By <a
+					href="https://themezhub.com/">ThemezHub</a>
+			</p>
+		</div>
+	</footer>
 
-   <script type="text/javascript" src="js/jquery.min.js"></script>
-   <script src="js/bootstrap.min.js"></script>
-   <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-   <script src="js/bootsnav.js"></script>
-   <script src="js/main.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script src="js/bootsnav.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$('.post_read').on('click',function(){
+			var str = ""
+		        var tdArr = new Array();    // 배열 선언
+		        // 현재 클릭된 Row(<tr>)
+		        var tr = $(this);
+		        var td = tr.children();
+		        // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
+		        td.each(function(i){
+		            tdArr.push(td.eq(i).text());
+		        });
+
+		        var num = td.eq(0).text();
+		        var title = td.eq(1).text();
+		        var content = td.eq(2).text();
+		        var writer = td.eq(3).text();
+		        var writeDate = td.eq(4).text();
+				
+				$.ajax({
+					url : "ReadPostCon.do",
+					type : "POST",
+					dataType : "text",
+					data : "num="+num,
+					success : function() {
+						console.log(num);
+						
+						
+						/* $('#list').empty();
+						for (var i = result.length - 1; i >= 0; i--) {
+							var item = '<li><span>' + result[i].id + '</span>:'
+									+ result[i].content + '</li>';
+							$('#list').append(item);} */
+					},
+					error : function() {
+						console.log("error");
+					}
+				});
+		        
+		 	/* $("ReadPostCon.do"); */
+			/* $(this).css({"background-color":"#0ff"});
+			var num = document.querySelector('.post_cd').value;
+			console.log(num);  */
+			/* $('post_read').append('<tr>'+'test'+'</tr>'); */
+				<%-- <table width="700" border="3" bordercolor="lightgray"
+					align="center">
+					<tr>
+						<td id="id">작성자</td>
+						<td><%=p_info.getPost_id()%></td>
+					</tr>
+					<tr>
+					<td id="dt">작성일</td>
+					<td><%=p_info.getPost_dt()%></td>
+				</tr>
+					<tr>
+						<td id="title">제 목</td>
+						<td><%=p_info.getPost_title()%></td>
+					</tr>
+					<tr>
+						<td id="title">내 용</td>
+						<td><%=p_info.getPost_content()%></td>
+					</tr> --%>
+		})
+	</script>
 </body>
 </html>

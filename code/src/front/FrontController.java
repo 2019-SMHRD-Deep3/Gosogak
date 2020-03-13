@@ -15,6 +15,7 @@ import com.controller.LoginCon;
 import com.controller.JoinCon;
 import com.controller.LoginCon;
 import com.controller.LogoutCon;
+import com.controller.ReadPostCon;
 import com.controller.UpdateUserCon;
 
 /**
@@ -32,6 +33,7 @@ private static final long serialVersionUID = 1L;
 		map.put("LogoutService.do", new LogoutCon());
 		map.put("UpdateUserService.do", new UpdateUserCon());
 		map.put("InsertPostCon.do", new InsertPostCon());
+		map.put("ReadPostCon.do", new ReadPostCon());
 		
 		//map.put("UpdateManagerService.do", new UpdateManagerCon());
 		//map.put("InsertPostService.do", new InsertPostCon());
@@ -41,7 +43,7 @@ private static final long serialVersionUID = 1L;
 			throws ServletException, IOException {
 		request.setCharacterEncoding("EUC-KR");
 		System.out.println("FrontController ¿‘¿Â!");
-		System.out.println(request.getParameter("detail"));
+//		System.out.println(request.getParameter("detail"));
 		String requestURI = request.getRequestURI();
 //		System.out.println(requestURI);
 		String contextPath = request.getContextPath();

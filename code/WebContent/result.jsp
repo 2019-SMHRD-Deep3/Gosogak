@@ -57,6 +57,7 @@
 .caption p {
 	margin-bottom: 50px;
 }
+
 </style>
 </head>
 
@@ -66,7 +67,7 @@
    <!-- Navigation Start  -->
    <nav class="navbar navbar-default navbar-sticky bootsnav">
 
-      <div class="container">
+      <div class="container" >
          <!-- Start Header Navigation -->
          <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -113,9 +114,9 @@
    <!-- Navigation End  -->
 
 	<!-- Main jumbotron for a primary marketing message or call to action -->
-	<div>
+	 <div>
 		<h5 id=warning>※ 경 고 : 위 서비스를 악용할 시 피해가 갈 수 있으니 주의하시기 바랍니다. ※</h5>
-	</div>
+	</div> 
 
 	<section class="inner-banner"
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
@@ -132,9 +133,9 @@
 	<!-- 자세히 보기 버튼을 클릭할 때 -->
 
 	<script type="text/javascript" src=js/jquery.min.js></script>
-	<script language=javascript>
+	<script>
 		$(function() {
-			$(".profile-detail").hide();
+			$(".resultHide").hide();
 		});
 		if ('<%=info%>' == 'null') {
 			$(function() {
@@ -149,7 +150,7 @@
 			$(function() {
 				$(".btn.brows-btn").on("click", function() {
 					$(".btn.brows-btn").hide()
-					$(".profile-detail").slideDown()
+					$(".resultHide").slideDown()
 				});
 			});
 		}
@@ -169,6 +170,7 @@
 		</div>
 
 		<section class="profile-detail">
+		<div class="resultHide">
 			<div class="container">
 				<div class="col-md-12">
 					<div class="row">
@@ -208,6 +210,7 @@
 				<input type="button" class="btn2" value="게시글로 공유" /> <input
 					type="button" class="btn2" value="1 : 1 상담 매칭" />
 			</section>
+			</div>
 		</section>
 
 
@@ -307,7 +310,7 @@
 
 
 	<!-- footer start -->
-	<!-- <footer>
+	<footer>
 			<div class="container">
 				<div class="col-md-3 col-sm-6">
 					<h4>Featured Job</h4>
@@ -364,7 +367,7 @@
 			<div class="copy-right">
 			 <p>&copy;Copyright 2018 Jober Desk | Design By <a href="https://themezhub.com/">ThemezHub</a></p>
 			</div>
-		</footer> -->
+		</footer>
 
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

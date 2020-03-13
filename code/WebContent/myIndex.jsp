@@ -33,6 +33,7 @@
 	display: table;
 	width: 50%;
 	float: left;
+	height:373px;
 }
 </style>
 
@@ -113,17 +114,16 @@
 				<div class="row"> -->
 			<div class="basic-information">
 				<ul class="information">
-					<h3>나의정보</h3>
 					<%
                         if (info == null) {
                      %>
-					<span><h2>로그인이 필요합니다.</h2></span>
+					<span><h5>로그인이 필요합니다.</h5></span>
 					<form action="LoginService.do">
                            <input type="text" class="form-control input-lg"
                               placeholder="User Name" name="id"> <input
                               type="password" class="form-control input-lg"
                               placeholder="Password" name="pw">
-                           <button type="submit" class="btn btn-primary" name="myinfo">Login</button>
+                           <div align="center"><button type="submit" class="btn btn-primary" name="myinfo">Login</button></div>
                     </form>
 				</ul>
 			</div>
@@ -140,18 +140,21 @@
 			</div>
 			<% } else { %>
 			
-					<li>아이디:<%=info.getId() %></li>
-					<li>닉네임:<%=info.getNm() %></li>
-					<li>E-mail:<%=info.getEmail() %></li>
-					<li>등급:<%=info.getGrade() %></li>
-                    <button onclick="window.location.href='updateUser.jsp'">정보수정</button>
+					<h3>나의정보</h3><br>
+					<li><span><h5>아이디 </h5></span><%=info.getId() %></li>
+					<li><span><h5>닉네임 </h5></span><%=info.getNm() %></li>
+					<li><span><h5>E-mail </h5></span><%=info.getEmail() %></li>
+					<%-- <li><span><h5>등급 </h5></span><%=info.getGrade() %></li>--%><br> 
+                    <div align="center"><button onclick="window.location.href='updateUser.jsp'" class="btn btn-primary">정보 수정</button></div>
 				</ul>
                      
 			</div>
-
+<div class="basic-information">
 			<div>
 				<ul class="information">
-					<h3>분석정보</h3>
+					<h3>분석정보</h3><br>
+					분석결과가 없습니다.
+					
                      <% PostDAO dao = new PostDAO();
                         ArrayList<PostDTO> list = dao.selectPost(info.getId());
                         for(int i=list.size()-1; i>=0; i--){%>
@@ -161,7 +164,7 @@
                                     <%= list.get(i).getPost_dt() %>
                                     </li><%} %>
 				</ul>
-			</div>
+			</div></div>
 			<% } %>
 			<!-- 			</div> -->
 			<!-- </div> -->
