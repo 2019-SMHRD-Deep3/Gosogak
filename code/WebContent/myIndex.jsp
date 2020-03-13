@@ -127,7 +127,7 @@
 				</ul>
 			</div>
 
-			<div class="basic-information">
+			<div>
 				<ul class="information">
 					<h3>분석정보</h3>
 					<li><span></span></li>
@@ -148,7 +148,7 @@
                      
 			</div>
 
-			<div class="basic-information">
+			<div>
 				<ul class="information">
 					<h3>분석정보</h3>
                      <% PostDAO dao = new PostDAO();
