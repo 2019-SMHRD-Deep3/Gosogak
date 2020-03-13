@@ -141,9 +141,9 @@ VALUES(anal_result_seq.nextval,'너는 바보야',0);
 select * from ANALYSIS_RESULT
 
 INSERT INTO POST
-VALUES(post_seq.nextval,'테스트용 제목입니다.', '테스트용 더미 게시글 입니다. 게시글의 내용이 들어갑니다.',sysdate,'test','1');
+VALUES(post_seq.nextval,'테스트용 제목입니다.', '테스트용 더미 게시글 입니다. 게시글의 내용이 들어갑니다.',sysdate,'test');
 INSERT INTO POST
-VALUES(post_seq.nextval,'테스트용 제목입니다.', '테스트용 더미 게시글 입니다. 게시글의 내용이 들어갑니다.',sysdate,'manager','1');
+VALUES(post_seq.nextval,'테스트용 제목입니다.', '테스트용 더미 게시글 입니다. 게시글의 내용이 들어갑니다.',sysdate,'manager');
 select * from POST;
 
 INSERT INTO REPLY
