@@ -107,8 +107,7 @@
 								</tr>
 								<tr>
 									<td id="title">제 목</td>
-									<td><input name="post_title" type="text" size="70"
-										maxlength="100"></input></td>
+									<td><input name="post_title" type="text" size="70" maxlength="100"/></td>
 								</tr>
 								<tr>
 									<td id="title">내 용</td>
