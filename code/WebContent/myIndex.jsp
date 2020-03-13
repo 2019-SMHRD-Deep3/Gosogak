@@ -25,7 +25,7 @@
 .basic-information {
 	position: relative;
 	z-index: 1;
-	background-color: #fff;
+	background-color: #ffffff;
 	padding: 30px 30px 20px;
 	-webkit-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .07);
 	box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .07);
@@ -154,11 +154,11 @@
                      <% PostDAO dao = new PostDAO();
                         ArrayList<PostDTO> list = dao.selectPost(info.getId());
                         for(int i=list.size()-1; i>=0; i--){%>
-                                    <li><span><%= list.get(i).getPost_cd() %>:
+                                    <li><%= list.get(i).getPost_cd() %>:
                                     <%= list.get(i).getPost_title() %>
                                     <%= list.get(i).getPost_content() %>
                                     <%= list.get(i).getPost_dt() %>
-                                    </span></li><%} %>
+                                    </li><%} %>
 				</ul>
 			</div>
 			<% } %>
@@ -167,36 +167,6 @@
 		</div>
 		<!-- 	</section> -->
 	</section>
-
-	<%--  <div class="container">
-         <table class="info">
-            <tr>
-               <td>
-                  <div class="row heading">
-                     
-                     
-                     <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-                        
-                     </div>
-                     
-                     <h2>님</h2>
-                     <h2>닉네임:</h2>
-                     <h2>Email:</h2>
-                     <h2>등급:</h2>
-                     
-                     
-                  </div>
-               </td>
-               <td>
-                  <div class="row heading">
-                     <span><h2>상담내역</h2></span>
-                     
-                                    <a href="deleteMessageService.do?num=<%= list.get(i).getPost_cd() %>">삭제</a>
-                              <li><a href="deleteMessageAllService.do" class="button next scrolly">전체삭제하기</a></li><%} %>
-                  </div>
-               </td>
-            </tr>
-         </table> --%>
 	<!-- <div class="row top-pad">
                <div class="filter">
                   <div class="col-md-2 col-sm-3">
