@@ -160,6 +160,7 @@
 									</c:forEach>
 								</table>
 							</div>
+
 							<%if(info==null){ %>
 							<form action="login.jsp">
 							<%} %>
