@@ -96,7 +96,7 @@
 					
 					
 					
-						<form method="post" action="BoardWriteAction.bo" name="boardForm"
+						<form method="post" action="InsertPostCon.do" name="boardForm"
 							enctype="multipart/form-data">
 							<input type="hidden" name="board_id"
 								value="${sessionScope.sessionID}">
@@ -108,18 +108,18 @@
 								</tr>
 								<tr>
 									<td id="title">力 格</td>
-									<td><input name="board_subject" type="text" size="70"
-										maxlength="100" value="" /></td>
+									<td><input name="post_title" type="text" size="70"
+										maxlength="100"/></td>
 								</tr>
 								<tr>
 									<td id="title">郴 侩</td>
-									<td><textarea name="board_content" cols="72" rows="20"></textarea>
+									<td><textarea name="post_content" cols="72" rows="20"></textarea>
 									</td>
 								</tr>
-								<tr>
+								<!-- <tr>
 									<td id="title">颇老梅何</td>
 									<td><input type="file" name="board_file" /></td>
-								</tr>
+								</tr> -->
 
 								<tr align="center" valign="middle">
 									<td colspan="5"><input type="reset" value="累己秒家">

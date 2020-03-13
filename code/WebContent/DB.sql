@@ -51,11 +51,9 @@ CREATE TABLE POST(
                 POST_CONTENT VARCHAR2(2000),
                 POST_DT DATE,
                 MEMBER_ID VARCHAR2(20),
-                ANALYSIS_RESULT_CD NUMBER(20),
                 CONSTRAINT post_member_id_fk FOREIGN KEY ("MEMBER_ID")
-                REFERENCES MEMBER ("MEMBER_ID"),
-                CONSTRAINT post_anal_result_fk FOREIGN KEY ("ANALYSIS_RESULT_CD")
-                REFERENCES ANALYSIS_RESULT ("ANALYSIS_RESULT_CD"));
+                REFERENCES MEMBER ("MEMBER_ID"));
+
             
 CREATE TABLE REPLY(
                 REPLY_CD NUMBER(20) PRIMARY KEY,
