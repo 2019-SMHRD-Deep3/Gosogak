@@ -6,50 +6,34 @@ public class PostDTO {
 	private String post_content;
 	private String post_dt;
 	private String post_id;
-	private String post_result;
 	
 	// 게시글 작성
-	
-	
-	public PostDTO(String post_title, String post_content, String post_id, String post_result) {
-		this.post_title = post_title;
-		this.post_content = post_content;
-		this.post_id = post_id;
-		this.post_result = post_result;
-	}
-	
 	public PostDTO(String post_title, String post_content, String post_id) {
-		super();
 		this.post_title = post_title;
 		this.post_content = post_content;
 		this.post_id = post_id;
 	}
 
 	// 작성 내역
-	public PostDTO(int post_cd, String post_title, String post_content, String post_dt, String post_id, String post_result){
+	public PostDTO(int post_cd, String post_title, String post_content, String post_dt, String post_id){
 		this.post_cd = post_cd;
 		this.post_title = post_title;
 		this.post_content = post_content;
 		this.post_dt = post_dt;
 		this.post_id = post_id;
-		this.post_result = post_result;
 	}
 	
+	// 게시글 목록
 	public PostDTO(int post_cd, String post_title, String post_dt, String post_id) {
 		this.post_cd = post_cd;
 		this.post_title = post_title;
 		this.post_dt = post_dt;
 		this.post_id = post_id;
 	}
-
-	public PostDTO(int post_cd, String post_title, String post_content, String post_id, String post_dt) {
-		this.post_cd = post_cd;
-		this.post_title = post_title;
-		this.post_content = post_content;
-		this.post_id = post_id;
-		this.post_dt = post_dt;
-		
 	
+	// 게시글 조회
+	public PostDTO(int post_cd) {
+		this.post_cd = post_cd;
 	}
 
 	public int getPost_cd() {
@@ -67,9 +51,6 @@ public class PostDTO {
 	public String getPost_id() {
 		return post_id;
 	}
-	public String getPost_result() {
-		return post_result;
-	}
 	public void setPost_cd(int post_cd) {
 		this.post_cd = post_cd;
 	}
@@ -85,13 +66,5 @@ public class PostDTO {
 	public void setPost_id(String post_id) {
 		this.post_id = post_id;
 	}
-	public void setPost_result(String post_result) {
-		this.post_result = post_result;
-	}
-
-
-
-	
-	
 	
 }

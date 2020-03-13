@@ -41,6 +41,7 @@ public class PostDAO {
 			e.printStackTrace();
 		}
 	}
+
 	// 게시글 작성
 	public int insertPost(PostDTO dto) {
 
@@ -82,9 +83,8 @@ public class PostDAO {
 				String post_content = rs.getString(3);
 				String post_dt = rs.getString(4);
 				String post_id = rs.getString(5);
-				String post_result = rs.getString(6);
 
-				PostDTO dto = new PostDTO(post_cd, post_title, post_content, post_dt, post_id, post_result);
+				PostDTO dto = new PostDTO(post_cd, post_title, post_content, post_dt, post_id);
 				list.add(dto);
 			}
 
@@ -99,7 +99,7 @@ public class PostDAO {
 	}
 
 	public void deleteAll(String email) {
-		
+
 		try {
 
 			getConnection();
@@ -117,7 +117,7 @@ public class PostDAO {
 
 	public void delete(int num) {
 		try {
-			
+
 			getConnection();
 			String sql = "delete from web_message where num=?";
 			psmt = conn.prepareStatement(sql);
@@ -130,38 +130,96 @@ public class PostDAO {
 			close();
 		}
 	}
-	
-	// 게시글 작성 내역
-		public ArrayList<PostDTO> selectAll() {
-			ArrayList<PostDTO> list = new ArrayList<PostDTO>();
-			
 
-			try {
-				getConnection();
-				String sql = "select * from POST";
-				psmt = conn.prepareStatement(sql);
-				rs = psmt.executeQuery();
-				while (rs.next()) {
-					int post_cd = rs.getInt(1);
-					String post_title = rs.getString(2);
-					String post_content = rs.getString(3);
-					String post_id = rs.getString(5);
-					String post_dt = rs.getString(4);
-					
-					
+	// 게시글 목록
+	public ArrayList<PostDTO> selectAll() {
+		ArrayList<PostDTO> list = new ArrayList<PostDTO>();
 
-					PostDTO dto = new PostDTO(post_cd, post_title,post_content, post_id, post_dt);
-					list.add(dto);
-					System.out.println(list.get(0).getPost_cd());
-				}
+		try {
+			getConnection();
+			String sql = "select * from POST";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				int post_cd = rs.getInt(1);
+				String post_title = rs.getString(2);
+				String post_content = rs.getString(3);
+				String post_id = rs.getString(5);
+				String post_dt = rs.getString(4);
 
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			} finally {
-				close();
+				PostDTO dto = new PostDTO(post_cd, post_title, post_content, post_id, post_dt);
+				list.add(dto);
+//				System.out.println(list.get(0).getPost_cd());
 			}
-			System.out.println("담는중");
-			return list;
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close();
 		}
+		return list;
+	}
+
+	// 게시글 클릭
+	public PostDTO selectOne(int post_cd) {
+		PostDTO p_info = null;
+		
+		String post_title = null;
+		String post_content = null;
+		String post_id = null;
+		String post_dt = null;
+
+		try {
+
+			getConnection();
+			String sql = "select * from POST where POST_CD=?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, post_cd);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				
+				post_title = rs.getString("POST_TITLE");
+				post_content = rs.getString("POST_CONTENT");
+				post_dt = rs.getString("POST_DT");
+				post_id = rs.getString("MEMBER_ID");
+				p_info = new PostDTO(post_cd,post_title,post_content,post_dt,post_id);
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return p_info;
+
+	}
+//		public ArrayList<PostDTO> selectOne(int post_cd) {
+//			ArrayList<PostDTO> list = new ArrayList<PostDTO>();
+//
+//			try {
+//				getConnection();
+//				String sql = "select * from POST where POST_CD=?";
+//				psmt = conn.prepareStatement(sql);
+//				psmt.setInt(1, post_cd);
+//				rs = psmt.executeQuery();
+//				while (rs.next()) {
+//					String post_title = rs.getString(2);
+//					String post_content = rs.getString(3);
+//					String post_dt = rs.getString(4);
+//					String post_id = rs.getString(5);
+//
+//					PostDTO dto = new PostDTO(post_cd, post_title, post_content, post_id, post_dt);
+//					list.add(dto);
+//				}
+//
+//			} catch (SQLException e) {
+//
+//				e.printStackTrace();
+//			} finally {
+//				close();
+//			}
+//			System.out.println("담는중");
+//			return list;
+//		}
 }

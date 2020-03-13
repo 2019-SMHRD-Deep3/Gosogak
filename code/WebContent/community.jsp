@@ -140,6 +140,7 @@
 									</tr>
 									<%
 										PostDAO dao = new PostDAO();
+										PostDTO p_info = (PostDTO)session.getAttribute("p_info");
 										ArrayList<PostDTO> list = dao.selectAll();
 									%>
 									<c:forEach var="board">
@@ -147,12 +148,12 @@
 
 										
 										<% for(int i =list.size()-1; i>=0; i--){%>
-										<tr>
-											<td><%= i+1%></td>
-											<td><%= list.get(i).getPost_title()%></td>
-											<td><%= list.get(i).getPost_content()%></td>
-											<td><%= list.get(i).getPost_id()%></td>
-											<td><%= list.get(i).getPost_dt()%></td>
+										<tr class="post_read">
+											<td class="post_cd"><%= i+1%></td>
+											<td class="post_title"><%= list.get(i).getPost_title()%></td>
+											<td class="post_content"><%= list.get(i).getPost_content()%></td>
+											<td class="post_id"><%= list.get(i).getPost_id()%></td>
+											<td class="post_dt"><%= list.get(i).getPost_dt()%></td>
 											
 										</tr>
 										<%
@@ -420,32 +421,68 @@
 	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
 	<script src="js/bootsnav.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript">
 		$('.post_read').on('click',function(){
-			var value = $('input').val();
-			$('ul').append('<li>'+value+'</li>');
-			$('input').val('');
-			$('input').focus();
-			
-			<table width="700" border="3" bordercolor="lightgray"
-				align="center">
-				<tr>
-					<td id="title">작성자</td>
-					<td><%=info.getNm()%></td>
+			var str = ""
+		        var tdArr = new Array();    // 배열 선언
+		        // 현재 클릭된 Row(<tr>)
+		        var tr = $(this);
+		        var td = tr.children();
+		        // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
+		        td.each(function(i){
+		            tdArr.push(td.eq(i).text());
+		        });
+
+		        var num = td.eq(0).text();
+		        var title = td.eq(1).text();
+		        var content = td.eq(2).text();
+		        var writer = td.eq(3).text();
+		        var writeDate = td.eq(4).text();
+				
+				$.ajax({
+					url : "ReadPostCon.do",
+					type : "POST",
+					dataType : "text",
+					data : "num="+num,
+					success : function() {
+						console.log(num);
+						
+						
+						/* $('#list').empty();
+						for (var i = result.length - 1; i >= 0; i--) {
+							var item = '<li><span>' + result[i].id + '</span>:'
+									+ result[i].content + '</li>';
+							$('#list').append(item);} */
+					},
+					error : function() {
+						console.log("error");
+					}
+				});
+		        
+		 	/* $("ReadPostCon.do"); */
+			/* $(this).css({"background-color":"#0ff"});
+			var num = document.querySelector('.post_cd').value;
+			console.log(num);  */
+			/* $('post_read').append('<tr>'+'test'+'</tr>'); */
+				<%-- <table width="700" border="3" bordercolor="lightgray"
+					align="center">
+					<tr>
+						<td id="id">작성자</td>
+						<td><%=p_info.getPost_id()%></td>
+					</tr>
+					<tr>
+					<td id="dt">작성일</td>
+					<td><%=p_info.getPost_dt()%></td>
 				</tr>
-				<tr>
-				<td id="dt">작성일</td>
-				<td><%=info.getNm()%></td>
-			</tr>
-				<tr>
-					<td id="title">제 목</td>
-					<td><input name="post_title" type="text" size="70" maxlength="100"/></td>
-				</tr>
-				<tr>
-					<td id="title">내 용</td>
-					<td><textarea name="post_content" cols="72" rows="20"></textarea>
-					</td>
-				</tr>
+					<tr>
+						<td id="title">제 목</td>
+						<td><%=p_info.getPost_title()%></td>
+					</tr>
+					<tr>
+						<td id="title">내 용</td>
+						<td><%=p_info.getPost_content()%></td>
+					</tr> --%>
 		})
 	</script>
 </body>
