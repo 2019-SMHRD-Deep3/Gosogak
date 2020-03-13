@@ -156,8 +156,9 @@
 									</c:forEach>
 								</table>
 							</div>
-
+							<%if(info == null){%>
 							<form action="login.jsp">
+							<%}%>
 							<button type="submit" class="btn brows-btn" name="detail" value="community">±Û¾²±â</button>
 
 							</form>
