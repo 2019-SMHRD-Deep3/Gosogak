@@ -168,7 +168,7 @@
 			<form action="login.jsp">
 			<%} %>
 			<p align=center>자세한 분석결과를 보려면  <자세히 보기> 를 눌러주세요</p>
-				<button type="submit" class="btn brows-btn" name="detail" value="abc">자세히 보기</button>
+				<button type="submit" class="btn brows-btn" name="detail" value="result">자세히 보기</button>
 			</form>
 		</div>
 

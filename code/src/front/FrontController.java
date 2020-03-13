@@ -38,6 +38,7 @@ private static final long serialVersionUID = 1L;
 			throws ServletException, IOException {
 		request.setCharacterEncoding("EUC-KR");
 		System.out.println("FrontController ¿‘¿Â!");
+		System.out.println(request.getParameter("detail"));
 		String requestURI = request.getRequestURI();
 //		System.out.println(requestURI);
 		String contextPath = request.getContextPath();
@@ -48,6 +49,5 @@ private static final long serialVersionUID = 1L;
 		ICommand iCommand = map.get(resultURL);
 		moveURL = iCommand.execute(request, response);
 		response.sendRedirect(moveURL);
-		
 	}
 }

@@ -11,15 +11,20 @@ import front.ICommand;
 
 public class LoginCon implements ICommand {
 
+	
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		String moveURL = null;
+	      
+	   
 		// response.setCharacterEncoding("EUC-KR");
 		// request.setCharacterEncoding("EUC-KR");
 		// String[] item = request.getParameterValues("item");
 		// int num = Integer.parseInt(request.getParameter("num"));
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
+		String detail=request.getParameter("detail");
+		System.out.println(detail);
 
 		MemberDTO dto = new MemberDTO(id, pw);
 		MemberDAO dao = MemberDAO.getDAO();
@@ -29,10 +34,14 @@ public class LoginCon implements ICommand {
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
 		}
-		if (request.getParameter("detail") == null) {
-			moveURL = "index.jsp";
-		} else {
+		
+		
+		if(request.getParameter("detail") == "community") {
+			moveURL = "postWrite.jsp";
+		}else if(request.getParameter("detail")=="result"){
 			moveURL = "result.jsp";
+		}else {
+			moveURL="index.jsp";
 		}
 
 		return moveURL;

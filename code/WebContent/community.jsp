@@ -147,7 +147,7 @@
 							<%if(info==null) {%>
 							<form action="login.jsp">
 							<%} %>
-							<button type="submit" class="btn brows-btn" name="detail">글쓰기</button>
+							<button type="submit" class="btn brows-btn" name="detail" value="community">글쓰기</button>
 							</form>
 							<!-- 페이지 넘버 부분 -->
 							<%-- <br>
