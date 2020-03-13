@@ -79,11 +79,10 @@
 				</button>
 				<a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
 					class="logo" alt=""></a>
-			</div>
 			<!-- End Header Navigation -->
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="navbar-menu">
+			<div style="width:997px;margin-left:28%;" class="collapse navbar-collapse" id="navbar-menu">
 				<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
 					data-out="fadeOutUp">
 					<li><a href="index.jsp">메인 화면</a></li>
@@ -96,7 +95,6 @@
 						} else {
 					%>
 					<li><a href="LogoutService.do">로그아웃</a></li>
-					<li><%=info.getNm()%>님 환영합니다.</li>
 					<%
 						}
 					%>
@@ -109,7 +107,10 @@
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<li><a href="counsel.jsp">상담 신청</a></li>
 						</ul></li>
+						<li><div style="float: right; margin-top:15%;margin-right:-50%;"><%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
+					<%}else {%><%} %></div></li>
 				</ul>
+			</div>
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>
