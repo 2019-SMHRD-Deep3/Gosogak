@@ -99,7 +99,9 @@
 			});
 		} else {
 			$(function() {
-				location.href = "community.jsp";
+				$(".btn.brows-btn").on("click",function(){
+					location.href = "postWrite.jsp";
+				})
 			});
 		}
 	</script>
