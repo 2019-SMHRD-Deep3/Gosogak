@@ -9,6 +9,8 @@ public class PostDTO {
 	private String post_result;
 	
 	// 게시글 작성
+	
+	
 	public PostDTO(String post_title, String post_content, String post_id, String post_result) {
 		this.post_title = post_title;
 		this.post_content = post_content;
@@ -16,6 +18,13 @@ public class PostDTO {
 		this.post_result = post_result;
 	}
 	
+	public PostDTO(String post_title, String post_content, String post_id) {
+		super();
+		this.post_title = post_title;
+		this.post_content = post_content;
+		this.post_id = post_id;
+	}
+
 	// 작성 내역
 	public PostDTO(int post_cd, String post_title, String post_content, String post_dt, String post_id, String post_result){
 		this.post_cd = post_cd;
