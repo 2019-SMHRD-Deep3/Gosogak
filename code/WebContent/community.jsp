@@ -134,6 +134,7 @@
 									<tr heigh="30">
 										<td>글번호</td>
 										<td>제목</td>
+										<td>내용</td>
 										<td>작성자</td>
 										<td>작성일</td>
 									</tr>
@@ -144,16 +145,15 @@
 									<c:forEach var="board">
 
 
-
-										<%
-											for (int i = list.size() - 1; i >= 0; i--) {
-										%>
-										<tr class="post_read">
-											<td><%=i + 1%></td>
-											<td><%=list.get(i).getPost_title()%></td>
-											<td><%=list.get(i).getPost_content()%></td>
-											<td><%=list.get(i).getPost_id()%></td>
-											<td><%=list.get(i).getPost_dt()%></td>
+										
+										<% for(int i =list.size()-1; i>=0; i--){%>
+										<tr>
+											<td><%= i+1%></td>
+											<td><%= list.get(i).getPost_title()%></td>
+											<td><%= list.get(i).getPost_content()%></td>
+											<td><%= list.get(i).getPost_id()%></td>
+											<td><%= list.get(i).getPost_dt()%></td>
+											
 										</tr>
 										<%
 											}
