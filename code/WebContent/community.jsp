@@ -134,6 +134,7 @@
 									<tr heigh="30">
 										<td>글번호</td>
 										<td>제목</td>
+										<td>내용</td>
 										<td>작성자</td>
 										<td>작성일</td>
 									</tr>
@@ -152,6 +153,7 @@
 											<td><%= list.get(i).getPost_content()%></td>
 											<td><%= list.get(i).getPost_id()%></td>
 											<td><%= list.get(i).getPost_dt()%></td>
+											
 										</tr>
 											<%}%>
 										
