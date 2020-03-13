@@ -130,4 +130,38 @@ public class PostDAO {
 			close();
 		}
 	}
+	
+	// 게시글 작성 내역
+		public ArrayList<PostDTO> selectAll() {
+			ArrayList<PostDTO> list = new ArrayList<PostDTO>();
+			
+
+			try {
+				getConnection();
+				String sql = "select * from POST";
+				psmt = conn.prepareStatement(sql);
+				rs = psmt.executeQuery();
+				while (rs.next()) {
+					int post_cd = rs.getInt(1);
+					String post_title = rs.getString(2);
+					String post_content = rs.getString(3);
+					String post_id = rs.getString(5);
+					String post_dt = rs.getString(4);
+					
+					
+
+					PostDTO dto = new PostDTO(post_cd, post_title,post_content, post_id, post_dt);
+					list.add(dto);
+					System.out.println(list.get(0).getPost_cd());
+				}
+
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			} finally {
+				close();
+			}
+			System.out.println("담는중");
+			return list;
+		}
 }

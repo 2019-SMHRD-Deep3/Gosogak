@@ -1,3 +1,6 @@
+<%@page import="com.model.PostDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.PostDAO"%>
 <%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
@@ -99,7 +102,7 @@
 			});
 		} else {
 			$(function() {
-				$(".btn.brows-btn").on("click",function(){
+				$(".btn.brows-btn").on("click", function() {
 					location.href = "postWrite.jsp";
 				})
 			});
@@ -131,23 +134,45 @@
 									<tr heigh="30">
 										<td>글번호</td>
 										<td>제목</td>
+										<td>내용</td>
 										<td>작성자</td>
 										<td>작성일</td>
 									</tr>
+									<%
+										PostDAO dao = new PostDAO();
+										ArrayList<PostDTO> list = dao.selectAll();
+									%>
 									<c:forEach var="board">
+
+
+										
+										<% for(int i =list.size()-1; i>=0; i--){%>
 										<tr>
-											<td></td>
-											<td><a href="#"></a></td>
-											<td></td>
-											<td></td>
+											<td><%= i+1%></td>
+											<td><%= list.get(i).getPost_title()%></td>
+											<td><%= list.get(i).getPost_content()%></td>
+											<td><%= list.get(i).getPost_id()%></td>
+											<td><%= list.get(i).getPost_dt()%></td>
+											
 										</tr>
+										<%
+											}
+										%>
+
 									</c:forEach>
 								</table>
 							</div>
-							<%if(info==null) {%>
+
+							<%
+								if (info == null) {
+							%>
 							<form action="login.jsp">
-							<%} %>
-							<button type="submit" class="btn brows-btn" name="detail" value="community">글쓰기</button>
+								<%
+									}
+								%>
+								<button type="submit" class="btn brows-btn" name="detail"
+									value="community">글쓰기</button>
+
 							</form>
 							<!-- 페이지 넘버 부분 -->
 							<%-- <br>
@@ -183,7 +208,7 @@
 							</div> --%>
 						</div>
 						<!-- 게시판 영역 종료 -->
-						
+
 						<!-- <div class="col-md-3 col-sm-3">
 							<img src="img/microsoft.png" alt="" class="img-responsive">
 						</div>
@@ -395,5 +420,33 @@
 	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
 	<script src="js/bootsnav.js"></script>
 	<script src="js/main.js"></script>
+	<script type="text/javascript">
+		$('.post_read').on('click',function(){
+			var value = $('input').val();
+			$('ul').append('<li>'+value+'</li>');
+			$('input').val('');
+			$('input').focus();
+			
+			<table width="700" border="3" bordercolor="lightgray"
+				align="center">
+				<tr>
+					<td id="title">작성자</td>
+					<td><%=info.getNm()%></td>
+				</tr>
+				<tr>
+				<td id="dt">작성일</td>
+				<td><%=info.getNm()%></td>
+			</tr>
+				<tr>
+					<td id="title">제 목</td>
+					<td><input name="post_title" type="text" size="70" maxlength="100"/></td>
+				</tr>
+				<tr>
+					<td id="title">내 용</td>
+					<td><textarea name="post_content" cols="72" rows="20"></textarea>
+					</td>
+				</tr>
+		})
+	</script>
 </body>
 </html>
