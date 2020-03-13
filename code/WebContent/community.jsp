@@ -19,6 +19,21 @@
 <!-- Style & Common Css -->
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/main.css">
+<style type="text/css">
+#board{
+	text-align: center;
+}
+#bList{	
+	border-top : 1px solid;
+	border-bottom: 1px solid;
+	bordercolor: lightgray;
+	width: 100%;
+}
+th{
+	text-align: center;
+	background-color: lightgray;
+	}
+</style>
 
 </head>
 
@@ -140,12 +155,12 @@
 							<!-- 게시글 목록 부분 -->
 							<br>
 							<div id="board">
-								<table id="bList" width="800" border="3" bordercolor="lightgray">
-									<tr heigh="30">
-										<td>글번호</td>
-										<td>제목</td>
-										<td>작성자</td>
-										<td>작성일</td>
+								<table id="bList" height="130">
+									<tr>
+										<th>글번호</th>
+										<th width=70%>제목</th>
+										<th>작성자</th>
+										<th>작성일</th>
 									</tr>
 									<%
 										PostDAO dao = new PostDAO();
