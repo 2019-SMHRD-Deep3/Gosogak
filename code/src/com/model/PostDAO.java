@@ -144,10 +144,10 @@ public class PostDAO {
 				int post_cd = rs.getInt(1);
 				String post_title = rs.getString(2);
 				String post_content = rs.getString(3);
-				String post_id = rs.getString(5);
 				String post_dt = rs.getString(4);
+				String post_id = rs.getString(5);
 
-				PostDTO dto = new PostDTO(post_cd, post_title, post_content, post_id, post_dt);
+				PostDTO dto = new PostDTO(post_cd, post_title, post_content, post_dt, post_id);
 				list.add(dto);
 //				System.out.println(list.get(0).getPost_cd());
 			}

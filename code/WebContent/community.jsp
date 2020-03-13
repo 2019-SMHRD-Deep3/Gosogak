@@ -131,12 +131,11 @@
 						<div id="wrap">
 
 							<!-- 글목록 위 부분-->
-							<%-- <br>
-                     <div id="topForm">
-                        <c:if test="${sessionScope.sessionID!=null}">
-                           
-                        </c:if>
-                     </div> --%>
+							<br>
+                     <div class="post_read">
+                        <table class="post">
+                        </table>
+                     </div>
 
 							<!-- 게시글 목록 부분 -->
 							<br>
