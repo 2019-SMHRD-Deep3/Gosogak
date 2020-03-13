@@ -96,8 +96,7 @@
 					
 					
 					
-						<form method="post" action="InsertPostCon.do" name="boardForm"
-							enctype="multipart/form-data">
+						<form method="post" action="InsertPostCon.do" name="boardForm">
 							<input type="hidden" name="board_id"
 								value="${sessionScope.sessionID}">
 							<table width="700" border="3" bordercolor="lightgray"
@@ -109,7 +108,7 @@
 								<tr>
 									<td id="title">제 목</td>
 									<td><input name="post_title" type="text" size="70"
-										maxlength="100"/></td>
+										maxlength="100"></input></td>
 								</tr>
 								<tr>
 									<td id="title">내 용</td>
