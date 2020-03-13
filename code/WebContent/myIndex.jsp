@@ -22,28 +22,26 @@
 <link rel="stylesheet" href="css/main.css">
 
 <style>
-.basic-information{
-    position: relative;
-    z-index: 1;
-    background-color: #fff;
-    padding: 30px 30px 20px;
-    -webkit-box-shadow: 0 5px 25px 0 rgba(0,0,0,.07);
-    box-shadow: 0 5px 25px 0 rgba(0,0,0,.07);
+.basic-information {
+	position: relative;
+	z-index: 1;
+	background-color: #fff;
+	padding: 30px 30px 20px;
+	-webkit-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .07);
+	box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .07);
 	border: 1px solid #eaecf1;
 	display: table;
-    width: 50%;
-    float: left;
+	width: 50%;
+	float: left;
 }
-
 </style>
 
 </head>
 
 <body>
 	<%
-      MemberDTO info = (MemberDTO) session.getAttribute("info");
-   
-   %>
+		MemberDTO info = (MemberDTO) session.getAttribute("info");
+	%>
 	<!-- Navigation Start  -->
 	<nav class="navbar navbar-default navbar-sticky bootsnav">
 
@@ -65,17 +63,17 @@
 					data-out="fadeOutUp">
 					<li><a href="index.jsp">메인 화면</a></li>
 					<%
-                  if (info == null) {
-               %>
+						if (info == null) {
+					%>
 					<li><a href="login.jsp">로그인</a></li>
 					<%
-                  } else {
-               %>
+						} else {
+					%>
 					<li><a href="LogoutService.do">로그아웃</a></li>
 					<%-- <li><%= info.getNm() %>님 환영합니다.</li> --%>
 					<%
-                  }
-               %>
+						}
+					%>
 					<li><a href="result.jsp">분석 결과</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">메뉴</a>
@@ -107,82 +105,92 @@
 
 
 
-<!-- 	<section class="profile-detail" > -->
-<section>
- 		<div class="container"> 
-<!-- 			<div class="col-md-12">
+	<!-- 	<section class="profile-detail" > -->
+	<section>
+		<div class="container">
+			<!-- 			<div class="col-md-12">
 				<div class="row"> -->
-					<div class="basic-information" >
-						<ul class="information">
-							<h3>나의정보</h3>
-							<li><span>Id:</span></li>
-							<li><span>Name:</span></li>
-							<li><span>E-mail:</span></li>
-							<li><span>Grade:</span></li>
-						</ul>
-					</div>
-					
-					<div class="basic-information">
-						<ul class="information">
-							<h3>분석정보</h3>
-							<li><span></span></li>
-							<li><span></span></li>
-							<li><span></span></li>
-							<li><span></span></li>
-						</ul>
-					</div>
-	<!-- 			</div> -->
+			<div class="basic-information">
+				<ul class="information">
+					<h3>나의정보</h3>
+					<%
+                        if (info == null) {
+                     %>
+					<span><h2>로그인이 필요합니다.</h2></span>
+					<form action="LoginService.do">
+                           <input type="text" class="form-control input-lg"
+                              placeholder="User Name" name="id"> <input
+                              type="password" class="form-control input-lg"
+                              placeholder="Password" name="pw">
+                           <button type="submit" class="btn btn-primary" name="myinfo">Login</button>
+                    </form>
+				</ul>
+			</div>
+
+			<div class="basic-information">
+				<ul class="information">
+					<h3>분석정보</h3>
+					<li><span></span></li>
+					<li><span></span></li>
+					<li><span></span></li>
+					<li><span></span></li>
+					<li><span></span></li>
+				</ul>
+			</div>
+			<% } else { %>
+			
+					<li>아이디:<%=info.getId() %></li>
+					<li>닉네임:<%=info.getNm() %></li>
+					<li>E-mail:<%=info.getEmail() %></li>
+					<li>등급:<%=info.getGrade() %></li>
+                    <button onclick="window.location.href='updateUser.jsp'">정보수정</button>
+				</ul>
+                     
+			</div>
+
+			<div class="basic-information">
+				<ul class="information">
+					<h3>분석정보</h3>
+                     <% PostDAO dao = new PostDAO();
+                        ArrayList<PostDTO> list = dao.selectPost(info.getId());
+                        for(int i=list.size()-1; i>=0; i--){%>
+                                    <li><span><%= list.get(i).getPost_cd() %>:
+                                    <%= list.get(i).getPost_title() %>
+                                    <%= list.get(i).getPost_content() %>
+                                    <%= list.get(i).getPost_dt() %>
+                                    </span></li><%} %>
+				</ul>
+			</div>
+			<% } %>
+			<!-- 			</div> -->
 			<!-- </div> -->
-		</div> 
-<!-- 	</section> -->
-</section>
+		</div>
+		<!-- 	</section> -->
+	</section>
 
 	<%--  <div class="container">
          <table class="info">
             <tr>
                <td>
                   <div class="row heading">
-                     <%
-                        if (info == null) {
-                     %>
-                     <span><h2>로그인이 필요합니다.</h2></span>
+                     
+                     
                      <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-                        <form action="LoginService.do">
-                           <input type="text" class="form-control input-lg"
-                              placeholder="User Name" name="id"> <input
-                              type="password" class="form-control input-lg"
-                              placeholder="Password" name="pw">
-                           <button type="submit" class="btn btn-primary">Login</button>
-                        </form>
+                        
                      </div>
-                     <%
-                        } else {
-                     %>
-                     <h2><%=info.getId() %>님</h2>
-                     <h2>닉네임:<%=info.getNm() %></h2>
-                     <h2>Email:<%=info.getEmail() %></h2>
-                     <h2>등급:<%=info.getGrade() %></h2>
-                     <%
-                        }
-                     %>
-                     <span>
-                     <button onclick="window.location.href='updateUser.jsp'">정보수정</button>
-                     </span>
+                     
+                     <h2>님</h2>
+                     <h2>닉네임:</h2>
+                     <h2>Email:</h2>
+                     <h2>등급:</h2>
+                     
+                     
                   </div>
                </td>
                <td>
                   <div class="row heading">
                      <span><h2>상담내역</h2></span>
-                     <% if(info == null){ %>
-                     <span><p>없음</p></span>
-                     <% } else{ PostDAO dao = new PostDAO();
-                                 ArrayList<PostDTO> list = dao.selectPost(info.getId());
-                                 for(int i=list.size()-1; i>=0; i--){%>
-                                    <li><%= list.get(i).getPost_cd() %>:
-                                    <%= list.get(i).getPost_title() %>
-                                    <%= list.get(i).getPost_content() %>
-                                    <%= list.get(i).getPost_dt() %>
-                                    </li><%}} %>
+                     
                                     <a href="deleteMessageService.do?num=<%= list.get(i).getPost_cd() %>">삭제</a>
                               <li><a href="deleteMessageAllService.do" class="button next scrolly">전체삭제하기</a></li><%} %>
                   </div>

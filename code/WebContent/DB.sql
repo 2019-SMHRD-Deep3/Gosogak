@@ -124,7 +124,7 @@ MAXVALUE 100000 ;
 INSERT INTO MEMBER
 VALUES('test','1111','김예시','test@test.com','user');
 INSERT INTO MEMBER
-VALUES('manager','1111','김관리','test@test.com','manage');
+VALUES('manager','1111','김관리','test@test.com','manager');
 
 select * from MEMBER
 
@@ -142,6 +142,8 @@ VALUES(anal_result_seq.nextval,'너는 바보야',0);
 
 INSERT INTO POST
 VALUES(post_seq.nextval,'테스트용 제목입니다.', '테스트용 더미 게시글 입니다. 게시글의 내용이 들어갑니다.',sysdate,'test','1');
+INSERT INTO POST
+VALUES(post_seq.nextval,'테스트용 제목입니다.', '테스트용 더미 게시글 입니다. 게시글의 내용이 들어갑니다.',sysdate,'manager','1');
 select * from POST;
 INSERT INTO REPLY
 VALUES(reply_seq.nextval,1,'test','테스트용 더미 댓글 입니다. 댓글의 내용이 들어갑니다.');
