@@ -57,69 +57,66 @@
 .caption p {
 	margin-bottom: 50px;
 }
+
 </style>
 </head>
 
-<body>
-	<%
-		MemberDTO info = (MemberDTO) session.getAttribute("info");
-		request.setCharacterEncoding("EUC-KR");
-	    response.setCharacterEncoding("euc-kr");
-	%>
+<%
+      MemberDTO info = (MemberDTO) session.getAttribute("info");
+   %>
+   <!-- Navigation Start  -->
+   <nav class="navbar navbar-default navbar-sticky bootsnav">
 
-	<!-- Navigation Start  -->
-	<nav class="navbar navbar-default navbar-sticky bootsnav">
+      <div class="container" >
+         <!-- Start Header Navigation -->
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+               data-target="#navbar-menu">
+               <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
+               class="logo" alt=""></a>
+         </div>
+         <!-- End Header Navigation -->
 
-		<div class="container">
-			<!-- Start Header Navigation -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#navbar-menu">
-					<i class="fa fa-bars"></i>
-				</button>
-				<a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-					class="logo" alt=""></a>
-			</div>
-			<!-- End Header Navigation -->
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="navbar-menu">
-				<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
-					data-out="fadeOutUp">
-					<li><a href="index.jsp">메인 화면</a></li>
-					<%
-						if (info == null) {
-					%>
-					<li><a href="login.jsp">로그인</a></li>
-
-					<%
-						} else {
-					%>
-					<li><a href="LogoutService.do">로그아웃</a></li>
-					<li><%=info.getNm()%>님 환영합니다.</li>
-					<%
-						}
-					%>
-					<li><a href="result.jsp">분석 결과</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">메뉴</a>
-						<ul class="dropdown-menu animated fadeOutUp"
-							style="display: none; opacity: 1;">
-							<li class="active"><a href="myIndex.jsp">내 정보</a></li>
-							<li><a href="community.jsp">커뮤니티</a></li>
-							<li><a href="counsel.jsp">상담 신청</a></li>
-						</ul></li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-	</nav>
-	<!-- Navigation End  -->
+         <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
+               data-out="fadeOutUp">
+               <li><a href="index.jsp">메인 화면</a></li>
+               <%
+                  if (info == null) {
+               %>
+               <li><a href="login.jsp">로그인</a></li>
+               <%
+                  } else {
+               %>
+               <li><a href="LogoutService.do">로그아웃</a></li>
+               <%
+                  }
+               %>
+               <li><a href="result.jsp">분석 결과</a></li>
+               <li class="dropdown"><a href="#" class="dropdown-toggle"
+                  data-toggle="dropdown">메뉴</a>
+                  <ul class="dropdown-menu animated fadeOutUp"
+                     style="display: none; opacity: 1;">
+                     <li class="active"><a href="myIndex.jsp">내 정보</a></li>
+                     <li><a href="community.jsp">커뮤니티</a></li>
+                     <li><a href="counsel.jsp">상담 신청</a></li>
+                  </ul></li>
+                  <li><div style="float: right; margin-top:15%;margin-right:-50%;"><%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
+					<%}else {%><%} %></div></li>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+   <!-- Navigation End  -->
 
 	<!-- Main jumbotron for a primary marketing message or call to action -->
-	<div>
+	 <div>
 		<h5 id=warning>※ 경 고 : 위 서비스를 악용할 시 피해가 갈 수 있으니 주의하시기 바랍니다. ※</h5>
-	</div>
+	</div> 
 
 	<section class="inner-banner"
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
@@ -136,9 +133,9 @@
 	<!-- 자세히 보기 버튼을 클릭할 때 -->
 
 	<script type="text/javascript" src=js/jquery.min.js></script>
-	<script language=javascript>
+	<script>
 		$(function() {
-			$(".profile-detail").hide();
+			$(".resultHide").hide();
 		});
 		if ('<%=info%>' == 'null') {
 			$(function() {
@@ -153,7 +150,7 @@
 			$(function() {
 				$(".btn.brows-btn").on("click", function() {
 					$(".btn.brows-btn").hide()
-					$(".profile-detail").slideDown()
+					$(".resultHide").slideDown()
 				});
 			});
 		}
@@ -173,6 +170,7 @@
 		</div>
 
 		<section class="profile-detail">
+		<div class="resultHide">
 			<div class="container">
 				<div class="col-md-12">
 					<div class="row">
@@ -212,6 +210,7 @@
 				<input type="button" class="btn2" value="게시글로 공유" /> <input
 					type="button" class="btn2" value="1 : 1 상담 매칭" />
 			</section>
+			</div>
 		</section>
 
 
@@ -311,7 +310,7 @@
 
 
 	<!-- footer start -->
-	<!-- <footer>
+	<footer>
 			<div class="container">
 				<div class="col-md-3 col-sm-6">
 					<h4>Featured Job</h4>
@@ -368,7 +367,7 @@
 			<div class="copy-right">
 			 <p>&copy;Copyright 2018 Jober Desk | Design By <a href="https://themezhub.com/">ThemezHub</a></p>
 			</div>
-		</footer> -->
+		</footer>
 
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

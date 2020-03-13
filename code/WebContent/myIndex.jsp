@@ -33,62 +33,64 @@
 	display: table;
 	width: 50%;
 	float: left;
+	height:373px;
 }
 </style>
 
 </head>
 
 <body>
-	<%
-		MemberDTO info = (MemberDTO) session.getAttribute("info");
-	%>
-	<!-- Navigation Start  -->
-	<nav class="navbar navbar-default navbar-sticky bootsnav">
+   <%
+      MemberDTO info = (MemberDTO) session.getAttribute("info");
+   %>
+   <!-- Navigation Start  -->
+   <nav class="navbar navbar-default navbar-sticky bootsnav">
 
-		<div class="container">
-			<!-- Start Header Navigation -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#navbar-menu">
-					<i class="fa fa-bars"></i>
-				</button>
-				<a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-					class="logo" alt=""></a>
-			</div>
-			<!-- End Header Navigation -->
+      <div class="container">
+         <!-- Start Header Navigation -->
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+               data-target="#navbar-menu">
+               <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
+               class="logo" alt=""></a>
+         </div>
+         <!-- End Header Navigation -->
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="navbar-menu">
-				<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
-					data-out="fadeOutUp">
-					<li><a href="index.jsp">메인 화면</a></li>
-					<%
-						if (info == null) {
-					%>
-					<li><a href="login.jsp">로그인</a></li>
-					<%
-						} else {
-					%>
-					<li><a href="LogoutService.do">로그아웃</a></li>
-					<%-- <li><%= info.getNm() %>님 환영합니다.</li> --%>
-					<%
-						}
-					%>
-					<li><a href="result.jsp">분석 결과</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">메뉴</a>
-						<ul class="dropdown-menu animated fadeOutUp"
-							style="display: none; opacity: 1;">
-							<li class="active"><a href="myIndex.jsp">내 정보</a></li>
-							<li><a href="community.jsp">커뮤니티</a></li>
-							<li><a href="counsel.jsp">상담 신청</a></li>
-						</ul></li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-	</nav>
-	<!-- Navigation End  -->
+         <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
+               data-out="fadeOutUp">
+               <li><a href="index.jsp">메인 화면</a></li>
+               <%
+                  if (info == null) {
+               %>
+               <li><a href="login.jsp">로그인</a></li>
+               <%
+                  } else {
+               %>
+               <li><a href="LogoutService.do">로그아웃</a></li>
+               <%
+                  }
+               %>
+               <li><a href="result.jsp">분석 결과</a></li>
+               <li class="dropdown"><a href="#" class="dropdown-toggle"
+                  data-toggle="dropdown">메뉴</a>
+                  <ul class="dropdown-menu animated fadeOutUp"
+                     style="display: none; opacity: 1;">
+                     <li class="active"><a href="myIndex.jsp">내 정보</a></li>
+                     <li><a href="community.jsp">커뮤니티</a></li>
+                     <li><a href="counsel.jsp">상담 신청</a></li>
+                  </ul></li>
+                  <li><div style="float: right; margin-top:15%;margin-right:-50%;"><%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
+					<%}else {%><%} %></div></li>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+   <!-- Navigation End  -->
 
 	<!-- Inner Banner -->
 	<section class="inner-banner"
@@ -112,17 +114,16 @@
 				<div class="row"> -->
 			<div class="basic-information">
 				<ul class="information">
-					<h3>나의정보</h3>
 					<%
                         if (info == null) {
                      %>
-					<span><h2>로그인이 필요합니다.</h2></span>
+					<span><h5>로그인이 필요합니다.</h5></span>
 					<form action="LoginService.do">
                            <input type="text" class="form-control input-lg"
                               placeholder="User Name" name="id"> <input
                               type="password" class="form-control input-lg"
                               placeholder="Password" name="pw">
-                           <button type="submit" class="btn btn-primary" name="myinfo">Login</button>
+                           <div align="center"><button type="submit" class="btn btn-primary" name="myinfo">Login</button></div>
                     </form>
 				</ul>
 			</div>
@@ -139,18 +140,21 @@
 			</div>
 			<% } else { %>
 			
-					<li>아이디:<%=info.getId() %></li>
-					<li>닉네임:<%=info.getNm() %></li>
-					<li>E-mail:<%=info.getEmail() %></li>
-					<li>등급:<%=info.getGrade() %></li>
-                    <button onclick="window.location.href='updateUser.jsp'">정보수정</button>
+					<h3>나의정보</h3><br>
+					<li><span><h5>아이디 </h5></span><%=info.getId() %></li>
+					<li><span><h5>닉네임 </h5></span><%=info.getNm() %></li>
+					<li><span><h5>E-mail </h5></span><%=info.getEmail() %></li>
+					<%-- <li><span><h5>등급 </h5></span><%=info.getGrade() %></li>--%><br> 
+                    <div align="center"><button onclick="window.location.href='updateUser.jsp'" class="btn btn-primary">정보 수정</button></div>
 				</ul>
                      
 			</div>
-
+<div class="basic-information">
 			<div>
 				<ul class="information">
-					<h3>분석정보</h3>
+					<h3>분석정보</h3><br>
+					분석결과가 없습니다.
+					
                      <% PostDAO dao = new PostDAO();
                         ArrayList<PostDTO> list = dao.selectPost(info.getId());
                         for(int i=list.size()-1; i>=0; i--){%>
@@ -160,7 +164,7 @@
                                     <%= list.get(i).getPost_dt() %>
                                     </li><%} %>
 				</ul>
-			</div>
+			</div></div>
 			<% } %>
 			<!-- 			</div> -->
 			<!-- </div> -->

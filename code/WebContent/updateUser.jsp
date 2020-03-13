@@ -18,59 +18,78 @@
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/main.css">
 
+<style>
+.basic-information {
+	position: relative;
+	z-index: 1;
+	background-color: #ffffff;
+	padding: 30px 30px 20px;
+	-webkit-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .07);
+	box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .07);
+	border: 1px solid #eaecf1;
+	display: table;
+	width: 50%;
+	float: center;
+	margin:auto;
+}
+td{
+width:40%;
+}
+</style>
 </head>
 
 <body>
-	<%
-		MemberDTO info = (MemberDTO) session.getAttribute("info");
-	%>
-	<!-- Navigation Start  -->
-	<nav class="navbar navbar-default navbar-sticky bootsnav">
+   <%
+      MemberDTO info = (MemberDTO) session.getAttribute("info");
+   %>
+   <!-- Navigation Start  -->
+   <nav class="navbar navbar-default navbar-sticky bootsnav">
 
-		<div class="container">
-			<!-- Start Header Navigation -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#navbar-menu">
-					<i class="fa fa-bars"></i>
-				</button>
-				<a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-					class="logo" alt=""></a>
-			</div>
-			<!-- End Header Navigation -->
+      <div class="container">
+         <!-- Start Header Navigation -->
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+               data-target="#navbar-menu">
+               <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
+               class="logo" alt=""></a>
+         </div>
+         <!-- End Header Navigation -->
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="navbar-menu">
-				<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
-					data-out="fadeOutUp">
-					<li><a href="index.jsp">메인 화면</a></li>
-					<%
-						if (info == null) {
-					%>
-					<li><a href="login.jsp">로그인</a></li>
-					<%
-						} else {
-					%>
-					<li><a href="LogoutService.do">로그아웃</a></li>
-					<%-- <li><%= info.getNm() %>님 환영합니다.</li> --%>
-					<%
-						}
-					%>
-					<li><a href="result.jsp">분석 결과</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">메뉴</a>
-						<ul class="dropdown-menu animated fadeOutUp"
-							style="display: none; opacity: 1;">
-							<li class="active"><a href="myIndex.jsp">내 정보</a></li>
-							<li><a href="community.jsp">커뮤니티</a></li>
-							<li><a href="counsel.jsp">상담 신청</a></li>
-						</ul></li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-	</nav>
-	<!-- Navigation End  -->
+         <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
+               data-out="fadeOutUp">
+               <li><a href="index.jsp">메인 화면</a></li>
+               <%
+                  if (info == null) {
+               %>
+               <li><a href="login.jsp">로그인</a></li>
+               <%
+                  } else {
+               %>
+               <li><a href="LogoutService.do">로그아웃</a></li>
+               <%
+                  }
+               %>
+               <li><a href="result.jsp">분석 결과</a></li>
+               <li class="dropdown"><a href="#" class="dropdown-toggle"
+                  data-toggle="dropdown">메뉴</a>
+                  <ul class="dropdown-menu animated fadeOutUp"
+                     style="display: none; opacity: 1;">
+                     <li class="active"><a href="myIndex.jsp">내 정보</a></li>
+                     <li><a href="community.jsp">커뮤니티</a></li>
+                     <li><a href="counsel.jsp">상담 신청</a></li>
+                  </ul></li>
+                  <li><div style="float: right; margin-top:15%;margin-right:-50%;"><%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
+					<%}else {%><%} %></div></li>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+   <!-- Navigation End  -->
 
 	<!-- Inner Banner -->
 	<section class="inner-banner"
@@ -85,49 +104,20 @@
 		</div>
 	</section>
 
-	<section class="jobs">
+	<section class="jobs" >
 		<div class="container">
-			<table class="info">
-				<tr>
-					<td>
-						<div class="row heading">
-							<%
-								if (info == null) {
-							%>
-							<span><h2>로그인이 필요합니다.</h2></span>
-							<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
-								<form action="LoginService.do">
-									<input type="text" class="form-control input-lg"
-										placeholder="User Name" name="id"> <input
-										type="password" class="form-control input-lg"
-										placeholder="Password" name="pw">
-									<button type="submit" class="btn btn-primary">Login</button>
-								</form>
-							</div>
-							<td>
-						<div class="row heading">
-							<span><h2>상담내역</h2></span> <span><p>없음</p></span>
-						</div>
-					</td>
-							<% } else{ %>
+						<div class="basic-information">
 							<form action="UpdateUserService.do" method="post">
-						<input name="pw" type="password"  class="form-control input-lg" placeholder="비밀번호를 입력하세요"><br>
-						<input name="nm" type="text"  class="form-control input-lg" placeholder="이름을 입력하세요"><br>
-						<input name="email"type="text"  class="form-control input-lg" placeholder="이메일을 입력하세요"><br>
-						<button type="submit" class="btn btn-primary">변경</button>
+						<h3>나의정보</h3><hr><br>
+						<table>
+					<tr><td><h5>아이디</h5></td><td><%=info.getId() %></td></tr>
+					<tr><td><h5>비밀번호</h5></td><td><input name="pw" type="password"  class="form-control input-lg" placeholder="비밀번호를 입력하세요"></td></tr>
+					<tr><td><h5>닉네임</h5></td><td><input name="nm" type="text"  class="form-control input-lg" placeholder="이름을 입력하세요"></td></tr>
+					<tr><td><h5>E-mail</h5></td><td><input name="email"type="text"  class="form-control input-lg" placeholder="이메일을 입력하세요"></td></tr>
+						</table><br>
+						<div align="center"><button type="submit" class="btn btn-primary">변경</button></div>
 						</form>
-						</div>
-					</td>
-					<td>
-						<div class="row heading">
-							<span><h2>상담내역</h2></span>
-							<%-- <% if %> --%>
-							 <span><p>게시글</p></span>
-						</div>
-					</td>
-				</tr>
-				<% } %>
-			</table>
+						</div></div>
 			<!-- <div class="row top-pad">
 					<div class="filter">
 						<div class="col-md-2 col-sm-3">
