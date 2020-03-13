@@ -51,11 +51,9 @@ CREATE TABLE POST(
                 POST_CONTENT VARCHAR2(2000),
                 POST_DT DATE,
                 MEMBER_ID VARCHAR2(20),
-                ANALYSIS_RESULT_CD NUMBER(20),
                 CONSTRAINT post_member_id_fk FOREIGN KEY ("MEMBER_ID")
-                REFERENCES MEMBER ("MEMBER_ID"),
-                CONSTRAINT post_anal_result_fk FOREIGN KEY ("ANALYSIS_RESULT_CD")
-                REFERENCES ANALYSIS_RESULT ("ANALYSIS_RESULT_CD"));
+                REFERENCES MEMBER ("MEMBER_ID"));
+
             
 CREATE TABLE REPLY(
                 REPLY_CD NUMBER(20) PRIMARY KEY,
@@ -124,7 +122,9 @@ MAXVALUE 100000 ;
 INSERT INTO MEMBER
 VALUES('test','1111','김예시','test@test.com','user');
 INSERT INTO MEMBER
-VALUES('manager','1111','김관리','test@test.com','manage');
+VALUES('manager','1111','김관리','test@test.com','manager');
+
+
 select * from MEMBER
 
 --INSERT INTO ANALYSIS_DETAIL
@@ -142,6 +142,8 @@ select * from ANALYSIS_RESULT
 
 INSERT INTO POST
 VALUES(post_seq.nextval,'테스트용 제목입니다.', '테스트용 더미 게시글 입니다. 게시글의 내용이 들어갑니다.',sysdate,'test','1');
+INSERT INTO POST
+VALUES(post_seq.nextval,'테스트용 제목입니다.', '테스트용 더미 게시글 입니다. 게시글의 내용이 들어갑니다.',sysdate,'manager','1');
 select * from POST;
 
 INSERT INTO REPLY

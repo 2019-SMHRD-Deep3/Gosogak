@@ -50,12 +50,11 @@ public class PostDAO {
 
 			getConnection();
 
-			String sql = "insert into POST values(num.nextval,?,?,sysdate,?,?)";
+			String sql = "insert into POST values(post_seq.nextval,?,?,sysdate,?)";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getPost_title());
 			psmt.setString(2, dto.getPost_content());
 			psmt.setString(3, dto.getPost_id());
-			psmt.setString(4, dto.getPost_result());
 			cnt = psmt.executeUpdate();
 
 		} catch (SQLException e) {

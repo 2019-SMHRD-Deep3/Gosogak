@@ -34,14 +34,15 @@ public class LoginCon implements ICommand {
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
 		}
-		
-		
-		if(request.getParameter("detail") == "community") {
-			moveURL = "postWrite.jsp";
-		}else if(request.getParameter("detail")=="result"){
+
+		if (request.getParameter("detail") != null) {
+
 			moveURL = "result.jsp";
-		}else {
-			moveURL="index.jsp";
+
+		} else if(request.getParameter("myinfo") != null) {
+			moveURL = "myIndex.jsp";
+		} else {
+			moveURL = "index.jsp";
 		}
 
 		return moveURL;
