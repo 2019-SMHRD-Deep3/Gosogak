@@ -44,13 +44,13 @@
 								<li><a href="LogoutService.do">로그아웃</a></li>
 								<li><%= info.getNm() %>님 환영합니다.</li>
 								<%} %>  
-							<li><a href="companies.jsp">분석 결과</a></li> 
+							<li><a href="result.jsp">분석 결과</a></li> 
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">메뉴</a>
 								<ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
-									<li class="active"><a href="browse-job.jsp">내 정보</a></li>
-									<li><a href="company-detail.jsp">커뮤니티</a></li>
-									<li><a href="resume.jsp">상담 신청</a></li>
+									<li class="active"><a href="myIndex.jsp">내 정보</a></li>
+									<li><a href="community.jsp">커뮤니티</a></li>
+									<li><a href="counsel.jsp">상담 신청</a></li>
 								</ul>
 							</li>
 						</ul>

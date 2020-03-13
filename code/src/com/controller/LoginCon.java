@@ -32,7 +32,7 @@ public class LoginCon implements ICommand {
 		if (request.getParameter("detail") == null) {
 			moveURL = "index.jsp";
 		} else {
-			moveURL = "companies.jsp";
+			moveURL = "result.jsp";
 		}
 
 		return moveURL;
