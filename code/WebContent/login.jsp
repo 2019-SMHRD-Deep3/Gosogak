@@ -72,7 +72,7 @@
    </nav>
    <!-- Navigation End  -->
 
-	<!-- login section start -->
+	<!-- 로그인 섹션 -->
 	<section class="login-wrapper">
 		<div class="container">
 			<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
