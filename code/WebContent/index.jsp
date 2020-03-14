@@ -110,7 +110,7 @@
    <!-- Navigation End  -->
 		
 		<!-- Main jumbotron for a primary marketing message or call to action -->
-		<section class="main-banner" style="background:#242c36 url(img/slider-01.jpg) no-repeat">
+		<section class="main-banner" style="background:#242c36 url(img/main.jpg) no-repeat">
 			<div class="container">
 				<div class="caption">
 					<h2>°í ¼Ò °¢</h2>
