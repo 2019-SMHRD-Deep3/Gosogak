@@ -42,8 +42,14 @@ CREATE TABLE MEMBER(
 
 CREATE TABLE ANALYSIS_RESULT(
                 ANALYSIS_RESULT_CD NUMBER(20) PRIMARY KEY,
+                MEMBER_ID VARCHAR2(20),
                 ORIGINAL_DATA VARCHAR2(2000),
-                RESULT VARCHAR2(20));
+                SCORE_PUBLIC NUMBER(4),
+                SCORE_SPEC NUMBER(4),
+                SCORE_INSULT NUMBER(4),
+                RESULT VARCHAR2(20),
+                CONSTRAINT anal_result_member_id_fk FOREIGN KEY ("MEMBER_ID")
+                REFERENCES MEMBER ("MEMBER_ID"));
                 
 CREATE TABLE POST(
                 POST_CD NUMBER(20) PRIMARY KEY,
@@ -137,7 +143,7 @@ select * from MEMBER
 --VALUES(anal_detail_seq.nextval,1,'야',0,0,0);
 
 INSERT INTO ANALYSIS_RESULT
-VALUES(anal_result_seq.nextval,'너는 바보야',0);
+VALUES(anal_result_seq.nextval,'test','너는 바보야',0,0,0,0);
 select * from ANALYSIS_RESULT
 
 INSERT INTO POST
