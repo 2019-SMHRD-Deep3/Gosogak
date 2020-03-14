@@ -146,7 +146,7 @@ height:100%;
 
 
 
-						<form method="post" action="InsertPostCon.do" name="boardForm">
+						<form method="post" action="InsertCounselCon.do" name="boardForm">
 							<input type="hidden" name="board_id"
 								value="${sessionScope.sessionID}">
 							<table width="80%" bordercolor="lightgray" align="center">
@@ -156,16 +156,16 @@ height:100%;
 								</tr>
 								<tr>
 									<td id="title">상담사</td>
-									<td><input size="90%"/></td>
+									<td><input name="counsel_manager" size="90%"/></td>
 								</tr>
 								<tr>
 									<td id="title">제 목</td>
-									<td><input name="post_title" type="text"
+									<td><input name="counsel_title" type="text"
 										size="90%" /></td>
 								</tr>
 								<tr height="500px">
 									<td id="title">내 용</td>
-									<td><textarea name="post_content" rows="20"></textarea>
+									<td><textarea name="counsel_content" rows="20"></textarea>
 									</td>
 								</tr>
 								<!-- <tr>

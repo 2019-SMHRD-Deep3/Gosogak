@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.controller.InsertCounselCon;
 import com.controller.InsertPostCon;
 import com.controller.JoinCon;
 import com.controller.LoginCon;
@@ -34,6 +35,7 @@ private static final long serialVersionUID = 1L;
 		map.put("UpdateUserService.do", new UpdateUserCon());
 		map.put("InsertPostCon.do", new InsertPostCon());
 		map.put("ReadPostCon.do", new ReadPostCon());
+		map.put("InsertCounselCon.do",new InsertCounselCon());
 		
 		//map.put("UpdateManagerService.do", new UpdateManagerCon());
 		//map.put("InsertPostService.do", new InsertPostCon());
