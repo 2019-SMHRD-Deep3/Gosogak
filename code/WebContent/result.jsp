@@ -134,6 +134,7 @@
 		</div>
 		<!-- End Header Navigation -->
 
+
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="navbar-menu">
 			<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
@@ -182,7 +183,7 @@
 
 
 <section class="main-banner"
-	style="background: #242c36 url(img/slider-01.jpg) no-repeat">
+	style="background: #242c36 url(img/main.jpg) no-repeat">
 	<div class="container">
 		<div class="caption">
 			<h2>고 소 각</h2>
@@ -190,6 +191,7 @@
 				<div class="col-md-5 col-sm-5 no-pad">
 					<input type="text" id="inputIdName" name="inputIdName"
 						class="form-control border-right" placeholder="아이디/이름 입력" />
+
 				</div>
 				<div class="col-md-3 col-sm-3 no-pad">
 					<select class="selectpicker" name="selectpicker">
