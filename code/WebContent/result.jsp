@@ -19,6 +19,44 @@
 <link rel="stylesheet" href="css/main.css">
 
 <style>
+
+.col-md-5{
+	width:13% !important;
+	margin-left: 0.5% !important;	
+}
+#content{
+	width:55% !important;
+	margin-left: 1% !important;
+		
+}
+.col-md-2{
+	width:14%; 
+	padding-right: 15px;
+	margin-left: 2% !important;		
+}
+.link:hover{
+	text-decoration: underline; color: blue;
+}	
+.link{
+	font-weight: bold; 
+}
+.warning{
+	text-align: center;	
+}
+.warning1{
+	color: red;
+    margin-top: 3%;	
+}
+.col-md-3.col-sm-3{
+	width:13% !important;
+	margin-left: 1% !important;
+}
+.features-content{
+	width:80% !important;
+}
+.col-md-10{
+	 line-height: 3em;
+}
 .btn2 {
 	display: inline-block;
 	font-size: 14px;
@@ -56,6 +94,7 @@
 
 .caption p {
 	margin-bottom: 50px;
+
 }
 
 </style>
@@ -114,22 +153,39 @@
    <!-- Navigation End  -->
 
 	<!-- Main jumbotron for a primary marketing message or call to action -->
-	 <div>
+	
+
+	<section class="main-banner" style="background:#242c36 url(img/slider-01.jpg) no-repeat">
+			<div class="container">
+				<div class="caption">
+					<h2>고 소 각</h2>
+					<form action="result.jsp" method="post">
+						<fieldset>
+							<div class="col-md-5 col-sm-5 no-pad">
+								<input type="text" id="inputIdName" name="inputIdName" class="form-control border-right" placeholder="아이디/이름 입력" />
+							</div>
+							 <div class="col-md-3 col-sm-3 no-pad">
+								<select class="selectpicker" name="selectpicker">
+								  <option>1:1 채팅</option>
+								  <option>개인 블로그</option>
+								  <option>개인 SNS</option>
+								  <option>커뮤니티 게시판</option>
+								  <option>유튜브</option>
+								</select>
+							</div>
+							<div class="col-md-4 col-sm-4 no-pad" id="content">
+								<input type="text" id="inputText" class="form-control border-right" placeholder="텍스트 입력" />
+							</div>
+							<div class="col-md-2 col-sm-2 no-pad">
+								<input type="submit" class="btn seub-btn" value="분석하기"/>
+							</div>
+						</fieldset>
+				</div>
+			</div>
+		</section>
+ <div>
 		<h5 id=warning>※ 경 고 : 위 서비스를 악용할 시 피해가 갈 수 있으니 주의하시기 바랍니다. ※</h5>
 	</div> 
-
-	<section class="inner-banner"
-		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
-		<div class="container">
-			<div class="caption">
-				<!-- <p>
-					분석결과 <span>202 New job</span>
-				</p> -->
-				<h2>고소 가능 / 고소 불가능</h2>
-			</div>
-		</div>
-	</section>
-
 	<!-- 자세히 보기 버튼을 클릭할 때 -->
 
 	<script type="text/javascript" src=js/jquery.min.js></script>

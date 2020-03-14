@@ -55,6 +55,8 @@
 	 line-height: 3em;
 }
 </style>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
    <%
@@ -114,45 +116,9 @@
 			<div class="container">
 				<div class="caption">
 					<h2>고 소 각</h2>
+					
 					<form action="result.jsp" method="post">
-						<fieldset>
-							<div class="col-md-5 col-sm-5 no-pad">
-								<input type="text" id="id" name="id" class="form-control border-right" placeholder="아이디 입력" />
-							</div>
-							 <div class="col-md-3 col-sm-3 no-pad">
-								<select class="selectpicker" name="selectpicker">
-								  <option>사이트 형식</option>
-								  <option>네이버블로그</option>
-								  <option>인스타그램</option>
-								  <option>페이스북</option>
-								  <option>유튜브</option>
-								  <option>네이버뉴스</option>
-								</select>
-							</div>
-							<div class="col-md-4 col-sm-4 no-pad" id="content">
-								<input type="text" name="text" class="form-control border-right" placeholder="텍스트 입력" />
-							</div>
-							<!-- <div class="col-md-3 col-sm-3 no-pad">
-								<select class="selectpicker border-right">
-								  <option>Experience</option>
-								  <option>0 Year</option>
-								  <option>1 Year</option>
-								  <option>2 Year</option>
-								  <option>3 Year</option>
-								  <option>4 Year</option>
-								  <option>5 Year</option>
-								  <option>6 Year</option>
-								  <option>7 Year</option>
-								  <option>8 Year</option>
-								  <option>9 Year</option>
-								 <option>10 Year</option>
-								</select>
-							</div> -->
-							
-							<div class="col-md-2 col-sm-2 no-pad">
-								<input type="submit" class="btn seub-btn" value="분석하기" />
-							</div>
-						</fieldset>
+					<input type="submit" class="btn seub-btn" value="시작하기"/>
 					</form>
 				</div>
 			</div>
@@ -160,8 +126,7 @@
 			<div class="warning">
 				<h4 class="warning1">※  경 고 :  위 서비스를 악용할 시 피해가 갈 수 있으니 주의하시기 바랍니다.  ※</h4>
 			</div>
-		
-			
+
 		<section class="newsletter">
 			<div class="container">
 				<div class="row">
