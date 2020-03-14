@@ -33,64 +33,81 @@
 	display: table;
 	width: 50%;
 	float: left;
-	height:373px;
+	height: 373px;
+}
+
+.loginre {
+	position: relative;
+	padding: 30px 30px 20px;
+	width: 50%;
+	margin: auto;
 }
 </style>
 
 </head>
 
 <body>
-   <%
-      MemberDTO info = (MemberDTO) session.getAttribute("info");
-   %>
-   <!-- Navigation Start  -->
-   <nav class="navbar navbar-default navbar-sticky bootsnav">
+	<%
+		MemberDTO info = (MemberDTO) session.getAttribute("info");
+	%>
+	<!-- Navigation Start  -->
+	<nav class="navbar navbar-default navbar-sticky bootsnav">
 
-      <div class="container">
-         <!-- Start Header Navigation -->
-         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-               data-target="#navbar-menu">
-               <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-               class="logo" alt=""></a>
-         </div>
-         <!-- End Header Navigation -->
+		<div class="container">
+			<!-- Start Header Navigation -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#navbar-menu">
+					<i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
+					class="logo" alt=""></a>
+			</div>
+			<!-- End Header Navigation -->
 
-         <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse" id="navbar-menu">
-            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
-               data-out="fadeOutUp">
-               <li><a href="index.jsp">메인 화면</a></li>
-               <%
-                  if (info == null) {
-               %>
-               <li><a href="login.jsp">로그인</a></li>
-               <%
-                  } else {
-               %>
-               <li><a href="LogoutService.do">로그아웃</a></li>
-               <%
-                  }
-               %>
-               <li><a href="result.jsp">분석 결과</a></li>
-               <li class="dropdown"><a href="#" class="dropdown-toggle"
-                  data-toggle="dropdown">메뉴</a>
-                  <ul class="dropdown-menu animated fadeOutUp"
-                     style="display: none; opacity: 1;">
-                     <li class="active"><a href="myIndex.jsp">내 정보</a></li>
-                     <li><a href="community.jsp">커뮤니티</a></li>
-                     <li><a href="counsel.jsp">상담 신청</a></li>
-                  </ul></li>
-                  <li><div style="float: right; margin-top:15%;margin-right:-50%;"><%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
-					<%}else {%><%} %></div></li>
-            </ul>
-         </div>
-         <!-- /.navbar-collapse -->
-      </div>
-   </nav>
-   <!-- Navigation End  -->
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbar-menu">
+				<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
+					data-out="fadeOutUp">
+					<li><a href="index.jsp">메인 화면</a></li>
+					<%
+						if (info == null) {
+					%>
+					<li><a href="login.jsp">로그인</a></li>
+					<%
+						} else {
+					%>
+					<li><a href="LogoutService.do">로그아웃</a></li>
+					<%
+						}
+					%>
+					<li><a href="result.jsp">분석 결과</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">메뉴</a>
+						<ul class="dropdown-menu animated fadeOutUp"
+							style="display: none; opacity: 1;">
+							<li class="active"><a href="myIndex.jsp">내 정보</a></li>
+							<li><a href="community.jsp">커뮤니티</a></li>
+							<li><a href="counsel.jsp">상담 신청</a></li>
+						</ul></li>
+					<li><div
+							style="float: right; margin-top: 15%; margin-right: -50%;">
+							<%
+								if (info != null) {
+							%><%=info.getNm()%>님 환영합니다.
+							<%
+								} else {
+							%>
+							<%
+								}
+							%>
+						</div></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+	</nav>
+	<!-- Navigation End  -->
 
 	<!-- Inner Banner -->
 	<section class="inner-banner"
@@ -112,23 +129,28 @@
 		<div class="container">
 			<!-- 			<div class="col-md-12">
 				<div class="row"> -->
-			<div class="basic-information">
-				<ul class="information">
-					<%
-                        if (info == null) {
-                     %>
-					<span><h5>로그인이 필요합니다.</h5></span>
-					<form action="LoginService.do">
-                           <input type="text" class="form-control input-lg"
-                              placeholder="User Name" name="id"> <input
-                              type="password" class="form-control input-lg"
-                              placeholder="Password" name="pw">
-                           <div align="center"><button type="submit" class="btn btn-primary" name="myinfo">Login</button></div>
-                    </form>
-				</ul>
-			</div>
 
-			<div>
+			<%
+				if (info == null) {
+			%>
+			<div class="loginre">
+				<h3>로그인이 필요합니다.</h3>
+				<hr>
+				<br>
+				<br>
+				<form action="LoginService.do">
+					<input type="text" class="form-control input-lg"
+						placeholder="User Name" name="id" width="150px"> <input
+						type="password" class="form-control input-lg"
+						placeholder="Password" name="pw"><br>
+					<br>
+					<div align="center">
+						<button type="submit" class="btn btn-primary" name="myinfo">Login</button>
+					</div>
+				</form>
+
+
+				<!-- 	<div>
 				<ul class="information">
 					<h3>분석정보</h3>
 					<li><span></span></li>
@@ -137,39 +159,51 @@
 					<li><span></span></li>
 					<li><span></span></li>
 				</ul>
+			</div> -->
+				<%
+					} else {
+				%>
+				<div class="basic-information">
+					<ul class="information" allign="center">
+						<h3>나의정보</h3>
+						<br>
+						<li><span><h5>아이디</h5></span><%=info.getId()%></li>
+						<li><span><h5>닉네임</h5></span><%=info.getNm()%></li>
+						<li><span><h5>E-mail</h5></span><%=info.getEmail()%></li>
+						<%-- <li><span><h5>등급 </h5></span><%=info.getGrade() %></li>--%>
+						<br>
+						<div align="center">
+							<button onclick="window.location.href='updateUser.jsp'"
+								class="btn btn-primary">정보 수정</button>
+						</div>
+					</ul>
+
+				</div>
+				<div class="basic-information">
+					<ul class="information">
+						<h3>분석정보</h3>
+						<br> 분석결과가 없습니다.
+						<%
+							PostDAO dao = new PostDAO();
+								ArrayList<PostDTO> list = dao.selectPost(info.getId());
+								for (int i = list.size() - 1; i >= 0; i--) {
+						%>
+						<li><%=list.get(i).getPost_cd()%>: <%=list.get(i).getPost_title()%>
+							<%=list.get(i).getPost_content()%> <%=list.get(i).getPost_dt()%>
+						</li>
+						<%
+							}
+						%>
+					</ul>
+				</div>
+				<%
+					}
+				%>
+				<!-- 			</div> -->
+				<!-- </div> -->
 			</div>
-			<% } else { %>
-			
-					<h3>나의정보</h3><br>
-					<li><span><h5>아이디 </h5></span><%=info.getId() %></li>
-					<li><span><h5>닉네임 </h5></span><%=info.getNm() %></li>
-					<li><span><h5>E-mail </h5></span><%=info.getEmail() %></li>
-					<%-- <li><span><h5>등급 </h5></span><%=info.getGrade() %></li>--%><br> 
-                    <div align="center"><button onclick="window.location.href='updateUser.jsp'" class="btn btn-primary">정보 수정</button></div>
-				</ul>
-                     
+			<!-- 	</section> -->
 			</div>
-<div class="basic-information">
-			<div>
-				<ul class="information">
-					<h3>분석정보</h3><br>
-					분석결과가 없습니다.
-					
-                     <% PostDAO dao = new PostDAO();
-                        ArrayList<PostDTO> list = dao.selectPost(info.getId());
-                        for(int i=list.size()-1; i>=0; i--){%>
-                                    <li><%= list.get(i).getPost_cd() %>:
-                                    <%= list.get(i).getPost_title() %>
-                                    <%= list.get(i).getPost_content() %>
-                                    <%= list.get(i).getPost_dt() %>
-                                    </li><%} %>
-				</ul>
-			</div></div>
-			<% } %>
-			<!-- 			</div> -->
-			<!-- </div> -->
-		</div>
-		<!-- 	</section> -->
 	</section>
 	<!-- <div class="row top-pad">
                <div class="filter">
@@ -453,7 +487,7 @@
                <input type="button" class="btn brows-btn" value="Brows All Jobs" />
             </div>
          </div> -->
-	</section>
+         
 
 
 	<!-- footer start -->
