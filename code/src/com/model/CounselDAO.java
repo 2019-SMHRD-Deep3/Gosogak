@@ -48,7 +48,7 @@ public class CounselDAO {
 		
 		try {
 			getConnection();
-			String sql="insert into COUNSELING values(couns_saq.nextval,?,?,?,?,sysdate)";
+			String sql="insert into COUNSELING values(couns_seq.nextval,?,?,?,?,sysdate)";
 			psmt=conn.prepareStatement(sql);
 			psmt.setString(1, dto.getCounsel_id());
 			psmt.setString(2, dto.getCounsel_manager());
