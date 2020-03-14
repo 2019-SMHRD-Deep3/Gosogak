@@ -85,6 +85,7 @@ CREATE TABLE COUNSELING(
                 COUNSELING_CD NUMBER(20) PRIMARY KEY,
                 MEMBER_ID VARCHAR2(20),
                 COUNSELOR_ID VARCHAR2(20),
+                COUNSELING_TITLE VARCHAR2(100),
                 COUNSELING_CONTENT VARCHAR2(2000),
                 COUNSELING_DATE DATE,
                 CONSTRAINT coun_member_id_fk FOREIGN KEY ("MEMBER_ID")
@@ -159,4 +160,5 @@ VALUES(reply_seq.nextval,1,'test','테스트용 더미 댓글 입니다. 댓글의 내용이 들어
 --VALUES(serv_seq.nextval,'test',sysdate,1);
 
 INSERT INTO COUNSELING
-VALUES(couns_seq.nextval,'test','manager','manager:테스트용 더미 채팅내역 입니다. test:채팅내역 내용이 들어갑니다.',sysdate);
+VALUES(couns_seq.nextval,'test','manager','제목입니다.','manager:테스트용 더미 채팅내역 입니다. test:채팅내역 내용이 들어갑니다.',sysdate);
+select * from COUNSELING;
