@@ -207,7 +207,7 @@ a.facebook1 {
 					</div>
 				</div>
 				
-				<form action="login.jsp">
+				<form action="counselPost.jsp">
 
 					<button type="submit" class="btn brows-btn" name="detail"
 						value="community">상담하기</button>
@@ -277,7 +277,7 @@ a.facebook1 {
 					</div>
 				</div>
 				
-				<form action="login.jsp">
+				<form action="counselPost.jsp">
 
 					<button type="submit" class="btn brows-btn" name="detail"
 						value="community">상담하기</button>
@@ -344,7 +344,7 @@ a.facebook1 {
 						</div>
 					</div>
 
-					<form action="counslePost.jsp">
+					<form action="counselPost.jsp">
 
 						<button type="submit" class="btn brows-btn" name="detail"
 							value="">상담하기</button>

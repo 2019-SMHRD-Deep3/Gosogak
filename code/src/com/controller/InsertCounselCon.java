@@ -19,7 +19,7 @@ public class InsertCounselCon implements ICommand {
 		String moveURL = null;
 		HttpSession session = request.getSession();
 		MemberDTO info = (MemberDTO)session.getAttribute("info");
-		String counsel_id = info.getNm();
+		String counsel_id = info.getId();
 		String counsel_manager = request.getParameter("counsel_manager");
 		String counsel_title = request.getParameter("counsel_title");
 		String counsel_content = request.getParameter("counsel_content");
