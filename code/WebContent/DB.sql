@@ -129,7 +129,11 @@ MAXVALUE 100000 ;
 INSERT INTO MEMBER
 VALUES('test','1111','김예시','test@test.com','user');
 INSERT INTO MEMBER
-VALUES('manager','1111','김관리','test@test.com','manager');
+VALUES('an','1111','안인태','test@test.com','manager');
+INSERT INTO MEMBER
+VALUES('cheon','1111','천승현','test@test.com','manager');
+INSERT INTO MEMBER
+VALUES('bang','1111','방세미','test@test.com','manager');
 
 
 select * from MEMBER
