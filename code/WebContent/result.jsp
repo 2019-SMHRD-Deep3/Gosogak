@@ -183,11 +183,12 @@
 
 
 <section class="main-banner"
-	style="background: #242c36 url(img/main.jpg) no-repeat">
+	style="background: #242c36 url(img/main3.jpg) no-repeat">
 	<div class="container">
 		<div class="caption">
-			<h2>고 소 각</h2>
+			<h2><b>이거.. 고소 각?</b></h2>
 			<fieldset>
+				
 				<div class="col-md-5 col-sm-5 no-pad">
 					<input type="text" id="inputIdName" name="inputIdName"
 						class="form-control border-right" placeholder="아이디/이름 입력" />
@@ -207,18 +208,18 @@
 						placeholder="텍스트 입력" />
 				</div>
 				<div class="col-md-2 col-sm-2 no-pad">
-					<button onclick="myClick()">click</button>
-					<br>
+					<button onclick="myClick()" class="btn brows-btn">click</button>
 
 
 
 				</div>
+				
 			</fieldset>
 		</div>
 	</div>
 </section>
 <div>
-	<h5 id=warning>※ 경 고 : 위 서비스를 악용할 시 피해가 갈 수 있으니 주의하시기 바랍니다. ※</h5>
+	<h5 id=warning>※  경 고 :  해당 서비스는 법적 효력이 없으며 악용시 처벌을 받을 수 있습니다.  ※</h5>
 </div>
 
 <section>

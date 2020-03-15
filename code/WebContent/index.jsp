@@ -127,7 +127,7 @@
 	</video>
 			<div class="container">
 				<div class="caption">
-					<h2>고 소 각</h2>
+					<h2><b>이거...고소 각?</b></h2>
 					<br><br>
 					<form action="result.jsp" method="post">
 					<input type="submit" class="btn seub-btn" value="시작하기"/>
@@ -137,7 +137,7 @@
 			</div>
 		</section>
 			<div class="warning">
-				<h4 class="warning1">※  경 고 :  위 서비스를 악용할 시 피해가 갈 수 있으니 주의하시기 바랍니다.  ※</h4>
+				<h4 class="warning1">※  경 고 :  해당 서비스는 법적 효력이 없으며 악용시 처벌을 받을 수 있습니다.  ※</h4>
 			</div>
 
 		<section class="newsletter">
@@ -156,8 +156,8 @@
 					<p>자신의 아이디를 입력하고 사이트의 유형을 선택한 후 알고 싶은 댓글을 넣고 분석하기를 누르면 결과를 확인할 수 있습니다. </p><br>
 					<span class="box1"><span aria-hidden="true" class="icon-search"></span></span>
 					<h2>3. 고소각은 어떻게 분석하나요?</h2><br>
-					<p>고소각 머신러닝은 네이버,유튜브 등 다양한 커뮤니티 사이트에서 댓글을 크롤링하여 6만개 가량의 자료를 수집하고
-					KNN모델을 사용하여 학습시켜 정확도 90%를 보여주는 모델입니다. 위 서비스는 앞으로도 꾸준히 자료를 수집하고 업데이트하여
+					<p>고소각 머신러닝은 자체 개발한 '고소미'모델을 사용합니다. 해당 모델은 네이버,유튜브 등 다양한 커뮤니티 사이트에서 수집한 6만개 가량의 댓글을 
+					Logistic Regression모델에 학습시켜 모욕성 판별에 약90%의 정확도를 보여줍니다.. 위 서비스는 앞으로도 꾸준히 자료를 수집하고 업데이트하여
 					다양한 소비자의 요구를 반영할 예정입니다.</p>
 					<!-- <div class="input-group">
 						<input type="text" class="form-control" placeholder="Type Your Email Address...">
