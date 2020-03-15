@@ -237,7 +237,6 @@ a.facebook1 {
 
 
 
-
 			<!-- <ul class="social"> -->
 			<!-- <li><a href="" class="facebook1"><i class="fa fa-facebook"></i></a></li> -->
 			<!-- 	<li><a href="" class="google"><i class="fa fa-google-plus"></i></a></li>
