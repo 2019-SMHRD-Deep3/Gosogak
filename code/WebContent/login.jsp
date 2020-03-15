@@ -107,7 +107,7 @@
 		<div class="container">
 			<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
 				<form action="JoinService.do" method="post">
-					<p>Create An Account</p>
+					<p>회원 가입</p>
 					<input name="id" type="text" class="form-control input-lg"
 						placeholder="id을 입력하세요"><br> <input name="pw"
 						type="password" class="form-control input-lg"

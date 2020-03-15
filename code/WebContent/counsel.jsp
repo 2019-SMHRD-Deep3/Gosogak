@@ -1,3 +1,4 @@
+
 <%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
@@ -32,14 +33,12 @@
 	height: 373px;
 	margin: 15px;
 }
-
 .social {
 	margin: 0;
 	padding: 5px 0;
 	display: inline-block;
 	width: 100%;
 }
-
 .social ul {
 	/* margin:0;
 padding:20px 0;
@@ -47,22 +46,18 @@ display:inline-block; */
 	/* width:75%; */
 	
 }
-
 .social li {
 	list-style: none;
 	/* float:left; */
 	margin-bottom: 1px;
 }
-
 .social li a {
 	/* font-size:10px; */
 	color: #6b797c;
 }
-
 .social li:hover a, .social li:focus a {
 	text-decoration: none;
 }
-
 a.facebook1 {
 	border: 2px solid #000000;
 	width: 200%;
@@ -71,7 +66,6 @@ a.facebook1 {
 	border-radius: 100px;
 	content: "\f09a";
 }
-
 .social li i {
 	width: 42px;
 	height: 42px;
@@ -81,27 +75,21 @@ a.facebook1 {
 	text-align: center;
 	margin-right: 7px;
 }
-
 .social li .facebook i {
 	background: #295396;
 }
-
 .social li .google i {
 	background: #d6201f;
 }
-
 .social li .twitter i {
 	background: #1da0f2;
 }
-
 .social li .linkedin i {
 	background: #0077b5;
 }
-
 .social li .instagram i {
 	background: #d3368c;;
 }
-
 @media ( min-width :1102px) {
 	.container {
 		width: 1502px
@@ -492,3 +480,4 @@ a.facebook1 {
 </body>
 
 </html>
+
