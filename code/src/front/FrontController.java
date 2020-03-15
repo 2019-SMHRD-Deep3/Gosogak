@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.controller.InsertAnalysisResult;
 import com.controller.InsertCounselCon;
 import com.controller.InsertPostCon;
 import com.controller.JoinCon;
@@ -36,14 +37,16 @@ private static final long serialVersionUID = 1L;
 		map.put("InsertPostCon.do", new InsertPostCon());
 		map.put("ReadPostCon.do", new ReadPostCon());
 		map.put("InsertCounselCon.do",new InsertCounselCon());
-		
+		map.put("InsertAnalysisResult.do",new InsertAnalysisResult());
 		//map.put("UpdateManagerService.do", new UpdateManagerCon());
 		//map.put("InsertPostService.do", new InsertPostCon());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("EUC-KR");
+		
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		System.out.println("FrontController ¿‘¿Â!");
 //		System.out.println(request.getParameter("detail"));
 		String requestURI = request.getRequestURI();
@@ -55,6 +58,7 @@ private static final long serialVersionUID = 1L;
 		putData();
 		ICommand iCommand = map.get(resultURL);
 		moveURL = iCommand.execute(request, response);
-		response.sendRedirect(moveURL);
+		if(!(moveURL==null))
+			response.sendRedirect(moveURL);
 	}
 }

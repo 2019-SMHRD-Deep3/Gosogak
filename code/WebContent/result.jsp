@@ -211,7 +211,7 @@
 					<br>
 
 
-					
+
 				</div>
 			</fieldset>
 		</div>
@@ -220,31 +220,7 @@
 <div>
 	<h5 id=warning>※ 경 고 : 위 서비스를 악용할 시 피해가 갈 수 있으니 주의하시기 바랍니다. ※</h5>
 </div>
-<!-- 자세히 보기 버튼을 클릭할 때 -->
 
-<script type="text/javascript" src=js/jquery.min.js></script>
-<script>
-		$(function() {
-			$(".resultHide").hide();
-		});
-		if ('<%=info%>' == 'null') {
-		$(function() {
-			$(".btn.brows-btn").on("click", function() {
-				var check = confirm('로그인이 필요한 서비스입니다.');
-				if (check) {
-					location.href = "login.jsp";
-				}
-			});
-		});
-	} else {
-		$(function() {
-			$(".btn.brows-btn").on("click", function() {
-				$(".btn.brows-btn").hide()
-				$(".resultHide").slideDown()
-			});
-		});
-	}
-</script>
 <section>
 	<div class="row heading">
 		<h2 id="result"></h2>
@@ -280,9 +256,9 @@
 									</h2>
 									<p>Now Hiring(102)</p>
 									<ul class="information">
-										<li><span>공영성:</span><span id="public"></span></li>
-										<li><span>특정성:</span><span id="spec"></span></li>
 										<li><span>모욕성:</span><span id="insult"></span></li>
+										<li><span>공연성:</span><span id="public"></span></li>
+										<li><span>특정성:</span><span id="spec"></span></li>
 									</ul>
 								</div>
 							</div>
@@ -303,8 +279,11 @@
 				</div>
 			</div>
 			<section align=center>
-				<input type="button" class="btn2" value="게시글로 공유" /> <input
-					type="button" class="btn2" value="1 : 1 상담 매칭" />
+				<button onclick="myInsert()" class="btn2">분석결과 저장</button>
+				<form action="counsel.jsp">
+				<input type="submit" class="btn2" value="1 : 1 상담 매칭" />
+				</form>
+				
 			</section>
 		</div>
 	</section>
@@ -377,16 +356,16 @@
 </footer>
 <script type="text/javascript">
 						function myClick() {
+							insultScore =0;
 							publicScore = 0;
 							specScore = 0;
-							insultScore =0;
 							console.clear()
 							/* console.log(inputIdName);
 							console.log(selectpicker);
 							console.log(inputText); */
 							var inputText = $('#inputText').val()
-							var pub =document.querySelector('#public');
 							var ins =document.querySelector('#insult');
+							var pub =document.querySelector('#public');
 							var spe =document.querySelector('#spec');
 							
 							// 댓글 판별
@@ -414,14 +393,14 @@
 										ins.innerHTML = '없음';
 									}
 									
-									// 공영성 판별
+									// 공연성 판별
 									if(selectpicker == "커뮤니티 게시판" || selectpicker == "유튜브"){
-										console.log('공영성:1')
+										console.log('공연성:1')
 										publicScore += 1;
 										totalScore += 1;
 										pub.innerHTML = '있음';
 									}else{
-										console.log('공영성:0')
+										console.log('공연성:0')
 										pub.innerHTML = '없음';
 									}
 									
@@ -449,6 +428,61 @@
 							
 							
 						}</script>
+<!-- 자세히 보기 버튼을 클릭할 때 -->
+
+<script type="text/javascript" src=js/jquery.min.js></script>
+<script>
+		$(function() {
+			$(".resultHide").hide();
+		});
+		if ('<%=info%>' == 'null') {
+		$(function() {
+			$(".btn.brows-btn").on("click", function() {
+				var check = confirm('로그인이 필요한 서비스입니다.');
+				if (check) {
+					location.href = "login.jsp";
+				}
+			});
+		});
+	} else {
+		$(function() {
+			$(".btn.brows-btn").on("click", function() {
+				$(".btn.brows-btn").hide()
+				$(".resultHide").slideDown()
+			});
+		});
+	}
+</script>
+<script type="text/javascript">
+	function myInsert() {
+		
+		var inputText = $('#inputText').val()
+		var ins = document.querySelector('#insult').innerHTML;
+		var pub = document.querySelector('#public').innerHTML;
+		var spe = document.querySelector('#spec').innerHTML;
+
+		console.log(inputText);
+		console.log(ins);
+		console.log(pub);
+		console.log(spe);
+		
+		
+		
+		$.ajax({
+			url : "InsertAnalysisResult.do",
+			type : "post",
+			dataType : "text",
+			data : "inputText="+inputText+"&ins="+ins+"&pub="+pub+"&spe="+spe,
+			success : function(result){
+				alert("저장 성공!");
+			},
+			error : function(){
+				alert("error");
+			}
+		});
+
+	}
+</script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/owl.carousel.min.js"></script>

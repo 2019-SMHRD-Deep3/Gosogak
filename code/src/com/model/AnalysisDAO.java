@@ -39,4 +39,27 @@ public class AnalysisDAO {
 			e.printStackTrace();
 		}
 	}
+
+	public int insertResult(AnalysisDTO dto) {
+		int cnt = 0;
+
+		try {
+			
+			getConnection();
+			String sql = "insert into ANALYSIS_RESULT values(anal_result_seq.nextval,?,?,?,?,?,?)";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getId());
+			psmt.setString(2, dto.getOriginal_data());
+			psmt.setString(3, dto.getScore_insert());
+			psmt.setString(4, dto.getScore_public());
+			psmt.setString(5, dto.getScore_spec());
+			psmt.setString(6, dto.getResult());
+			cnt = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
 }
