@@ -51,6 +51,17 @@
 .col-md-10{
 	 line-height: 3em;
 }
+#video {
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     min-width: 100%;
+     min-height: 100%;
+     width: 100%;
+     height: 100%;
+     z-index: -1;
+     overflow: hidden;
+}
 
 </style>
 <script
@@ -110,7 +121,10 @@
    <!-- Navigation End  -->
 		
 		<!-- Main jumbotron for a primary marketing message or call to action -->
-		<section class="main-banner" style="background:#242c36 url(img/main.jpg) no-repeat">
+		<section class="main-banner"> <!-- style="background:url(img/main.jpg) no-repeat" -->
+			<video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+      <source src="img/coverr-sparks.mp4">
+	</video>
 			<div class="container">
 				<div class="caption">
 					<h2>°í ¼Ò °¢</h2>
@@ -235,9 +249,6 @@
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua.</p>
 					</div>
 				</div> -->
-			
-			</div>
-		</section>
 		
 		<!-- <section class="counter">
 			<div class="container">
@@ -566,8 +577,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</section> -->
+			</div>-->
+		</section> 
 
 
 			
