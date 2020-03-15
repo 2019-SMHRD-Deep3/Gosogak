@@ -1,3 +1,5 @@
+<%@page import="com.model.CounselDTO"%>
+<%@page import="com.model.CounselDAO"%>
 <%@page import="com.model.PostDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.PostDAO"%>
@@ -42,6 +44,17 @@
 	width: 50%;
 	margin: auto;
 }
+
+th {
+	padding: 1px;
+	border-bottom: 1px solid #333;
+}
+
+td {
+	padding: 1px;
+	border-bottom: 1px solid lightgray;
+}
+
 </style>
 
 </head>
@@ -136,14 +149,12 @@
 			<div class="loginre">
 				<h3>로그인이 필요합니다.</h3>
 				<hr>
-				<br>
-				<br>
+				<br> <br>
 				<form action="LoginService.do">
 					<input type="text" class="form-control input-lg"
 						placeholder="User Name" name="id" width="150px"> <input
 						type="password" class="form-control input-lg"
-						placeholder="Password" name="pw"><br>
-					<br>
+						placeholder="Password" name="pw"><br> <br>
 					<div align="center">
 						<button type="submit" class="btn btn-primary" name="myinfo">Login</button>
 					</div>
@@ -181,19 +192,32 @@
 				</div>
 				<div class="basic-information">
 					<ul class="information">
-						<h3>분석정보</h3>
-						<br> 분석결과가 없습니다.
-						<%
-							PostDAO dao = new PostDAO();
-								ArrayList<PostDTO> list = dao.selectPost(info.getId());
-								for (int i = list.size() - 1; i >= 0; i--) {
-						%>
-						<li><%=list.get(i).getPost_cd()%>: <%=list.get(i).getPost_title()%>
-							<%=list.get(i).getPost_content()%> <%=list.get(i).getPost_dt()%>
-						</li>
-						<%
-							}
-						%>
+						<h3>나의 상담 내역</h3>
+						<table>
+							<tr>
+								<th></th>
+								<th>상담사</th>
+								<th>제목</th>
+								<th>내용</th>
+								<th>날짜</th>
+							</tr>
+
+							<%
+								CounselDAO counseldao = new CounselDAO();
+									ArrayList<CounselDTO> list = counseldao.selectCounsel(info.getId());
+									for (int i = list.size() - 1; i >= 0; i--) {
+							%>
+							<tr>
+								<td><%=list.get(i).getCounsel_cd()%>.</td>
+								<td><%=list.get(i).getCounsel_manager()%></td>
+								<td><%=list.get(i).getCounsel_title()%></td>
+								<td><%=list.get(i).getCounsel_content()%></td>
+								<td><%=list.get(i).getCounsel_dt()%></td>
+							</tr>
+							<%
+								}
+							%>
+						</table>
 					</ul>
 				</div>
 				<%
@@ -203,7 +227,7 @@
 				<!-- </div> -->
 			</div>
 			<!-- 	</section> -->
-			</div>
+		</div>
 	</section>
 	<!-- <div class="row top-pad">
                <div class="filter">
@@ -487,7 +511,7 @@
                <input type="button" class="btn brows-btn" value="Brows All Jobs" />
             </div>
          </div> -->
-         
+
 
 
 	<!-- footer start -->
