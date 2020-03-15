@@ -74,7 +74,7 @@ th {
 					<%
 						}
 					%>
-					<li><a href="result.jsp">분석 결과</a></li>
+					<li><a href="result.jsp">분석 하기</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">메뉴</a>
 						<ul class="dropdown-menu animated fadeOutUp"
@@ -107,9 +107,9 @@ th {
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
 		<div class="container">
 			<div class="caption">
-				<h2>Get your jobs</h2>
+				<h2>공개 상담 게시판</h2>
 				<p>
-					Get your Popular jobs <span>202 New job</span>
+					건전한 인터넷 문화를 만들어 갑시다 <span>욕설,타인비방,악성루머,성적 게시글 무통보 삭제</span>
 				</p>
 			</div>
 		</div>

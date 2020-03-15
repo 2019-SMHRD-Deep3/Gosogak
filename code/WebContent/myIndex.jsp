@@ -81,7 +81,7 @@
 					<%
 						}
 					%>
-					<li><a href="result.jsp">분석 결과</a></li>
+					<li><a href="result.jsp">분석 하기</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">메뉴</a>
 						<ul class="dropdown-menu animated fadeOutUp"
