@@ -48,12 +48,21 @@
 	width:13% !important;
 	margin-left: 1% !important;
 }
-.features-content{
-	width:80% !important;
-}
 .col-md-10{
 	 line-height: 3em;
 }
+#video {
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     min-width: 100%;
+     min-height: 100%;
+     width: 100%;
+     height: 100%;
+     z-index: -1;
+     overflow: hidden;
+}
+
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -73,7 +82,7 @@
                <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-               class="logo" alt=""></a>
+                alt=""></a>
          </div>
          <!-- End Header Navigation -->
 
@@ -112,13 +121,17 @@
    <!-- Navigation End  -->
 		
 		<!-- Main jumbotron for a primary marketing message or call to action -->
-		<section class="main-banner" style="background:#242c36 url(img/slider-01.jpg) no-repeat">
+		<section class="main-banner"> <!-- style="background:url(img/main.jpg) no-repeat" -->
+			<video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+      <source src="img/coverr-sparks.mp4">
+	</video>
 			<div class="container">
 				<div class="caption">
 					<h2>고 소 각</h2>
-					
+					<br><br>
 					<form action="result.jsp" method="post">
 					<input type="submit" class="btn seub-btn" value="시작하기"/>
+					<br><br><br>
 					</form>
 				</div>
 			</div>
@@ -129,6 +142,8 @@
 
 		<section class="newsletter">
 			<div class="container">
+			<div class="features-content" id="goso">
+				<span class="box1"><span aria-hidden="true" class="icon-printer"></span></span>
 				<div class="row">
 					<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
 					<h2>1. 고소각 이란 어떤 서비스인가요? </h2><br>
@@ -136,8 +151,10 @@
                            <a class="link" href="https://glaw.scourt.go.kr/wsjo/lawod/sjo190.do?contId=3201160&q=%EC%A0%95%EB%B3%B4%ED%86%B5%EC%8B%A0%EB%A7%9D%EC%9D%B4%EC%9A%A9%EC%B4%89%EC%A7%84%EB%B0%8F%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EB%B2%95%EB%A5%A0&nq=&w=lawod&section=lawod_nm&subw=&subsection=&subId=1&csq=&groups=2,3&category=&outmax=1&msort=&onlycount=&sp=&d1=&d2=&d3=&d4=&d5=&pg=1&p1=&p2=&p3=&p4=02&p5=&p6=&p7=&p8=&p9=&p10=&p11=&p12=&sysCd=&tabGbnCd=&saNo=&joNo=&lawNm=&hanjaYn=N&userSrchHistNo=&poption=&srch=&range=&daewbyn=N&smpryn=N&idgJyul=01&newsimyn=Y&tabId=&save=Y&bubNm=#1583915955660"><정보통신망 이용촉진 및 정보보호 등에 관한 법률></a>을 기반으로 
 						     머신러닝을 통해 고소가능 여부를 판단해주는 시스템입니다.
 						   서비스의 결과는 참고자료로 사용하시고 판결 결과는 실제와 다를 수 있으니 변호사와의 상담을 추천드립니다.</p><br>
+					<span class="box1"><span aria-hidden="true" class="icon-dial"></span></span>
 					<h2>2. 고소각은 어떻게 사용하나요? </h2><br>
 					<p>자신의 아이디를 입력하고 사이트의 유형을 선택한 후 알고 싶은 댓글을 넣고 분석하기를 누르면 결과를 확인할 수 있습니다. </p><br>
+					<span class="box1"><span aria-hidden="true" class="icon-search"></span></span>
 					<h2>3. 고소각은 어떻게 분석하나요?</h2><br>
 					<p>고소각 머신러닝은 네이버,유튜브 등 다양한 커뮤니티 사이트에서 댓글을 크롤링하여 6만개 가량의 자료를 수집하고
 					KNN모델을 사용하여 학습시켜 정확도 90%를 보여주는 모델입니다. 위 서비스는 앞으로도 꾸준히 자료를 수집하고 업데이트하여
@@ -148,6 +165,7 @@
 							<button type="button" class="btn btn-default">subscribe!</button>
 						</span>
 					</div> -->
+					</div>
 					</div>
 				</div>
 			</div>
@@ -203,7 +221,7 @@
 						<p><b>1. 모욕죄</b><br><br>
 상대방에 대하여 욕, 조롱 또는 악평을 가하는 등 구체적인 사실을 적시하지 않고 추상적 판단, 경멸적 감정 표현을 언급할 때 성립될 수 있습니다.
 
-모욕죄에 해당하는 경우 1년 이하의 징역형이나 금고, 200만 원 이하의 벌금형을 받을 수 있습니다.<br><br>
+모욕죄에 해당하는 경우 1년 이하의 징역형이나 금고, 200만 원 이하의 벌금형을 받을 수 있습니다.<br><br><br>
 
 <b>2. 명예훼손죄</b><br><br>
 허위 사실이 아니라 진실한 사실이라도 공공연하게 이야기하는 것이 당사자의 사회적 명예를 훼손하는 것이라면 성립되는 범죄입니다.
@@ -217,9 +235,9 @@
 					<div class="features-content">
 						<span class="box1"><span aria-hidden="true" class="icon-search"></span></span>
 						<h3>악플 고소 절차</h3><br>
-						<p>일반적인 모욕죄와 명예훼손에 해당하는 경우에는 상대방의 인적 사항을 확보하여 명예훼손을 한 사실을 바탕으로 고소장을 작성하여 경찰서에 접수를 하면 됩니다.
+						<p>일반적인 모욕죄와 명예훼손에 해당하는 경우에는 상대방의 인적 사항을 확보하여 명예훼손을 한 사실을 바탕으로 고소장을 작성하여 경찰서에 접수를 하면 됩니다.<br>
 
-하지만 문제는 바로 모욕, 명예를 훼손한 사람이 익명의 아이디를 사용한다면 상대방을 특정하기 힘들기 때문에 악플러 고소 절차를 진행하기 힘들 수 있습니다. 이러한 경우 수사기관에 해당 아이디를 사용한 사람의 인적 사항을 확보, 소환하여 조사하는 수사를 진행하고, 최종적으로 처벌을 받을 수 있도록 하여야 합니다.<br>
+하지만 문제는 바로 모욕, 명예를 훼손한 사람이 익명의 아이디를 사용한다면 상대방을 특정하기 힘들기 때문에 악플러 고소 절차를 진행하기 힘들 수 있습니다.<br> 이러한 경우 수사기관에 해당 아이디를 사용한 사람의 인적 사항을 확보, 소환하여 조사하는 수사를 진행하고, 최종적으로 처벌을 받을 수 있도록 하여야 합니다.<br>
 법적 대응을 하고자 할 때는 사건의 객관적인 증거와 정황, 그리고 법적으로 어떤 것에 해당하는지를 정확히 아는 법적 지식이 필요합니다. 본인의 힘으로 판단하고자 하면 불분명함 때문에 손해를 입을 수 있으므로 변호인과 조력하여 해당 내용을 검토하여 성립 요건이 해당이 되는지, 전문적으로 파헤쳐 볼 필요가 있습니다.</p>
 					</div>
 				</div> 
@@ -231,9 +249,6 @@
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqua.</p>
 					</div>
 				</div> -->
-			
-			</div>
-		</section>
 		
 		<!-- <section class="counter">
 			<div class="container">
@@ -562,8 +577,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</section> -->
+			</div>-->
+		</section> 
 
 
 			

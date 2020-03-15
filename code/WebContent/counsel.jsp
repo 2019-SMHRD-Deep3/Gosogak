@@ -115,8 +115,8 @@ a.facebook1 {
 
 <body>
 	<%
-      MemberDTO info = (MemberDTO) session.getAttribute("info");
-   %>
+		MemberDTO info = (MemberDTO) session.getAttribute("info");
+	%>
 	<!-- Navigation Start  -->
 	<nav class="navbar navbar-default navbar-sticky bootsnav">
 
@@ -138,16 +138,16 @@ a.facebook1 {
 					data-out="fadeOutUp">
 					<li><a href="index.jsp">메인 화면</a></li>
 					<%
-                  if (info == null) {
-               %>
+						if (info == null) {
+					%>
 					<li><a href="login.jsp">로그인</a></li>
 					<%
-                  } else {
-               %>
+						} else {
+					%>
 					<li><a href="LogoutService.do">로그아웃</a></li>
 					<%
-                  }
-               %>
+						}
+					%>
 					<li><a href="result.jsp">분석 결과</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">메뉴</a>
@@ -159,9 +159,15 @@ a.facebook1 {
 						</ul></li>
 					<li><div
 							style="float: right; margin-top: 15%; margin-right: -50%;">
-							<%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
-							<%}else {%>
-							<%} %>
+							<%
+								if (info != null) {
+							%><%=info.getNm()%>님 환영합니다.
+							<%
+								} else {
+							%>
+							<%
+								}
+							%>
 						</div></li>
 				</ul>
 			</div>
@@ -169,6 +175,19 @@ a.facebook1 {
 		</div>
 	</nav>
 	<!-- Navigation End  -->
+
+	<script type="text/javascript" src=js/jquery.min.js></script>
+	<script>
+		if ('<%=info%>' == 'null') {
+			$(function() {
+				$(".btn").on("click", function() {
+					var check = confirm('로그인이 필요한 서비스입니다.');
+				});
+			});
+		} 
+	</script>
+
+
 
 	<!-- Main jumbotron for a primary marketing message or call to action -->
 	<section class="inner-banner"
@@ -188,43 +207,44 @@ a.facebook1 {
 		<div class="container">
 			<!-- 				<div class="col-md-12">
 					<div class="row"> -->
-			<div class="basic-information">
-				<div class="col-md-3 col-sm-3">
-					<img src="img/intae.PNG" alt="" class="img-responsive">
-				</div>
-				<div class="col-md-9 col-sm-9">
-					<div class="profile-content">
-						<h3>
-							안인태<span>상담사</span>
-						</h3>
-						<p>악플고소 전문 상담사</p>
-						<ul class="information">
-							<li><span>Name:</span>안인태</li>
-							<li><span>Email:</span>gmggcov@naver.com</li>
-							<li><span>Mobile:</span>010-6604-6501</li>
-							<br>
-						</ul>
+			<%
+				if (info == null) {
+			%>
+			<form action="login.jsp">
+				<%
+					}else{
+				%><form action="counselPost.jsp"><%} %>
+				<div class="basic-information">
+					<div class="col-md-3 col-sm-3">
+						<img src="img/intae.PNG" alt="" class="img-responsive">
 					</div>
-				</div>
-				
-				<form action="login.jsp">
+					<div class="col-md-9 col-sm-9">
+						<div class="profile-content">
+							<h3>
+								안인태<span>상담사</span>
+							</h3>
+							<p>악플고소 전문 상담사</p>
+							<ul class="information">
+								<li><span>Name:</span>안인태</li>
+								<li><span>Email:</span>gmggcov@naver.com</li>
+								<li><span>Mobile:</span>010-6604-6501</li>
+								<br>
+							</ul>
+						</div>
+					</div>
+					<button type="submit" class="btn brows-btn" name="counsel" value="안인태">상담하기</button>
+			</form>
 
-					<button type="submit" class="btn brows-btn" name="detail"
-						value="community">상담하기</button>
-
-				</form>
 
 
-
-
-				<!-- <ul class="social"> -->
-				<!-- <li><a href="" class="facebook1"><i class="fa fa-facebook"></i></a></li> -->
-				<!-- 	<li><a href="" class="google"><i class="fa fa-google-plus"></i></a></li>
+			<!-- <ul class="social"> -->
+			<!-- <li><a href="" class="facebook1"><i class="fa fa-facebook"></i></a></li> -->
+			<!-- 	<li><a href="" class="google"><i class="fa fa-google-plus"></i></a></li>
 								<li><a href="" class="twitter"><i class="fa fa-twitter"></i></a></li> -->
-				<!-- 		<li><a href="" class="linkedin"><i class="fa fa-linkedin"></i>Linked In</a></li> -->
-				<!-- <li><a href="" class="instagram"><i class="fa fa-instagram"></i></a></li> -->
-				<!-- </ul> -->
-				<!-- <div class="panel panel-default">
+			<!-- 		<li><a href="" class="linkedin"><i class="fa fa-linkedin"></i>Linked In</a></li> -->
+			<!-- <li><a href="" class="instagram"><i class="fa fa-instagram"></i></a></li> -->
+			<!-- </ul> -->
+			<!-- <div class="panel panel-default">
 								<div class="panel-heading">
 									<i class="fa fa-user fa-fw"></i> About Me
 								</div>
@@ -234,28 +254,100 @@ a.facebook1 {
 								</div>
 							</div> -->
 
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<i class="fa fa-leaf fa-fw"></i> 이력:
-					</div>
-					<!-- /.panel-heading -->
-					<div class="panel-body">
-						<p></p>
-						<ul>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-					</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-leaf fa-fw"></i> 이력:
+				</div>
+				<!-- /.panel-heading -->
+				<div class="panel-body">
+					<p></p>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
 				</div>
 			</div>
-			<!-- 	</div> -->
-			<!-- 				</div>
+		</div>
+		<!-- 	</div> -->
+		<!-- 				</div>
 			</div> -->
-			<!-- 		</section> -->
+		<!-- 		</section> -->
 
-			<!-- 		<section class="profile-detail">
+		<!-- 		<section class="profile-detail">
 			<div class="container"> -->
+		<!-- 				<div class="col-md-12">
+					<div class="row"> -->
+		<div class="basic-information">
+			<div class="col-md-3 col-sm-3">
+				<img src="img/intae.PNG" alt="" class="img-responsive">
+			</div>
+			<div class="col-md-9 col-sm-9">
+				<div class="profile-content">
+					<h3>
+						천승현<span>상담사</span>
+					</h3>
+					<p>악플고소 전문 상담사</p>
+					<ul class="information">
+						<li><span>Name:</span>천승현</li>
+						<li><span>Email:</span>gmggcov@naver.com</li>
+						<li><span>Mobile:</span>010-6604-6501</li>
+						<br>
+					</ul>
+				</div>
+			</div>
+
+			<%
+				if (info == null) {
+			%>
+			<form action="login.jsp">
+				<%
+					}else{
+				%><form action="counselPost.jsp"><%} %>
+				<button type="submit" class="btn brows-btn" name="counsel"
+					value="천승현">상담하기</button>
+
+			</form>
+
+			<!-- <ul class="social">
+								<li><a href="" class="facebook1"><i class="fa fa-facebook"></i></a></li> -->
+			<!-- 		<li><a href="" class="google"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="" class="twitter"><i class="fa fa-twitter"></i></a></li> -->
+			<!-- 		<li><a href="" class="linkedin"><i class="fa fa-linkedin"></i>Linked In</a></li> -->
+			<!-- 		<li><a href="" class="instagram"><i class="fa fa-instagram"></i></a></li> -->
+			<!-- </ul> -->
+			<!-- <div class="panel panel-default">
+								<div class="panel-heading">
+									<i class="fa fa-user fa-fw"></i> About Me
+								</div>
+													/.panel-heading
+								<div class="panel-body">
+								<p>The front end is the part that users see and interact with, includes the User Interface, the animations, and usually a bunch of logic to talk to the backend. It is the visual bit that the user interacts with. This includes the design, images, colours, buttons, forms, typography, animations and content. It’s basically everything that you as a user of the website can see.</p>	
+								</div>
+							</div> -->
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-leaf fa-fw"></i> 이력:
+				</div>
+				<!-- /.panel-heading -->
+				<div class="panel-body">
+					<p></p>
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 					</div> -->
+		<!-- 				</div>
+			</div> -->
+		<!-- 		</section> -->
+
+		<!-- <section class="profile-detail"> -->
+		<div class="container">
 			<!-- 				<div class="col-md-12">
 					<div class="row"> -->
 			<div class="basic-information">
@@ -265,32 +357,35 @@ a.facebook1 {
 				<div class="col-md-9 col-sm-9">
 					<div class="profile-content">
 						<h3>
-							천승현<span>상담사</span>
+							방세미<span>상담사</span>
 						</h3>
 						<p>악플고소 전문 상담사</p>
 						<ul class="information">
-							<li><span>Name:</span>천승현</li>
+							<li><span>Name:</span>방세미</li>
 							<li><span>Email:</span>gmggcov@naver.com</li>
 							<li><span>Mobile:</span>010-6604-6501</li>
 							<br>
 						</ul>
 					</div>
 				</div>
-				
-				<form action="login.jsp">
 
-					<button type="submit" class="btn brows-btn" name="detail"
-						value="community">상담하기</button>
+				<%
+				if (info == null) {
+			%>
+			<form action="login.jsp">
+				<%
+					}else{
+				%><form action="counselPost.jsp"><%} %>
+					<button type="submit" class="btn brows-btn" name="counsel" value="방세미">상담하기</button>
 
 				</form>
-				
-				<!-- <ul class="social">
+				<!-- 			<ul class="social">
 								<li><a href="" class="facebook1"><i class="fa fa-facebook"></i></a></li> -->
-				<!-- 		<li><a href="" class="google"><i class="fa fa-google-plus"></i></a></li>
+				<!-- 			<li><a href="" class="google"><i class="fa fa-google-plus"></i></a></li>
 								<li><a href="" class="twitter"><i class="fa fa-twitter"></i></a></li> -->
 				<!-- 		<li><a href="" class="linkedin"><i class="fa fa-linkedin"></i>Linked In</a></li> -->
-				<!-- 		<li><a href="" class="instagram"><i class="fa fa-instagram"></i></a></li> -->
-				<!-- </ul> -->
+				<!-- 	<li><a href="" class="instagram"><i class="fa fa-instagram"></i></a></li> -->
+				<!-- 	</ul> -->
 				<!-- <div class="panel panel-default">
 								<div class="panel-heading">
 									<i class="fa fa-user fa-fw"></i> About Me
@@ -316,73 +411,7 @@ a.facebook1 {
 					</div>
 				</div>
 			</div>
-			<!-- 					</div> -->
-			<!-- 				</div>
-			</div> -->
-			<!-- 		</section> -->
-
-			<!-- <section class="profile-detail"> -->
-			<div class="container">
-				<!-- 				<div class="col-md-12">
-					<div class="row"> -->
-				<div class="basic-information">
-					<div class="col-md-3 col-sm-3">
-						<img src="img/intae.PNG" alt="" class="img-responsive">
-					</div>
-					<div class="col-md-9 col-sm-9">
-						<div class="profile-content">
-							<h3>
-								방세미<span>상담사</span>
-							</h3>
-							<p>악플고소 전문 상담사</p>
-							<ul class="information">
-								<li><span>Name:</span>방세미</li>
-								<li><span>Email:</span>gmggcov@naver.com</li>
-								<li><span>Mobile:</span>010-6604-6501</li>
-								<br>
-							</ul>
-						</div>
-					</div>
-
-					<form action="counslePost.jsp">
-
-						<button type="submit" class="btn brows-btn" name="detail"
-							value="">상담하기</button>
-
-					</form>
-					<!-- 			<ul class="social">
-								<li><a href="" class="facebook1"><i class="fa fa-facebook"></i></a></li> -->
-					<!-- 			<li><a href="" class="google"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="" class="twitter"><i class="fa fa-twitter"></i></a></li> -->
-					<!-- 		<li><a href="" class="linkedin"><i class="fa fa-linkedin"></i>Linked In</a></li> -->
-					<!-- 	<li><a href="" class="instagram"><i class="fa fa-instagram"></i></a></li> -->
-					<!-- 	</ul> -->
-					<!-- <div class="panel panel-default">
-								<div class="panel-heading">
-									<i class="fa fa-user fa-fw"></i> About Me
-								</div>
-													/.panel-heading
-								<div class="panel-body">
-								<p>The front end is the part that users see and interact with, includes the User Interface, the animations, and usually a bunch of logic to talk to the backend. It is the visual bit that the user interacts with. This includes the design, images, colours, buttons, forms, typography, animations and content. It’s basically everything that you as a user of the website can see.</p>	
-								</div>
-							</div> -->
-
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<i class="fa fa-leaf fa-fw"></i> 이력:
-						</div>
-						<!-- /.panel-heading -->
-						<div class="panel-body">
-							<p></p>
-							<ul>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+		</div>
 		</div>
 		<!-- </div> -->
 		<!-- 		</section> -->

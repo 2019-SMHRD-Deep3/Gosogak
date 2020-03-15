@@ -81,16 +81,15 @@
 						type="text" class="form-control input-lg" placeholder="User Name"
 						name="id"> <input type="password"
 						class="form-control input-lg" placeholder="Password" name="pw">
-
 					<%
-						if (request.getParameter("detail") == "community") {
+						if (request.getParameter("detail") != null) {
 					%>
 					<button type="submit" class="btn btn-primary" name="detail"
-						value="community">Login</button>
+						value="result">Login</button>
 					<%
-						} else if (request.getParameter("detail") == "result") {
+						} else if (request.getParameter("counsel") != null) {
 					%>
-					<button type="submit" class="btn btn-primary" name="detail"
+					<button type="submit" class="btn btn-primary" name="counsel"
 						value="result">Login</button>
 					<%
 						} else {

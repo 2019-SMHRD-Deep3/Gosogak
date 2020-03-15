@@ -20,19 +20,21 @@
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/main.css">
 <style type="text/css">
-#board{
+#board {
 	text-align: center;
 }
-#bList{	
-	border-top : 1px solid;
+
+#bList {
+	border-top: 1px solid;
 	border-bottom: 1px solid;
 	bordercolor: lightgray;
 	width: 100%;
 }
-th{
+
+th {
 	text-align: center;
 	background-color: lightgray;
-	}
+}
 </style>
 
 </head>
@@ -147,11 +149,7 @@ th{
 
 							<!-- 글목록 위 부분-->
 							<br>
-                     <div class="post_read">
-                        <table class="post">
-                        </table>
-                     </div>
-
+							<div class="post_load"></div>
 							<!-- 게시글 목록 부분 -->
 							<br>
 							<div id="board">
@@ -164,7 +162,6 @@ th{
 									</tr>
 									<%
 										PostDAO dao = new PostDAO();
-										PostDTO p_info = (PostDTO) session.getAttribute("p_info");
 										ArrayList<PostDTO> list = dao.selectAll();
 									%>
 									<c:forEach var="board">
@@ -456,57 +453,35 @@ th{
 		        td.each(function(i){
 		            tdArr.push(td.eq(i).text());
 		        });
-
+		        
 		        var num = td.eq(0).text();
-		        var title = td.eq(1).text();
-		        var content = td.eq(2).text();
-		        var writer = td.eq(3).text();
-		        var writeDate = td.eq(4).text();
-				
+		      
 				$.ajax({
 					url : "ReadPostCon.do",
 					type : "POST",
 					dataType : "text",
 					data : "num="+num,
 					success : function() {
-						console.log(num);
+						console.log("성공");
+						var p_id = '${click_p_info_id}';
+						alert(p_id);
+						/* $('.post').remove(load);
+						var post = '<table class="post" width="700" border="3" bordercolor="lightgray" align="center"></table>';
+						$('.post_load').append(post);
+						var load = '<tr class="posttr"><td>'+ '글번호' + '</td><td>' + num + '</td></tr>'
+						+'<tr class="posttr"><td>'+ '작성자' + '</td><td>' + p_id + '</td></tr>'
+						+'<tr class="posttr"><td>'+ '작성날짜' + '</td><td>' + 'writeDate' + '</td></tr>'
+						+'<tr class="posttr"><td>'+ '제목' + '</td><td>' + 'title' + '</td></tr>'
+						+'<tr class="posttr"><td>'+ '내용' + '</td><td>' + 'content' + '</td></tr>';
+						$('.post').append(load); */
 						
-						
-						/* $('#list').empty();
-						for (var i = result.length - 1; i >= 0; i--) {
-							var item = '<li><span>' + result[i].id + '</span>:'
-									+ result[i].content + '</li>';
-							$('#list').append(item);} */
 					},
 					error : function() {
 						console.log("error");
 					}
 				});
-		        
-		 	/* $("ReadPostCon.do"); */
-			/* $(this).css({"background-color":"#0ff"});
-			var num = document.querySelector('.post_cd').value;
-			console.log(num);  */
-			/* $('post_read').append('<tr>'+'test'+'</tr>'); */
-				<%-- <table width="700" border="3" bordercolor="lightgray"
-					align="center">
-					<tr>
-						<td id="id">작성자</td>
-						<td><%=p_info.getPost_id()%></td>
-					</tr>
-					<tr>
-					<td id="dt">작성일</td>
-					<td><%=p_info.getPost_dt()%></td>
-				</tr>
-					<tr>
-						<td id="title">제 목</td>
-						<td><%=p_info.getPost_title()%></td>
-					</tr>
-					<tr>
-						<td id="title">내 용</td>
-						<td><%=p_info.getPost_content()%></td>
-					</tr> --%>
-		})
+				
+		});
 	</script>
 </body>
 </html>

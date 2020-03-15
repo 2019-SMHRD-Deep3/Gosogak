@@ -61,6 +61,8 @@ height:100%;
 <body>
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
+	response.setCharacterEncoding("EUC-KR");
+		request.setCharacterEncoding("EUC-KR");
 	%>
 	<!-- Navigation Start  -->
 	<nav class="navbar navbar-default navbar-sticky bootsnav">
@@ -146,6 +148,7 @@ height:100%;
 
 
 
+
 						<form method="post" action="InsertCounselCon.do" name="boardForm">
 							<input type="hidden" name="board_id"
 								value="${sessionScope.sessionID}">
@@ -156,10 +159,9 @@ height:100%;
 								</tr>
 								<tr>
 									<td id="title">惑淬荤</td>
-									<td><input name="counsel_manager" size="90%"/></td>
+									<td ><input style="border:none" name="counselorName" placeholder="<%=request.getParameter("counsel") %>" value="<%=request.getParameter("counsel") %>"></td>
 								</tr>
-								<tr>
-									<td id="title">力 格</td>
+								<tr>									<td id="title">力 格</td>
 									<td><input name="counsel_title" type="text"
 										size="90%" /></td>
 								</tr>

@@ -21,29 +21,53 @@ public class ReadPostCon implements ICommand {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		String moveURL = null;
-		int post_cd =  Integer.parseInt(request.getParameter("num"));
-		
+		int post_cd = Integer.parseInt(request.getParameter("num"));
+
 //		System.out.println(post_cd);
 		
 		PostDAO dao = new PostDAO();
 		PostDTO dto = new PostDTO(post_cd);
-		PostDTO p_info = dao.selectOne(post_cd);
-		
+		PostDTO click_p_info = dao.selectOne(post_cd);
+		String click_p_info_id = click_p_info.getPost_id();
+		String click_p_info_cd = Integer.toString(click_p_info.getPost_cd());
+		String click_p_info_title = click_p_info.getPost_title();
+		String click_p_info_content = click_p_info.getPost_content();
+		String click_p_info_dt = click_p_info.getPost_dt();
+
 //		ArrayList<ChatDTO> list = dao.select();
 //		Gson gson = new Gson();
 //		String value = gson.toJson(list);
 //		response.getWriter().print(value);
-		if (p_info != null) {
-			System.out.println(p_info.getPost_cd());
-			System.out.println(p_info.getPost_title());
-			System.out.println(p_info.getPost_content());
-			System.out.println(p_info.getPost_dt());
-			System.out.println(p_info.getPost_id());
-			HttpSession session = request.getSession();
-			session.setAttribute("p_info", p_info);
-		}else {
-			System.out.println("실패");
-		}
+		HttpSession session = request.getSession();
+		session.removeAttribute("click_p_info_id");
+		session.setAttribute("click_p_info_id", click_p_info_id);
+//		session.setAttribute("click_p_info_id", click_p_info_id);
+//		if(session.getAttribute("click_p_info_id") != null) {
+//				session.removeAttribute("click_p_info_id");
+//				System.out.println(click_p_info_id);
+//		}
+//		session.setAttribute("click_p_info_cd", click_p_info_cd);
+//		session.setAttribute("click_p_info_title", click_p_info_title);
+//		session.setAttribute("click_p_info_content", click_p_info_content);
+//		session.setAttribute("click_p_info_dt", click_p_info_dt);
+//		session.setAttribute("click_p_info", click_p_info);
+
+//		if (click_p_info != null) {
+//		session.removeAttribute("click_p_info");
+//			HttpSession session = request.getSession();
+//			session.setAttribute("click_p_info", click_p_info);
+//			session.setAttribute("click_p_info_cd", click_p_info_cd);
+//			session.setAttribute("click_p_info_title", click_p_info_title);
+//			session.setAttribute("click_p_info_content", click_p_info_content);
+//			session.setAttribute("click_p_info_dt", click_p_info_dt);
+			System.out.println(click_p_info_id);
+//			System.out.println(click_p_info2.getPost_title());
+//			System.out.println(click_p_info2.getPost_content());
+//			System.out.println(click_p_info2.getPost_dt());
+//			System.out.println(click_p_info2.getPost_id());
+//		} else {
+//			System.out.println("실패");
+//		}
 		moveURL = "community.jsp";
 		return moveURL;
 	}
