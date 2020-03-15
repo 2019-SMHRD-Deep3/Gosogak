@@ -159,10 +159,9 @@ height:100%;
 								</tr>
 								<tr>
 									<td id="title">惑淬荤</td>
-									<td><%=request.getParameter("counsel") %></td>
+									<td ><input style="border:none" name="counselorName" placeholder="<%=request.getParameter("counsel") %>" value="<%=request.getParameter("counsel") %>"></td>
 								</tr>
-								<tr>
-									<td id="title">力 格</td>
+								<tr>									<td id="title">力 格</td>
 									<td><input name="counsel_title" type="text"
 										size="90%" /></td>
 								</tr>
