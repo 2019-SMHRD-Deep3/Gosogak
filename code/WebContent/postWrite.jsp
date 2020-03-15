@@ -17,6 +17,48 @@
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/main.css">
 
+<style>
+input{
+border:none;}
+table {
+	border-collapse: separate;
+}
+#title{
+padding:0.5%;
+width:10%;
+text-align:center;
+}
+#post_title {
+	width:90%;
+	text-align:center;
+}
+textarea{
+width:98.6%;
+height:100%;
+}
+.btn2 {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background: gray;
+	color: #ffffff;
+	text-transform: uppercase;
+	text-shadow: none;
+	line-height: 1.2;
+	margin-bottom:10px;
+	padding: 10px 20px;
+}
+
+.btn2:hover {
+	background: #da0833;
+}
+</style>
 </head>
 
 <body>
@@ -100,15 +142,14 @@
 						<form method="post" action="InsertPostCon.do" name="boardForm">
 							<input type="hidden" name="board_id"
 								value="${sessionScope.sessionID}">
-							<table width="700" border="3" bordercolor="lightgray"
-								align="center">
-								<tr>
+							<table width="80%" bordercolor="lightgray" align="center">
+								<tr border>
 									<td id="title">작성자</td>
 									<td><%=info.getNm() %></td>
 								</tr>
 								<tr>
 									<td id="title">제 목</td>
-									<td><input name="post_title" type="text" size="70" maxlength="100"/></td>
+									<td><input name="post_title" size="90%"/></td>
 								</tr>
 								<tr>
 									<td id="title">내 용</td>
@@ -121,9 +162,9 @@
 								</tr> -->
 
 								<tr align="center" valign="middle">
-									<td colspan="5"><input type="reset" value="작성취소">
-										<input type="submit" value="등록"> <input type="button"
-										value="목록"></td>
+									<td colspan="5"><input class="btn2" type="reset" value="취소">
+										<input class="btn2" type="button"value="목록">
+										<input class="btn2" type="submit" value="등록"> </td>
 								</tr>
 							</table>
 						</form>

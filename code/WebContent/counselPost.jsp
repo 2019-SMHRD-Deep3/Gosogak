@@ -18,11 +18,13 @@
 <link rel="stylesheet" href="css/main.css">
 
 <style>
+input{
+border:none;}
 table {
 	border-collapse: separate;
 }
 td{
-padding:0.5%
+padding:0.5%;
 }
 #title {
 	width:10%;
@@ -159,9 +161,9 @@ height:100%;
 								</tr>
 								<tr>
 									<td id="title">惑淬荤</td>
-									<td ><input style="border:none" name="counselorName" placeholder="<%=request.getParameter("counsel") %>" value="<%=request.getParameter("counsel") %>"></td>
+									<td><input style="border:none" name="counselorName" placeholder="<%=request.getParameter("counsel") %>" value="<%=request.getParameter("counsel") %>"></td>
 								</tr>
-								<tr>									<td id="title">力 格</td>
+								<tr><td id="title" >力 格</td>
 									<td><input name="counsel_title" type="text"
 										size="90%" /></td>
 								</tr>
