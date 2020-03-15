@@ -82,7 +82,7 @@
                <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-               class="logo" alt=""></a>
+                alt=""></a>
          </div>
          <!-- End Header Navigation -->
 

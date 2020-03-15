@@ -44,9 +44,9 @@ CREATE TABLE ANALYSIS_RESULT(
                 ANALYSIS_RESULT_CD NUMBER(20) PRIMARY KEY,
                 MEMBER_ID VARCHAR2(20),
                 ORIGINAL_DATA VARCHAR2(2000),
-                SCORE_PUBLIC NUMBER(4),
-                SCORE_SPEC NUMBER(4),
-                SCORE_INSULT NUMBER(4),
+                SCORE_PUBLIC VARCHAR2(4),
+                SCORE_SPEC VARCHAR2(4),
+                SCORE_INSULT VARCHAR2(4),
                 RESULT VARCHAR2(20),
                 CONSTRAINT anal_result_member_id_fk FOREIGN KEY ("MEMBER_ID")
                 REFERENCES MEMBER ("MEMBER_ID"));
@@ -129,7 +129,11 @@ MAXVALUE 100000 ;
 INSERT INTO MEMBER
 VALUES('test','1111','±è¿¹½Ã','test@test.com','user');
 INSERT INTO MEMBER
-VALUES('manager','1111','±è°ü¸®','test@test.com','manager');
+VALUES('an','1111','¾ÈÀÎÅÂ','test@test.com','manager');
+INSERT INTO MEMBER
+VALUES('cheon','1111','Ãµ½ÂÇö','test@test.com','manager');
+INSERT INTO MEMBER
+VALUES('bang','1111','¹æ¼¼¹Ì','test@test.com','manager');
 
 
 select * from MEMBER

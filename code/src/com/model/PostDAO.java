@@ -163,7 +163,7 @@ public class PostDAO {
 
 	// 게시글 클릭
 	public PostDTO selectOne(int post_cd) {
-		PostDTO p_info = null;
+		PostDTO click_p_info = null;
 		
 		String post_title = null;
 		String post_content = null;
@@ -183,7 +183,7 @@ public class PostDAO {
 				post_content = rs.getString("POST_CONTENT");
 				post_dt = rs.getString("POST_DT");
 				post_id = rs.getString("MEMBER_ID");
-				p_info = new PostDTO(post_cd,post_title,post_content,post_dt,post_id);
+				click_p_info = new PostDTO(post_cd,post_title,post_content,post_dt,post_id);
 				
 			}
 		} catch (SQLException e) {
@@ -191,7 +191,7 @@ public class PostDAO {
 		} finally {
 			close();
 		}
-		return p_info;
+		return click_p_info;
 
 	}
 //		public ArrayList<PostDTO> selectOne(int post_cd) {

@@ -1,19 +1,17 @@
 package com.model;
 
 public class AnalysisDTO {
-	private String result_cd;
 	private String id;
 	private String original_data;
-	private int score_public;
-	private int score_spec;
-	private int score_insert;
+	private String score_public;
+	private String score_spec;
+	private String score_insert;
 	private String result;
 	
 	
-	public AnalysisDTO(String result_cd, String id, String original_data, int score_public, int score_spec,
-			int score_insert, String result) {
+	public AnalysisDTO(String id, String original_data,String score_insert, String score_public, String score_spec,
+			 String result) {
 		super();
-		this.result_cd = result_cd;
 		this.id = id;
 		this.original_data = original_data;
 		this.score_public = score_public;
@@ -22,15 +20,6 @@ public class AnalysisDTO {
 		this.result = result;
 	}
 
-
-	public String getResult_cd() {
-		return result_cd;
-	}
-
-
-	public void setResult_cd(String result_cd) {
-		this.result_cd = result_cd;
-	}
 
 
 	public String getId() {
@@ -53,32 +42,32 @@ public class AnalysisDTO {
 	}
 
 
-	public int getScore_public() {
+	public String getScore_public() {
 		return score_public;
 	}
 
 
-	public void setScore_public(int score_public) {
+	public void setScore_public(String score_public) {
 		this.score_public = score_public;
 	}
 
 
-	public int getScore_spec() {
+	public String getScore_spec() {
 		return score_spec;
 	}
 
 
-	public void setScore_spec(int score_spec) {
+	public void setScore_spec(String score_spec) {
 		this.score_spec = score_spec;
 	}
 
 
-	public int getScore_insert() {
+	public String getScore_insert() {
 		return score_insert;
 	}
 
 
-	public void setScore_insert(int score_insert) {
+	public void setScore_insert(String score_insert) {
 		this.score_insert = score_insert;
 	}
 
