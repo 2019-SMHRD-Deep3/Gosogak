@@ -139,7 +139,7 @@ height:100%;
 					
 					
 					
-						<form method="post" action="InsertPostCon.do" name="boardForm">
+						<form action="InsertPostCon.do" name="boardForm">
 							<input type="hidden" name="board_id"
 								value="${sessionScope.sessionID}">
 							<table width="80%" bordercolor="lightgray" align="center">

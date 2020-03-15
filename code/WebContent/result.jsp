@@ -239,7 +239,7 @@
 				자세한 분석결과를 보려면
 				<자세히 보기> 를 눌러주세요 
 			</p>
-			<button type="submit" class="btn brows-btn" name="detail"
+			<button type="submit" class="btn brows-btn detail" name="detail"
 				value="result">자세히 보기</button>
 		</form>
 	</div>
@@ -438,7 +438,7 @@
 		});
 		if ('<%=info%>' == 'null') {
 		$(function() {
-			$(".btn.brows-btn").on("click", function() {
+			$(".btn.brows-btn.detail").on("click", function() {
 				var check = confirm('로그인이 필요한 서비스입니다.');
 				if (check) {
 					location.href = "login.jsp";
@@ -447,8 +447,8 @@
 		});
 	} else {
 		$(function() {
-			$(".btn.brows-btn").on("click", function() {
-				$(".btn.brows-btn").hide()
+			$(".btn.brows-btn.detail").on("click", function() {
+				$(".btn.brows-btn.detail").hide()
 				$(".resultHide").slideDown()
 			});
 		});
