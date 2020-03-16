@@ -82,6 +82,7 @@ th {
 							<li class="active"><a href="myIndex.jsp">내 정보</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<li><a href="counsel.jsp">상담 신청</a></li>
+							<li><a href="myResult.jsp">나의 분석내역/상담내역</a></li>
 						</ul></li>
 					<li><div
 							style="float: right; margin-top: 15%; margin-right: -50%;">

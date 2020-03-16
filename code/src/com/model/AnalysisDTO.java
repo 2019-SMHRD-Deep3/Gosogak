@@ -9,14 +9,14 @@ public class AnalysisDTO {
 	private String result;
 	
 	
-	public AnalysisDTO(String id, String original_data,String score_insert, String score_public, String score_spec,
+	public AnalysisDTO(String id, String original_data,String score_public, String score_spec, String score_insult,
 			 String result) {
 		super();
 		this.id = id;
 		this.original_data = original_data;
 		this.score_public = score_public;
 		this.score_spec = score_spec;
-		this.score_insert = score_insert;
+		this.score_insert = score_insult;
 		this.result = result;
 	}
 
