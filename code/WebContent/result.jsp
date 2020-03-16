@@ -483,9 +483,6 @@ $(function(){
 		$(function() {
 			$(".btn.brows-btn.detail").on("click", function() {
 				var check = confirm('로그인이 필요한 서비스입니다.');
-				if (check) {
-					location.href = "login.jsp";
-				}
 			});
 		});
 	} else {
