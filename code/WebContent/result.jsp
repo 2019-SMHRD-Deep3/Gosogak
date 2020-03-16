@@ -123,6 +123,11 @@
      z-index: -1;
      overflow: hidden;
      object-fit: fill;
+}
+
+.panel.panel-default{
+	text-align: center;
+}
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -288,11 +293,11 @@
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<!-- <i class="fa fa-user fa-fw"></i> About Microsoft -->
+									<i class="fa fa-user fa-fw"></i>
 								</div>
 								<!-- /.panel-heading -->
 								<!-- <div class="panel-body">
-									<!-- <p>The front end is the part that users see and interact
+									<p>The front end is the part that users see and interact
 										with, includes the User Interface, the animations, and usually
 										a bunch of logic to talk to the backend. It is the visual bit
 										that the user interacts with.</p>
