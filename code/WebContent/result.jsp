@@ -111,6 +111,18 @@
 	padding-bottom: 11%;
 	padding-top: 11%;	
 }
+
+#video {
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     min-width: 100%;
+     min-height: 100%;
+     width: 100%;
+     height: 100%;
+     z-index: -1;
+     overflow: hidden;
+     object-fit: fill;
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -189,11 +201,14 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 
 
-<section class="main-banner"
-	style="background: #242c36 url(img/main3.jpg) no-repeat">
+<section class="main-banner">
+	<video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+      <source src="img/coverr-sparks.mp4">
+	 </video>
+	<!--  style="background: #242c36 url(img/main3.jpg) no-repeat">-->
 	<div class="container">
 		<div class="caption">
-			<h2><b>이거.. 고소 각?</b></h2>
+			<h2><b>이거.. 고소 각?</b></h2>			
 			<fieldset>
 				
 				<div class="col-md-5 col-sm-5 no-pad">
@@ -262,7 +277,7 @@
 									<h2>
 										상세 분석 결과<span>본 분석결과는 법적효력이 없으며, 참고용도로만 사용하시기 바랍니다.</span>
 									</h2>
-									<p>Now Hiring(102)</p>
+									<p></p>
 									<ul class="information">
 										<li><span>모욕성:</span><span id="insult"></span></li>
 										<li><span>공연성:</span><span id="public"></span></li>
@@ -272,25 +287,27 @@
 							</div>
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<i class="fa fa-user fa-fw"></i> About Microsoft
+									<!-- <i class="fa fa-user fa-fw"></i> About Microsoft -->
 								</div>
 								<!-- /.panel-heading -->
-								<div class="panel-body">
-									<p>The front end is the part that users see and interact
+								<!-- <div class="panel-body">
+									<!-- <p>The front end is the part that users see and interact
 										with, includes the User Interface, the animations, and usually
 										a bunch of logic to talk to the backend. It is the visual bit
 										that the user interacts with.</p>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<section align=center>				
-				<button onclick="myInsert()" class="btn2">분석결과 저장</button>
-				<form action="counsel.jsp">
-				<input type="submit" class="btn2" value="1 : 1 상담 매칭" />
-				</form>				
+			<section align=center>
+				<div>					
+				<button onclick="myInsert()" class="btn2" >분석결과 저장</button>			
+				<button onclick="location='counsel.jsp'" class="btn2" >1 : 1 상담 매칭</button>
+				<!--<input type="submit" class="btn2" value="1 : 1 상담 매칭" />-->			
+				
+				</div>							
 			</section>
 		</div>
 	</section>
