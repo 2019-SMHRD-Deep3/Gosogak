@@ -167,3 +167,4 @@ VALUES(reply_seq.nextval,1,'test','테스트용 더미 댓글 입니다. 댓글의 내용이 들어
 INSERT INTO COUNSELING
 VALUES(couns_seq.nextval,'test','manager','제목입니다.','manager:테스트용 더미 채팅내역 입니다. test:채팅내역 내용이 들어갑니다.',sysdate);
 select * from COUNSELING;
+DELETE FROM COUNSELING WHERE MEMBER_ID = 'test';
