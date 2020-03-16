@@ -63,6 +63,13 @@
      overflow: hidden;
      object-fit: fill;
 }
+.btn.seub-btn{
+	margin: 0px auto;
+	width: 13%;
+	padding-bottom: 1%;
+	padding-top: 1%;
+	font-size: 20px !important;
+}
 
 </style>
 <script
