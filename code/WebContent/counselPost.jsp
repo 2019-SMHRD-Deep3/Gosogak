@@ -210,9 +210,9 @@ background:#bc2610;
 								</tr> -->
 
 								<tr align="center" valign="middle">
-									<td colspan="5"><input class="btn2" type="reset" value="취소">
+									<td colspan="5"><input class="btn2 reset" type="reset" value="취소" >
 										<input class="btn2" type="button"value="목록">
-										<input class="btn2" type="submit" value="등록"> </td>
+										<input class="btn2 submit" type="submit" value="등록"> </td>
 								</tr>
 							</table>
 						</form>
@@ -287,6 +287,17 @@ background:#bc2610;
 			</p>
 		</div>
 	</footer>
+	
+	
+	<script type="text/javascript" src=js/jquery.min.js></script>
+<script>
+		$(function() {
+			$(".btn2.submit").on("click", function() {
+				console.log('hi');
+				alert('제출되었습니다.');
+			});
+		});
+</script>
 
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

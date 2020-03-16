@@ -54,6 +54,7 @@ public class AnalysisDAO {
 			psmt.setString(3, dto.getScore_public());
 			psmt.setString(4, dto.getScore_spec());
 			psmt.setString(5, dto.getScore_insurt());
+
 			psmt.setString(6, dto.getResult());
 			cnt = psmt.executeUpdate();
 		} catch (SQLException e) {
@@ -77,12 +78,12 @@ public class AnalysisDAO {
 				int an_cd=rs.getInt(1);
 				String an_id=rs.getString(2);
 				String an_data=rs.getString(3);
-				String an_public=rs.getString(4);
-				String an_spec=rs.getString(5);
-				String an_insult=rs.getString(6);
+				String an_insult=rs.getString(4);
+				String an_public=rs.getString(5);
+				String an_spec=rs.getString(6);
 				String an_result=rs.getString(7);
 				
-				AnalysisDTO dto=new AnalysisDTO(an_id, an_data, an_public, an_spec, an_insult, an_result);
+				AnalysisDTO dto=new AnalysisDTO(an_id, an_data, an_insult, an_public, an_spec, an_result);
 			list.add(dto);
 			}
 		} catch (SQLException e) {

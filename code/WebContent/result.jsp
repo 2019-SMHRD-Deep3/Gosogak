@@ -128,6 +128,10 @@
 .panel.panel-default{
 	text-align: center;
 }
+
+.col-md-9{
+width:95%;
+}
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
