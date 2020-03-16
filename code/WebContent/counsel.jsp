@@ -159,7 +159,7 @@ a.facebook1 {
 
 .information li {
 	display: block;
-	padding: 10px 0;
+	padding: 2px 0;
 	margin: 5px;
 	font-size: 10.5;
 	list-style: none;
@@ -198,6 +198,18 @@ a.facebook1 {
 	padding:100px 1px 10px 0px;
 	}
 
+body {
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    font-size: 14px;
+    line-height: 10px;
+    color: #6f6f6f;
+}
+
+
+section{
+padding:40px 0px 60px 0px;
+}
 </style>
 <!-- --------------------------------------------------------------------------------- -->
 
@@ -294,7 +306,7 @@ a.facebook1 {
 		</div>
 	</section>
 
-	<section>
+	<section >
 		<!-- <section class="profile-detail"> -->
 		<div class="container">
 			<!-- 				<div class="col-md-12">
@@ -309,8 +321,9 @@ a.facebook1 {
 			
 			<div align="center" class="col-md-9 col-sm-9">
 				<div class="profile-content">
+				<br> 
 					<h3>
-						안인태<span>상담사</span>
+						안인태<span><h5>상담사</h5></span>
 					</h3>
 					<p>악플고소 전문 상담사</p>
 				</div>
@@ -340,7 +353,7 @@ a.facebook1 {
 
 					
 					</form>
-
+<br>
 			<!-- <ul class="social"> -->
 			<!-- <li><a href="" class="facebook1"><i class="fa fa-facebook"></i></a></li> -->
 			<!-- 	<li><a href="" class="google"><i class="fa fa-google-plus"></i></a></li>
@@ -390,8 +403,9 @@ a.facebook1 {
 			<div align="center" class="col-md-9 col-sm-9">
 			
 				<div class="profile-content">
+				<br>
 					<h3>
-						박병관<span>변호사</span>
+						박병관<span><h5>변호사</h5></span>
 					</h3>
 					<p>명예훼손/모욕</p>
 				</div>
@@ -423,7 +437,7 @@ a.facebook1 {
 
 					
 					</form>
-				
+				<br>
 				<!-- <ul class="social">
 								<li><a href="" class="facebook1"><i class="fa fa-facebook"></i></a></li> -->
 				<!-- 		<li><a href="" class="google"><i class="fa fa-google-plus"></i></a></li>
@@ -472,8 +486,9 @@ a.facebook1 {
 				</div>
 				<div align="center" class="col-md-9 col-sm-9">
 					<div class="profile-content">
+					<br>
 						<h3>
-							리기성<span>변호사</span>
+							이기성<span><h5>변호사</h5></span>
 						</h3>
 						<p>개인정보 보호</p>
 	
@@ -482,7 +497,7 @@ a.facebook1 {
 				<section class="infor">
 				<div>
 									<ul class="information">
-							<li><span>Name:</span> 리기성</li>
+							<li><span>Name:</span> 이기성</li>
 							<li><span>Email:</span>Stretching@naver.com</li>
 							<li><span>Mobile:</span>010-5959-5959</li>
 							<br>
@@ -505,6 +520,7 @@ a.facebook1 {
 
 				
 					</form>
+					<br>
 					<!-- 			<ul class="social">
 								<li><a href="" class="facebook1"><i class="fa fa-facebook"></i></a></li> -->
 					<!-- 			<li><a href="" class="google"><i class="fa fa-google-plus"></i></a></li>
