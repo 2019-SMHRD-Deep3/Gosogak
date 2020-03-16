@@ -68,6 +68,7 @@
 	width: 13%;
 	padding-bottom: 1%;
 	padding-top: 1%;
+	margin-bottom: 0.5%;
 	font-size: 20px !important;
 }
 
