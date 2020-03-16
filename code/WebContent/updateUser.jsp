@@ -96,7 +96,7 @@ width:40%;
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
 		<div class="container">
 			<div class="caption">
-				<h2>Get your jobs</h2>
+				<h2>내 정보/정보 수정</h2>
 				<p>
 					Get your Popular jobs <span>202 New job</span>
 				</p>
@@ -108,7 +108,7 @@ width:40%;
 		<div class="container">
 						<div class="basic-information">
 							<form action="UpdateUserService.do" method="post">
-						<h3>나의정보</h3><hr><br>
+						<h3>내 정보</h3><hr><br>
 						<table>
 					<tr><td><h5>아이디</h5></td><td><%=info.getId() %></td></tr>
 					<tr><td><h5>비밀번호</h5></td><td><input name="pw" type="password"  class="form-control input-lg" placeholder="비밀번호를 입력하세요"></td></tr>
