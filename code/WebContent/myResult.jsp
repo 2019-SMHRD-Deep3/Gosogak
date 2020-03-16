@@ -44,7 +44,36 @@ margin:auto;
 	height: 373px;
 	position: relative;
 }
+.inner-banner .caption{
+position:relative;
+}
+.inner-banner h2{
+color:#white;
+font-weight:400;
+display: block;
+ margin-bottom: 25px;
+}
+.inner-banner p{
+color:#white;
+font-weight:300;
+display: block;
+font-size:20px;
+margin-top:15px;
+}
+.inner-banner p span{
+color:white;
+}
+.inner-banner:before{
+content:"";
+display:block;
+top:0;
+bottom:0;
+left:0;
+right:0;
+position:absolute;
+background:#bc2610;
 
+}
 .loginre {
 	position: relative;
 	padding: 30px 30px 20px;
