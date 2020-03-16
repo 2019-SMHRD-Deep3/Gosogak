@@ -223,7 +223,7 @@ td {
 						<tr>
 						<td><%=i+1 %></td>
 							<td><%=an_list.get(i).getOriginal_data()%></td>
-							<td><%=an_list.get(i).getScore_insert()%></td>
+							<td><%=an_list.get(i).getScore_insult()%></td>
 							<td><%=an_list.get(i).getScore_public()%></td>
 							<td><%=an_list.get(i).getScore_spec()%></td>
 							<td><%=an_list.get(i).getResult()%></td>
