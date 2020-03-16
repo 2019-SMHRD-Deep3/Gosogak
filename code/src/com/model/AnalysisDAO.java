@@ -51,7 +51,7 @@ public class AnalysisDAO {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getId());
 			psmt.setString(2, dto.getOriginal_data());
-			psmt.setString(3, dto.getScore_insurt());
+			psmt.setString(3, dto.getScore_insult());
 			psmt.setString(4, dto.getScore_public());
 			psmt.setString(5, dto.getScore_spec());
 			psmt.setString(6, dto.getResult());
