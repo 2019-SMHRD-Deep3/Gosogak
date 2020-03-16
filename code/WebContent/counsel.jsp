@@ -184,6 +184,20 @@ a.facebook1 {
 	margin:12px;
 
 }
+
+	.col-md-3 {
+		width: 100%
+		
+	}
+	
+	.col-md-9 {
+		width: 100%
+	}
+	
+	.infor {
+	padding:100px 1px 10px 0px;
+	}
+
 </style>
 <!-- --------------------------------------------------------------------------------- -->
 
@@ -287,10 +301,13 @@ a.facebook1 {
 					<div class="row"> -->
 			
 				<div class="basic-information"> 
-			<div class="col-md-3 col-sm-3">
-				<img src="img/intae.PNG" alt="" class="img-responsive">
+			<div align="center" class="col-md-3 col-sm-3">
+				<img src="img/intae.PNG" alt="" class="img-responsive" style="width:200px; height:250px;">
 			</div>
-			<div class="col-md-9 col-sm-9">
+			
+			<br>
+			
+			<div align="center" class="col-md-9 col-sm-9">
 				<div class="profile-content">
 					<h3>
 						안인태<span>상담사</span>
@@ -298,6 +315,7 @@ a.facebook1 {
 					<p>악플고소 전문 상담사</p>
 				</div>
 			</div>
+			<section class="infor">
 			<div>
 				<ul class="information">
 					<li><span>Name:</span>안인태</li>
@@ -306,7 +324,7 @@ a.facebook1 {
 					<br>
 				</ul>
 			</div>
-
+		</section>
 			<%
 					if (info == null) {
 				%>
@@ -366,17 +384,20 @@ a.facebook1 {
 		<!-- 				<div class="col-md-12">
 					<div class="row"> -->
 		<div class="basic-information"> 
-			<div class="col-md-3 col-sm-3">
-				<img src="img/park.PNG" alt="" class="img-responsive">
+			<div align="center" class="col-md-3 col-sm-3">
+				<img src="img/park.PNG" alt="" class="img-responsive" style="width:200px; height:250px;">
 			</div>
-			<div class="col-md-9 col-sm-9">
+			<div align="center" class="col-md-9 col-sm-9">
+			
 				<div class="profile-content">
 					<h3>
 						박병관<span>변호사</span>
 					</h3>
 					<p>명예훼손/모욕</p>
 				</div>
+				
 			</div>
+			<section class="infor">
 			<div>
 				<ul class="information">
 					<li><span>Name:</span>박병관</li>
@@ -385,6 +406,7 @@ a.facebook1 {
 					<br>
 				</ul>
 			</div>
+			</section>
 
 			<%
 					if (info == null) {
@@ -445,10 +467,10 @@ a.facebook1 {
 			<!-- 				<div class="col-md-12">
 					<div class="row"> -->
 			<div class="basic-information"> 
-				<div class="col-md-3 col-sm-3">
-					<img src="img/lee.PNG" alt="" class="img-responsive">
+				<div align="center" class="col-md-3 col-sm-3">
+					<img src="img/lee.PNG" alt="" class="img-responsive" style="width:200px; height:250px;">
 				</div>
-				<div class="col-md-9 col-sm-9">
+				<div align="center" class="col-md-9 col-sm-9">
 					<div class="profile-content">
 						<h3>
 							리기성<span>변호사</span>
@@ -457,6 +479,7 @@ a.facebook1 {
 	
 					</div>
 				</div>
+				<section class="infor">
 				<div>
 									<ul class="information">
 							<li><span>Name:</span> 리기성</li>
@@ -465,6 +488,7 @@ a.facebook1 {
 							<br>
 						</ul>
 				</div>
+				</section>
 
 				<%
 					if (info == null) {
