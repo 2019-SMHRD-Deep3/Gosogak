@@ -134,7 +134,8 @@ INSERT INTO MEMBER
 VALUES('cheon','1111','玫铰泅','test@test.com','manager');
 INSERT INTO MEMBER
 VALUES('bang','1111','规技固','test@test.com','manager');
-
+INSERT INTO MEMBER
+VALUES('manager','1111','辫包府','manager@test.com','manager')
 
 select * from MEMBER
 
