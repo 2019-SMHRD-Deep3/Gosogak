@@ -44,9 +44,9 @@ CREATE TABLE ANALYSIS_RESULT(
                 ANALYSIS_RESULT_CD NUMBER(20) PRIMARY KEY,
                 MEMBER_ID VARCHAR2(20),
                 ORIGINAL_DATA VARCHAR2(2000),
-                SCORE_PUBLIC VARCHAR2(4),
-                SCORE_SPEC VARCHAR2(4),
                 SCORE_INSULT VARCHAR2(4),
+                SCORE_SPEC VARCHAR2(4),
+                SCORE_PUBLIC VARCHAR2(4),
                 RESULT VARCHAR2(20),
                 CONSTRAINT anal_result_member_id_fk FOREIGN KEY ("MEMBER_ID")
                 REFERENCES MEMBER ("MEMBER_ID"));
@@ -167,4 +167,3 @@ VALUES(reply_seq.nextval,1,'test','테스트용 더미 댓글 입니다. 댓글의 내용이 들어
 INSERT INTO COUNSELING
 VALUES(couns_seq.nextval,'test','manager','제목입니다.','manager:테스트용 더미 채팅내역 입니다. test:채팅내역 내용이 들어갑니다.',sysdate);
 select * from COUNSELING;
-DELETE FROM COUNSELING WHERE MEMBER_ID = 'test';

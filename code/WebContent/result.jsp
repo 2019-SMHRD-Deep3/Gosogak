@@ -132,6 +132,11 @@
 .col-md-9{
 width:95%;
 }
+#warn{
+color:red;
+}
+hr{
+margin-bottom:0px;}
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -267,7 +272,7 @@ width:95%;
 			<%
 				}
 			%>
-			<p align=center>
+			<p id="more" align="center">
 				자세한 분석결과를 보려면
 				<자세히 보기> 를 눌러주세요. 
 			</p>
@@ -284,9 +289,12 @@ width:95%;
 						<div class="basic-information">
 							<div class="col-md-9 col-sm-9">
 								<div class="profile-content">
+									<div class="panel-heading">
+									
+								
 									<h2>
-										상세 분석 결과<span>본 분석결과는 법적효력이 없으며, 참고용도로만 사용하시기 바랍니다.</span>
-									</h2>
+										상세 분석 결과</h2><hr></div><span id="warn"> : 본 분석결과는 법적효력이 없으며, 참고용도로만 사용하시기 바랍니다.</span>
+									<br>
 									<p></p>
 									<ul class="information">
 										<li><span>모욕성:</span><span id="insult"></span></li>
@@ -296,9 +304,7 @@ width:95%;
 								</div>
 							</div>
 							<div class="panel panel-default">
-								<div class="panel-heading">
-									<i class="fa fa-user fa-fw"></i>
-								</div>
+								
 								<!-- /.panel-heading -->
 								<!-- <div class="panel-body">
 									<p>The front end is the part that users see and interact
@@ -390,6 +396,7 @@ width:95%;
 </footer>
 <script type="text/javascript">
 						function myClick() {
+							$(".row").show();
 							insultScore =0;
 							publicScore = 0;
 							specScore = 0;
@@ -466,6 +473,9 @@ width:95%;
 
 <script type="text/javascript" src=js/jquery.min.js></script>
 <script>
+$(function(){
+	$(".row").hide();
+});
 		$(function() {
 			$(".resultHide").hide();
 		});
@@ -473,15 +483,13 @@ width:95%;
 		$(function() {
 			$(".btn.brows-btn.detail").on("click", function() {
 				var check = confirm('로그인이 필요한 서비스입니다.');
-				if (check) {
-					location.href = "login.jsp";
-				}
 			});
 		});
 	} else {
 		$(function() {
 			$(".btn.brows-btn.detail").on("click", function() {
 				$(".btn.brows-btn.detail").hide()
+				$("#more").hide()
 				$(".resultHide").slideDown()
 			});
 		});
