@@ -5,16 +5,16 @@ public class AnalysisDTO {
 	private String original_data;
 	private String score_public;
 	private String score_spec;
-	private String score_insurt;
+	private String score_insult;
 	private String result;
 	
 	
-
-	public AnalysisDTO(String id, String original_data,String score_insult,String score_public, String score_spec,  String result) {
+	public AnalysisDTO(String id, String original_data,String score_insult, String score_public, String score_spec,
+			 String result) {
 		super();
 		this.id = id;
 		this.original_data = original_data;
-		this.score_insurt = score_insult;
+		this.score_insult = score_insult;
 		this.score_public = score_public;
 		this.score_spec = score_spec;
 		this.result = result;
@@ -62,13 +62,13 @@ public class AnalysisDTO {
 	}
 
 
-	public String getScore_insurt() {
-		return score_insurt;
-
+	public String getScore_insult() {
+		return score_insult;
 	}
 
-	public void setScore_insurt(String score_insult) {
-		this.score_insurt = score_insult;
+
+	public void setScore_insert(String score_insult) {
+		this.score_insult = score_insult;
 	}
 
 
