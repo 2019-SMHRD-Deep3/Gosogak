@@ -30,9 +30,8 @@
 }
 
 .col-md-2 {
-	width: 14%;
-	padding-right: 15px;
-	margin-left: 2% !important;
+	width: 16%;
+	padding-right: 15px;	
 }
 
 .link:hover {
@@ -103,6 +102,14 @@
 
 .caption p {
 	margin-bottom: 50px;
+}
+
+#btn1{
+	margin: 0px auto;
+	width: 85%;
+	margin-right: 0.5%;
+	padding-bottom: 11%;
+	padding-top: 11%;	
 }
 </style>
 <script
@@ -208,7 +215,7 @@
 						placeholder="텍스트 입력" />
 				</div>
 				<div class="col-md-2 col-sm-2 no-pad">
-					<button onclick="myClick()" class="btn brows-btn">click</button>
+					<button onclick="myClick()" class="btn brows-btn" id="btn1">click</button>
 
 
 
@@ -218,8 +225,8 @@
 		</div>
 	</div>
 </section>
-<div>
-	<h5 id=warning>※  경 고 :  해당 서비스는 법적 효력이 없으며 악용시 처벌을 받을 수 있습니다.  ※</h5>
+<div class="warning">
+	<h4 class="warning1">※  경 고 :  해당 서비스는 법적 효력이 없으며 악용시 처벌을 받을 수 있습니다.  ※</h4>
 </div>
 
 <section>
@@ -279,12 +286,11 @@
 					</div>
 				</div>
 			</div>
-			<section align=center>
+			<section align=center>				
 				<button onclick="myInsert()" class="btn2">분석결과 저장</button>
 				<form action="counsel.jsp">
 				<input type="submit" class="btn2" value="1 : 1 상담 매칭" />
-				</form>
-				
+				</form>				
 			</section>
 		</div>
 	</section>
