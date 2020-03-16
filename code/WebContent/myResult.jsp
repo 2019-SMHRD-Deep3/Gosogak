@@ -1,7 +1,15 @@
+<%@page import="com.model.AnalysisDTO"%>
+<%@page import="com.model.AnalysisDAO"%>
+<%@page import="com.model.CounselDTO"%>
+<%@page import="com.model.CounselDAO"%>
+<%@page import="com.model.PostDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.PostDAO"%>
 <%@page import="com.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
+
 <html class="no-js" lang="en">
 <head>
 <meta charset="utf-8">
@@ -18,43 +26,43 @@
 <link rel="stylesheet" href="css/main.css">
 
 <style>
-input{
-border:none;}
-table {
-	border-collapse: separate;
+.container{
+margin:auto;
 }
-td{
-padding:0.5%;
-}
-#title {
-	width:10%;
-	text-align:center;
-}
-textarea{
-width:98.6%;
-height:100%;
-}
-.btn2 {
-	display: inline-block;
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 1.42857143;
-	text-align: center;
-	vertical-align: middle;
-	cursor: pointer;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	background: gray;
-	color: #ffffff;
-	text-transform: uppercase;
-	text-shadow: none;
-	line-height: 1.2;
-	margin-bottom:10px;
-	padding: 10px 20px;
+.basic-information {
+	width:100%;
+	margin:3%;
+	position : relative;
+	z-index: 1;
+	background-color: #ffffff;
+	padding: 30px 30px 20px;
+	-webkit-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .07);
+	box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .07);
+	border: 1px solid #eaecf1;
+	display: table;
+	float: left;
+	height: 373px;
+	position: relative;
 }
 
-.btn2:hover {
-	background: #da0833;
+.loginre {
+	position: relative;
+	padding: 30px 30px 20px;
+	width: 50%;
+	margin: auto;
+}
+table{
+margin:auto;
+width:95%;
+}
+th {
+	padding: 1px;
+	border-bottom: 1px solid #333;
+}
+
+td {
+	padding: 1px;
+	border-bottom: 1px solid lightgray;
 }
 </style>
 
@@ -63,8 +71,6 @@ height:100%;
 <body>
 	<%
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
-	response.setCharacterEncoding("EUC-KR");
-		request.setCharacterEncoding("EUC-KR");
 	%>
 	<!-- Navigation Start  -->
 	<nav class="navbar navbar-default navbar-sticky bootsnav">
@@ -125,73 +131,121 @@ height:100%;
 	</nav>
 	<!-- Navigation End  -->
 
-	<!-- Main jumbotron for a primary marketing message or call to action -->
+	<!-- Inner Banner -->
 	<section class="inner-banner"
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
 		<div class="container">
 			<div class="caption">
-				<h2>Get your jobs</h2>
+				<h2>내정보/분석리스트</h2>
 				<p>
-					Get your Popular jobs <span>202 New job</span>
+					<span>내정보/분석리스트</span>
 				</p>
 			</div>
 		</div>
 	</section>
 
 
-	<section class="profile-detail">
 
-
-
+	<!-- 	<section class="profile-detail" > -->
+	<section>
 		<div class="container">
-			<div class="col-md-12">
-				<div class="row">
-					<div class="basic-information">
+			<!-- 			<div class="col-md-12">
+				<div class="row"> -->
 
-
-
-
-						<form action="InsertCounselCon.do" name="boardForm">
-							<input type="hidden" name="board_id"
-								value="${sessionScope.sessionID}">
-							<table width="80%" bordercolor="lightgray" align="center">
-								<tr>
-									<td id="title">작성자</td>
-									<td><%=info.getNm()%></td>
-								</tr>
-								<tr>
-									<td id="title">상담사</td>
-									<td><input style="border:none" name="counselorName" placeholder="<%=request.getParameter("counsel") %>" value="<%=request.getParameter("counsel") %>"></td>
-								</tr>
-								<tr><td id="title" >제 목</td>
-									<td><input name="counsel_title" type="text" placeholder="제목을 입력해 주세요"
-										size="90%" /></td>
-								</tr>
-								<tr height="500px">
-									<td id="title">내 용</td>
-									<td><textarea name="counsel_content" rows="20"></textarea>
-									</td>
-								</tr>
-								<!-- <tr>
-									<td id="title">파일첨부</td>
-									<td><input type="file" name="board_file" /></td>
-								</tr> -->
-
-								<tr align="center" valign="middle">
-									<td colspan="5"><input class="btn2" type="reset" value="취소">
-										<input class="btn2" type="button"value="목록">
-										<input class="btn2" type="submit" value="등록"> </td>
-								</tr>
-							</table>
-						</form>
-
-
-
+			<%
+				if (info == null) {
+			%>
+			<div class="loginre">
+				<h3>로그인이 필요합니다.</h3>
+				<hr>
+				<br> <br>
+				<form action="LoginService.do">
+					<input type="text" class="form-control input-lg"
+						placeholder="User Name" name="id" width="150px"> <input
+						type="password" class="form-control input-lg"
+						placeholder="Password" name="pw"><br> <br>
+					<div align="center">
+						<button type="submit" class="btn btn-primary" name="myinfo">Login</button>
 					</div>
-				</div>
+				</form>
 			</div>
-	</section>
+			<%
+				} else {
+			%>
+			<div class="basic-information">
+				<ul class="information">
+					<h3>나의 분석 내역</h3><hr>
+					<table>
+						<tr>
+							<th width="5%"></th>
+							<th width="63%">댓글</th>
+							<th width="8%">모욕성</th>
+							<th width="8%">공연성</th>
+							<th width="8%">특정성</th>
+							<th width="8%">결과</th>
+						</tr>
 
+						<%
+							AnalysisDAO andao = new AnalysisDAO();
+								ArrayList<AnalysisDTO> an_list = andao.selectResult(info.getId());
+								for (int i = an_list.size() - 1; i >= 0; i--) {
+						%>
+						<tr>
+						<td><%=i+1 %></td>
+							<td><%=an_list.get(i).getOriginal_data()%></td>
+							<td><%=an_list.get(i).getScore_insert()%></td>
+							<td><%=an_list.get(i).getScore_public()%></td>
+							<td><%=an_list.get(i).getScore_spec()%></td>
+							<td><%=an_list.get(i).getResult()%></td>
+						</tr>
+						<%
+							}
+						%>
+
+					</table>
+				</ul>
+			</div>
+
+			<div class="basic-information">
+				<ul class="information">
+					<h3>나의 상담 내역</h3><hr>
+					<table>
+						<tr>
+							<th width="5%"></th>
+							<th width="10%">상담사</th>
+							<th width="20%">제목</th>
+							<th width="50%">내용</th>
+							<th width="15%">날짜</th>
+						</tr>
+
+						<%
+							CounselDAO counseldao = new CounselDAO();
+								ArrayList<CounselDTO> list = counseldao.selectCounsel(info.getId());
+								for (int i = list.size() - 1; i >= 0; i--) {
+						%>
+						<tr>
+							<td><%=list.get(i).getCounsel_cd()%></td>
+							<td><%=list.get(i).getCounsel_manager()%></td>
+							<td><%=list.get(i).getCounsel_title()%></td>
+							<td><%=list.get(i).getCounsel_content()%></td>
+							<td><%=list.get(i).getCounsel_dt()%></td>
+						</tr>
+						<%
+							}
+						%>
+					</table>
+				</ul>
+			</div>
+
+
+
+
+			<%
+				}
+			%>
+
+		</div>
+	</section>
 	<!-- footer start -->
 	<footer>
 		<div class="container">

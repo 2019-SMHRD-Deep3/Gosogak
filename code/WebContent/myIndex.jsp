@@ -25,6 +25,7 @@
 
 <style>
 .basic-information {
+	margin:auto;
 	position: relative;
 	z-index: 1;
 	background-color: #ffffff;
@@ -34,7 +35,6 @@
 	border: 1px solid #eaecf1;
 	display: table;
 	width: 50%;
-	float: left;
 	height: 373px;
 }
 
@@ -159,6 +159,7 @@ td {
 						<button type="submit" class="btn btn-primary" name="myinfo">Login</button>
 					</div>
 				</form>
+			</div>
 
 
 				<!-- 	<div>
@@ -190,42 +191,12 @@ td {
 					</ul>
 
 				</div>
-				<div class="basic-information">
-					<ul class="information">
-						<h3>나의 상담 내역</h3>
-						<table>
-							<tr>
-								<th></th>
-								<th>상담사</th>
-								<th>제목</th>
-								<th>내용</th>
-								<th>날짜</th>
-							</tr>
-
-							<%
-								CounselDAO counseldao = new CounselDAO();
-									ArrayList<CounselDTO> list = counseldao.selectCounsel(info.getId());
-									for (int i = list.size() - 1; i >= 0; i--) {
-							%>
-							<tr>
-								<td><%=list.get(i).getCounsel_cd()%>.</td>
-								<td><%=list.get(i).getCounsel_manager()%></td>
-								<td><%=list.get(i).getCounsel_title()%></td>
-								<td><%=list.get(i).getCounsel_content()%></td>
-								<td><%=list.get(i).getCounsel_dt()%></td>
-							</tr>
-							<%
-								}
-							%>
-						</table>
-					</ul>
-				</div>
+				
 				<%
 					}
 				%>
 				<!-- 			</div> -->
 				<!-- </div> -->
-			</div>
 			<!-- 	</section> -->
 		</div>
 	</section>
