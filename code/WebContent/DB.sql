@@ -45,8 +45,8 @@ CREATE TABLE ANALYSIS_RESULT(
                 MEMBER_ID VARCHAR2(20),
                 ORIGINAL_DATA VARCHAR2(2000),
                 SCORE_INSULT VARCHAR2(4),
-                SCORE_SPEC VARCHAR2(4),
                 SCORE_PUBLIC VARCHAR2(4),
+                SCORE_SPEC VARCHAR2(4),
                 RESULT VARCHAR2(20),
                 CONSTRAINT anal_result_member_id_fk FOREIGN KEY ("MEMBER_ID")
                 REFERENCES MEMBER ("MEMBER_ID"));
