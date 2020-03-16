@@ -140,7 +140,7 @@
 					<br><br>
 					<form action="result.jsp" method="post">
 					<input type="submit" class="btn seub-btn" value="시작하기"/>
-					<br><br><br>
+					<br><br>
 					</form>
 				</div>
 			</div>
