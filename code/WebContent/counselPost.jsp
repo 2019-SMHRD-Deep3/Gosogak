@@ -56,6 +56,37 @@ height:100%;
 .btn2:hover {
 	background: #da0833;
 }
+
+.inner-banner .caption{
+position:relative;
+}
+.inner-banner h2{
+color:#white;
+font-weight:400;
+display: block;
+ margin-bottom: 25px;
+}
+.inner-banner p{
+color:#white;
+font-weight:300;
+display: block;
+font-size:20px;
+margin-top:15px;
+}
+.inner-banner p span{
+color:white;
+}
+.inner-banner:before{
+content:"";
+display:block;
+top:0;
+bottom:0;
+left:0;
+right:0;
+position:absolute;
+background:#bc2610;
+
+}
 </style>
 
 </head>
@@ -131,9 +162,9 @@ height:100%;
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
 		<div class="container">
 			<div class="caption">
-				<h2>Get your jobs</h2>
+				<h2>개인 상담 작성</h2>
 				<p>
-					Get your Popular jobs <span>202 New job</span>
+					개인 상담 내역은 본인과 상담사 외엔 열람 할 수 없습니다.<span>/욕설,타인비방,악성루머,성적 게시글 무통보 삭제</span>
 				</p>
 			</div>
 		</div>
