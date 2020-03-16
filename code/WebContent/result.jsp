@@ -137,6 +137,7 @@ color:red;
 }
 hr{
 margin-bottom:0px;}
+
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -153,65 +154,54 @@ margin-bottom:0px;}
 	var specScore = 0;
 </script>
 <!-- Navigation Start  -->
-<nav class="navbar navbar-default navbar-sticky bootsnav">
+   <nav class="navbar navbar-default navbar-sticky bootsnav">
 
-	<div class="container">
-		<!-- Start Header Navigation -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#navbar-menu">
-				<i class="fa fa-bars"></i>
-			</button>
-			<a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-				class="logo" alt=""></a>
-		</div>
-		<!-- End Header Navigation -->
+      <div class="container">
+         <!-- Start Header Navigation -->
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+               data-target="#navbar-menu">
+               <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
+                alt=""></a>
+         </div>
+         <!-- End Header Navigation -->
 
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="navbar-menu">
-			<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
-				data-out="fadeOutUp">
-				<li><a href="index.jsp">메인 화면</a></li>
-				<%
-					if (info == null) {
-				%>
-				<li><a href="login.jsp">로그인</a></li>
-				<%
-					} else {
-				%>
-				<li><a href="LogoutService.do">로그아웃</a></li>
-				<%
-					}
-				%>
-				<li><a href="result.jsp">분석 하기</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">메뉴</a>
-					<ul class="dropdown-menu animated fadeOutUp"
-						style="display: none; opacity: 1;">
-						<li class="active"><a href="myIndex.jsp">내 정보</a></li>
-						<li><a href="community.jsp">커뮤니티</a></li>
-						<li><a href="counsel.jsp">상담 신청</a></li>
-						<li><a href="myResult.jsp">나의 분석내역/상담내역</a></li>
-					</ul></li>
-				<li><div
-						style="float: right; margin-top: 15%; margin-right: -50%;">
-						<%
-							if (info != null) {
-						%><%=info.getNm()%>님 환영합니다.
-						<%
-							} else {
-						%>
-						<%
-							}
-						%>
-					</div></li>
-			</ul>
-		</div>
-		<!-- /.navbar-collapse -->
-	</div>
-</nav>
-<!-- Navigation End  -->
+         <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
+               data-out="fadeOutUp">
+               <li><a href="index.jsp">메인 화면</a></li>
+               <%
+                  if (info == null) {
+               %>
+               <li><a href="login.jsp">로그인</a></li>
+               <%
+                  } else {
+               %>
+               <li><a href="LogoutService.do">로그아웃</a></li>
+               <%
+                  }
+               %>
+               <li><a href="result.jsp">분석 하기</a></li>
+               <li class="dropdown"><a href="#" class="dropdown-toggle"
+                  data-toggle="dropdown">메뉴</a>
+                  <ul class="dropdown-menu animated fadeOutUp"
+                     style="display: none; opacity: 1;">
+                     <li class="active"><a href="myIndex.jsp">내 정보</a></li>
+                     <li><a href="community.jsp">커뮤니티</a></li>
+                     <li><a href="counsel.jsp">상담 신청</a></li>
+                     <li><a href="myResult.jsp">나의 분석내역/상담내역</a></li>
+                  </ul></li>
+                  <li><div style="float: right; margin-top:15%;margin-right:-50%;"><%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
+					<%}else {%><%} %></div></li>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+   <!-- Navigation End  -->
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
 
@@ -459,9 +449,11 @@ margin-bottom:0px;}
 									console.log('총합:'+totalScore);
 	
 									if(totalScore>=3){
-										$('#result').text('고소..각!')
+										$('.resultImg').remove();
+										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/sue.png">');
 									}else{
-										$('#result').text('애매한데...')
+										$('.resultImg').remove();
+										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/neutral.png">');
 									}
 								}
 							});

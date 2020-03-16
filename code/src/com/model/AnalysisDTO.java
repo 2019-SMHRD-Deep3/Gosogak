@@ -9,8 +9,8 @@ public class AnalysisDTO {
 	private String result;
 	
 	
-	public AnalysisDTO(String id, String original_data,String score_insult, String score_public, String score_spec,
-			 String result) {
+
+	public AnalysisDTO(String id, String original_data,String score_insult,String score_public, String score_spec,  String result) {
 		super();
 		this.id = id;
 		this.original_data = original_data;
@@ -64,10 +64,10 @@ public class AnalysisDTO {
 
 	public String getScore_insult() {
 		return score_insult;
+
 	}
 
-
-	public void setScore_insert(String score_insult) {
+	public void setScore_insult(String score_insult) {
 		this.score_insult = score_insult;
 	}
 
