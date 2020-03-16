@@ -184,6 +184,20 @@ a.facebook1 {
 	margin:12px;
 
 }
+
+ 	.col-md-31 {
+		width: 100%
+		
+	} 
+	
+	.col-md-9 {
+		width: 100%
+	}
+	
+	.infor {
+	padding:100px 1px 10px 0px;
+	}
+
 </style>
 <!-- --------------------------------------------------------------------------------- -->
 
@@ -287,10 +301,13 @@ a.facebook1 {
 					<div class="row"> -->
 			
 				<div class="basic-information"> 
-			<div class="col-md-3 col-sm-3">
-				<img src="img/intae.PNG" alt="" class="img-responsive">
+			<div align="center" class="col-md-31 col-sm-3">
+				<img src="img/intae.PNG" alt="" class="img-responsive" style="width:200px; height:250px;">
 			</div>
-			<div class="col-md-9 col-sm-9">
+			
+			<br>
+			
+			<div align="center" class="col-md-9 col-sm-9">
 				<div class="profile-content">
 					<h3>
 						안인태<span>상담사</span>
@@ -298,6 +315,7 @@ a.facebook1 {
 					<p>악플고소 전문 상담사</p>
 				</div>
 			</div>
+			<section class="infor">
 			<div>
 				<ul class="information">
 					<li><span>Name:</span>안인태</li>
@@ -306,7 +324,7 @@ a.facebook1 {
 					<br>
 				</ul>
 			</div>
-
+		</section>
 			<%
 					if (info == null) {
 				%>
@@ -342,7 +360,7 @@ a.facebook1 {
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<i class="fa fa-leaf fa-fw"></i> 이력:
+					<i class="fa fa-leaf fa-fw"></i> 이력
 				</div>
 				<!-- /.panel-heading -->
 				<div class="panel-body">
@@ -350,7 +368,7 @@ a.facebook1 {
 					<ul>
 						<li>Don't use bad comments 대학 졸업</li>
 						<li>(前)  악플방지위원회 회원</li>
-						<li>現 스마트고소각 전문 상담사</li>
+						<li> 現 스마트고소각 전문 상담사</li>
 					</ul>
 				</div>
 			</div>
@@ -366,17 +384,20 @@ a.facebook1 {
 		<!-- 				<div class="col-md-12">
 					<div class="row"> -->
 		<div class="basic-information"> 
-			<div class="col-md-3 col-sm-3">
-				<img src="img/park.PNG" alt="" class="img-responsive">
+			<div align="center" class="col-md-31 col-sm-3">
+				<img src="img/park.PNG" alt="" class="img-responsive" style="width:200px; height:250px;">
 			</div>
-			<div class="col-md-9 col-sm-9">
+			<div align="center" class="col-md-9 col-sm-9">
+			
 				<div class="profile-content">
 					<h3>
 						박병관<span>변호사</span>
 					</h3>
 					<p>명예훼손/모욕</p>
 				</div>
+				
 			</div>
+			<section class="infor">
 			<div>
 				<ul class="information">
 					<li><span>Name:</span>박병관</li>
@@ -385,6 +406,7 @@ a.facebook1 {
 					<br>
 				</ul>
 			</div>
+			</section>
 
 			<%
 					if (info == null) {
@@ -421,7 +443,7 @@ a.facebook1 {
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<i class="fa fa-leaf fa-fw"></i> 이력:
+						<i class="fa fa-leaf fa-fw"></i> 이력
 					</div>
 					<!-- /.panel-heading -->
 					<div class="panel-body">
@@ -445,10 +467,10 @@ a.facebook1 {
 			<!-- 				<div class="col-md-12">
 					<div class="row"> -->
 			<div class="basic-information"> 
-				<div class="col-md-3 col-sm-3">
-					<img src="img/lee.PNG" alt="" class="img-responsive">
+				<div align="center" class="col-md-31 col-sm-3">
+					<img src="img/lee.PNG" alt="" class="img-responsive" style="width:200px; height:250px;">
 				</div>
-				<div class="col-md-9 col-sm-9">
+				<div align="center" class="col-md-9 col-sm-9">
 					<div class="profile-content">
 						<h3>
 							리기성<span>변호사</span>
@@ -457,6 +479,7 @@ a.facebook1 {
 	
 					</div>
 				</div>
+				<section class="infor">
 				<div>
 									<ul class="information">
 							<li><span>Name:</span> 리기성</li>
@@ -465,6 +488,7 @@ a.facebook1 {
 							<br>
 						</ul>
 				</div>
+				</section>
 
 				<%
 					if (info == null) {
@@ -500,7 +524,7 @@ a.facebook1 {
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<i class="fa fa-leaf fa-fw"></i> 이력:
+							<i class="fa fa-leaf fa-fw"></i> 이력
 						</div>
 						<!-- /.panel-heading -->
 						<div class="panel-body">
@@ -521,69 +545,68 @@ a.facebook1 {
 	</section>
 
 	<!-- footer start -->
-
-	<footer>
-		<div class="container">
-			<div class="col-md-3 col-sm-6">
-				<h4>Featured Job</h4>
-				<ul>
-					<li><a href="#">Browse Jobs</a></li>
-					<li><a href="#">Premium MBA Jobs</a></li>
-					<li><a href="#">Access Database</a></li>
-					<li><a href="#">Manage Responses</a></li>
-					<li><a href="#">Report a Problem</a></li>
-					<li><a href="#">Mobile Site</a></li>
-					<li><a href="#">Jobs by Skill</a></li>
-				</ul>
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<h4>Latest Job</h4>
-				<ul>
-					<li><a href="#">Browse Jobs</a></li>
-					<li><a href="#">Premium MBA Jobs</a></li>
-					<li><a href="#">Access Database</a></li>
-					<li><a href="#">Manage Responses</a></li>
-					<li><a href="#">Report a Problem</a></li>
-					<li><a href="#">Mobile Site</a></li>
-					<li><a href="#">Jobs by Skill</a></li>
-				</ul>
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<h4>Reach Us</h4>
-				<address>
-					<ul>
-						<li>1201, Murakeu Market, QUCH07<br> United Kingdon
-						</li>
-						<li>Email: Support@job.com</li>
-						<li>Call: 044 123 458 65879</li>
-						<li>Skype: job@skype</li>
-						<li>FAX: 123 456 85</li>
-					</ul>
-				</address>
-			</div>
-
-			<div class="col-md-3 col-sm-6">
-				<h4>Drop A Mail</h4>
-				<form>
-					<input type="text" class="form-control input-lg"
-						placeholder="Your Name"> <input type="text"
-						class="form-control input-lg" placeholder="Email...">
-					<textarea class="form-control" placeholder="Message"></textarea>
-					<button type="submit" class="btn btn-primary">Login</button>
-				</form>
-			</div>
-
-
+<footer>
+	<div class="container">
+		<div class="col-md-3 col-sm-6">
+			<h4>Featured Job</h4>
+			<ul>
+				<li><a href="#">Browse Jobs</a></li>
+				<li><a href="#">Premium MBA Jobs</a></li>
+				<li><a href="#">Access Database</a></li>
+				<li><a href="#">Manage Responses</a></li>
+				<li><a href="#">Report a Problem</a></li>
+				<li><a href="#">Mobile Site</a></li>
+				<li><a href="#">Jobs by Skill</a></li>
+			</ul>
 		</div>
-		<div class="copy-right">
-			<p>
-				&copy;Copyright 2018 Jober Desk | Design By <a
-					href="https://themezhub.com/">ThemezHub</a>
-			</p>
+
+		<div class="col-md-3 col-sm-6">
+			<h4>Latest Job</h4>
+			<ul>
+				<li><a href="#">Browse Jobs</a></li>
+				<li><a href="#">Premium MBA Jobs</a></li>
+				<li><a href="#">Access Database</a></li>
+				<li><a href="#">Manage Responses</a></li>
+				<li><a href="#">Report a Problem</a></li>
+				<li><a href="#">Mobile Site</a></li>
+				<li><a href="#">Jobs by Skill</a></li>
+			</ul>
 		</div>
-	</footer>
+
+		<div class="col-md-3 col-sm-6">
+			<h4>Reach Us</h4>
+			<address>
+				<ul>
+					<li>1201, Murakeu Market, QUCH07<br> United Kingdon
+					</li>
+					<li>Email: Support@job.com</li>
+					<li>Call: 044 123 458 65879</li>
+					<li>Skype: job@skype</li>
+					<li>FAX: 123 456 85</li>
+				</ul>
+			</address>
+		</div>
+
+		<div class="col-md-3 col-sm-6">
+			<h4>Drop A Mail</h4>
+			<form>
+				<input type="text" class="form-control input-lg"
+					placeholder="Your Name"> <input type="text"
+					class="form-control input-lg" placeholder="Email...">
+				<textarea class="form-control" placeholder="Message"></textarea>
+				<button type="submit" class="btn btn-primary">Login</button>
+			</form>
+		</div>
+
+
+	</div>
+	<div class="copy-right">
+		<p>
+			&copy;Copyright 2018 Jober Desk | Design By <a
+				href="https://themezhub.com/">ThemezHub</a>
+		</p>
+	</div>
+</footer>
 
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
