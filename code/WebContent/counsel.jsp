@@ -57,7 +57,7 @@ left:0;
 right:0;
 position:absolute;
 background:#bc2610;
-
+height:384.25px;
 }
 
 /* �ѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤѤ� */
@@ -198,13 +198,13 @@ a.facebook1 {
 	padding:100px 1px 10px 0px;
 	}
 
-body {
+/* body {
     font-family: 'Open Sans', sans-serif;
     position: relative;
     font-size: 14px;
     line-height: 10px;
     color: #6f6f6f;
-}
+} */
 
 
 section{
