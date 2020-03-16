@@ -85,12 +85,12 @@ margin:auto;
 width:95%;
 }
 th {
-	padding: 1px;
+	padding: 1%;
 	border-bottom: 1px solid #333;
 }
 
 td {
-	padding: 1px;
+	padding: 1%;
 	border-bottom: 1px solid lightgray;
 }
 </style>
@@ -244,8 +244,8 @@ td {
 							<th width="5%"></th>
 							<th width="10%">상담사</th>
 							<th width="20%">제목</th>
-							<th width="50%">내용</th>
-							<th width="15%">날짜</th>
+							<th width="49%">내용</th>
+							<th width="16%">날짜</th>
 						</tr>
 
 						<%
