@@ -63,6 +63,13 @@
      overflow: hidden;
      object-fit: fill;
 }
+.btn.seub-btn{
+	margin: 0px auto;
+	width: 13%;
+	padding-bottom: 1%;
+	padding-top: 1%;
+	font-size: 20px !important;
+}
 
 </style>
 <script
@@ -111,6 +118,7 @@
                      <li class="active"><a href="myIndex.jsp">내 정보</a></li>
                      <li><a href="community.jsp">커뮤니티</a></li>
                      <li><a href="counsel.jsp">상담 신청</a></li>
+                     <li><a href="myResult.jsp">나의 분석내역/상담내역</a></li>
                   </ul></li>
                   <li><div style="float: right; margin-top:15%;margin-right:-50%;"><%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
 					<%}else {%><%} %></div></li>
