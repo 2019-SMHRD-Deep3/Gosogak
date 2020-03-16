@@ -23,6 +23,9 @@ border:none;}
 table {
 	border-collapse: separate;
 }
+td{
+padding:1%;
+}
 #title{
 padding:0.5%;
 width:10%;
@@ -181,7 +184,7 @@ background:#bc2610;
 								</tr>
 								<tr>
 									<td id="title">제 목</td>
-									<td><input name="post_title" size="90%"/></td>
+									<td><input name="post_title" size="90%" placeholder="제목을 입력해 주세요"/></td>
 								</tr>
 								<tr>
 									<td id="title">내 용</td>
