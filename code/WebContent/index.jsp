@@ -61,6 +61,7 @@
      height: 100%;
      z-index: -1;
      overflow: hidden;
+     object-fit: fill;
 }
 
 </style>
@@ -124,7 +125,7 @@
 		<section class="main-banner"> <!-- style="background:url(img/main.jpg) no-repeat" -->
 			<video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
       <source src="img/coverr-sparks.mp4">
-	</video>
+	 </video>
 			<div class="container">
 				<div class="caption">
 					<h2><b>이거...고소 각?</b></h2>
