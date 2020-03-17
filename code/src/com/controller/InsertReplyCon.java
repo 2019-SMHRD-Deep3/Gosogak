@@ -27,8 +27,9 @@ public class InsertReplyCon implements ICommand {
 		
 		String moveURL = null;
 		int post_cd = Integer.parseInt(request.getParameter("num"));
-		String reply_content = request.getParameter("reple_content");
+		String reply_content = request.getParameter("reply_content");
 		System.out.println(post_cd);
+		System.out.println(reply_content);
 		HttpSession session = request.getSession();
 		MemberDTO info = (MemberDTO)session.getAttribute("info");
 		String reply_id = info.getId();
@@ -37,7 +38,7 @@ public class InsertReplyCon implements ICommand {
 		ReplyDAO dao = new ReplyDAO();
 		dao.insertReply(dto);
 		
-		moveURL = "ReadPostCon";
+		
 		return moveURL;
 		
 	}

@@ -145,61 +145,10 @@ th {
             })
          });
       }
-      
-      $(function(){
-    	  $('.btn-reply').on('click',function(){
-        	  var str = ""
-    		       var tdArr2 = new Array();    // 배열 선언
-    		        // 현재 클릭된 Row(<tr>)
-    		        var tr2 = $('.posttr');
-    		        var td2 = tr2.children();
-    		        // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
-    		        td2.each(function(i){
-    		            tdArr2.push(td2.eq(i).text());
-    		        });
-    		        var num = td2.eq(0).text();
-    		        console.log(num);
-         	 	$.ajax({
-    				url : "InsertReply.do.do",
-    				type : "POST",
-    				cache : false,
-    				dataType : "json",
-    				data : "num="+num,
-    				success : function(result) {
-    					/* console.log("성공");
-    					console.log(result); */
-    					var reply = $(".reply");
-    					var reply_list;
-    					reply.empty();
-    					reply.append(reply_ido);
-    					reply_load.append(reply);
-    					if(result.length != 0){
-    						/* console.log("조건문"); */
-    						for (var i = 0; i < result.length; i++) {
-    							/* console.log("반복"); */
-    							var reply_id = result[i].reply_id;
-    							var reply_content = result[i].reply_content;
-    							reply_list = '<tr><td class="reply_list">' + reply_id + '</td><td>'
-    							+ reply_content + '</td></tr>';
-    							reply.append(reply_list);
-    							reply_load.append(reply);
-    						}
-    					}
-    					else{
-    						/* reply.remove(reply_list); */
-    						/* reply.empty(); */
-    						/* reply.remove(reply_list); */
-    						/* console.log("조건문밖"); */
-    					}
-    				},
-    				error : function() {
-    				console.log("error");
-    				}
-    			});
-          	});
-      });      
-      
+    	  
    </script>
+   
+   
 	<section class="profile-detail">
 
 
@@ -216,18 +165,19 @@ th {
 							<div class="post_load"></div>
 							<!--  댓글 출력 부분 -->
 							<br>
-							<form action="InsertReply.do">
 							<div class="reply_load">
+							<!-- <form action="InsertReply.do"> -->
 							<table class="reply" style="width:700px;, border:3px;, bordercolor:lightgray;, align:center;">
 							<% if (info != null) {%>
 								<tr class="reply_ido"><td class="ido" style="width:200px;"><%=info.getId()%></td>
-								<td><input style="width:500px;" type="text" name="reply_content"></td><td><button type="submit" class="btn-reply">등록</button></td></tr>
+								<td><input style="width:500px;" type="text" class="reply_content" name="reply_content"></td><td><button onclick="insertreply()" class="btn-reply">등록</button></td></tr>
 							<% }else{%>
 							<tr class="reply_ido"><td class="ido" colspan="3">로그인이 필요합니다.</td></tr>
 							<%} %>
 							</table>
+							<!-- </form> -->
 							</div>
-							</form>
+							
 							<!-- 게시글 목록 부분 -->
 							<br>
 							<div id="board">
@@ -346,7 +296,10 @@ th {
 	<script src="js/bootsnav.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+	var num = 0;
 	
+	</script>
 	<script type="text/javascript">
 		$('.post_read').on('click',function(){
 			var reply_load = $(".reply_load");
@@ -358,7 +311,7 @@ th {
 			
 /* 			reply_load.style.display = "none";
 			reply_load.style.display = "inline"; */
-			var str = ""
+				var str = ""
 		        var tdArr = new Array();    // 배열 선언
 		        // 현재 클릭된 Row(<tr>)
 		        var tr = $(this);
@@ -368,7 +321,7 @@ th {
 		            tdArr.push(td.eq(i).text());
 		        });
 		        
-		        var num = td.eq(0).text();
+		        num = td.eq(0).text();
 		        /* console.log(num); */
 				
 				$.ajax({
@@ -442,5 +395,29 @@ th {
 				
 		});
 	</script>
+	
+	<script type="text/javascript">
+   function insertreply(){
+ 		  var reply_content = $('.reply_content').val();
+ 		  /* console.log(reply_content); */
+ 		  /* console.log(num); */
+ 		 $.ajax({
+				url : "InsertReply.do",
+				type : "POST",
+				cache : false,
+				dataType : "text",
+				data : "num="+num+"&reply_content="+reply_content,
+				success : function() {
+					console.log("성공");
+					location.href="community.jsp"
+				
+				},
+				error : function() {
+					console.log("error");
+				}
+			});
+ 		  
+   }
+   </script>
 </body>
 </html>
