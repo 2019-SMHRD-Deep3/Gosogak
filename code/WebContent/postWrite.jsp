@@ -197,9 +197,9 @@ background:#bc2610;
 								</tr> -->
 
 								<tr align="center" valign="middle">
-									<td colspan="5"><input class="btn2" type="reset" value="취소">
-										<input class="btn2" type="button"value="목록">
-										<input class="btn2" type="submit" value="등록"> </td>
+									<td colspan="5"><input class="btn2" type="reset" value="다시쓰기">
+										<input class="btn2" type="button"value="돌아가기" onClick="location.href='community.jsp'">
+										<input class="btn2" type="submit" value="등록하기"> </td>
 								</tr>
 							</table>
 						</form>

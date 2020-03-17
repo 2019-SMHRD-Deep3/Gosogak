@@ -163,6 +163,7 @@
 						   서비스의 결과는 참고자료로 사용하시고 판결 결과는 실제와 다를 수 있으니 변호사와의 상담을 추천드립니다.</p><br>
 					<span class="box1"><span aria-hidden="true" class="icon-dial"></span></span>
 					<h2>2. 고소각은 어떻게 사용하나요? </h2><br>
+					<img src="img/gosoinfo.png " width= "892px"><br><br>
 					<p>자신의 아이디를 입력하고 사이트의 유형을 선택한 후 알고 싶은 댓글을 넣고 분석하기를 누르면 결과를 확인할 수 있습니다. </p><br>
 					<span class="box1"><span aria-hidden="true" class="icon-search"></span></span>
 					<h2>3. 고소각은 어떻게 분석하나요?</h2><br>

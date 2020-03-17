@@ -26,6 +26,14 @@
 <link rel="stylesheet" href="css/main.css">
 
 <style>
+/* @font-face {
+  font-family: NANUMGOTHIC;
+  src: url('./fonts/NANUMGOTHIC.TTF');
+}
+
+body {
+  font-family: NANUMGOTHIC;
+} */
 .container{
 margin:auto;
 }
@@ -193,8 +201,8 @@ td {
 				} else {
 			%>
 			<div class="basic-information">
-				<ul class="information">
-					<h3>나의 분석 내역</h3><hr>
+				
+					<h3>나의 분석 내역</h3><hr><span id="warn"> <b>▷ 분석결과 </b> : 0 (해당사항 없음) <b> / </b> 1 (해당함)</span><br><br>
 					<table>
 						<tr>
 							<th width="5%"></th>
@@ -223,7 +231,7 @@ td {
 						%>
 
 					</table>
-				</ul>
+				
 			</div>
 
 			<div class="basic-information">

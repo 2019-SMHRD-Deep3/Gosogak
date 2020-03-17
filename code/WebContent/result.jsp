@@ -387,6 +387,7 @@ margin-bottom:0px;}
 <script type="text/javascript">
 						function myClick() {
 							$(".row").show();
+							window.scrollTo(200,500);
 							insultScore =0;
 							publicScore = 0;
 							specScore = 0;
@@ -450,7 +451,7 @@ margin-bottom:0px;}
 	
 									if(totalScore>=3){
 										$('.resultImg').remove();
-										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/sue.png">');
+										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/sue.png">').animate({rotate:'30deg',scale:'2'},7000);										
 									}else if(totalScore == 2){
 										$('.resultImg').remove();
 										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/neutral.png">');

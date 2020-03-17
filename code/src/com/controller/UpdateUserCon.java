@@ -34,7 +34,7 @@ public class UpdateUserCon implements ICommand {
 			session.setAttribute("info", dto);
 			System.out.println("정보수정완료");
 		}
-		moveURL = "index.jsp";
+		moveURL = "myIndex.jsp";
 		return moveURL;
 	}
 
