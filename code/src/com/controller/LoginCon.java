@@ -23,7 +23,8 @@ public class LoginCon implements ICommand {
 		// int num = Integer.parseInt(request.getParameter("num"));
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		String detail=request.getParameter("detail");
+		String detail = request.getParameter("detail");
+		String write = request.getParameter("write");
 		System.out.println(detail);
 
 		MemberDTO dto = new MemberDTO(id, pw);
@@ -37,13 +38,15 @@ public class LoginCon implements ICommand {
 
 		if (request.getParameter("detail") != null) {
 			moveURL = "result.jsp";
+			
+		} else if (request.getParameter("write") != null) {
+			moveURL = "community.jsp";	
 
 		} else if(request.getParameter("myinfo") != null) {
 			moveURL = "myIndex.jsp";
-		}
-		else if(request.getParameter("counsel") != null) {
+		} else if(request.getParameter("counsel") != null) {
 			moveURL = "counsel.jsp";
-		}else {
+		} else {
 			moveURL = "index.jsp";
 		}
 

@@ -183,6 +183,7 @@ public class PostDAO {
 				post_content = rs.getString("POST_CONTENT");
 				post_dt = rs.getString("POST_DT");
 				post_id = rs.getString("MEMBER_ID");
+								
 				click_p_info = new PostDTO(post_cd,post_title,post_content,post_dt,post_id);
 				
 			}

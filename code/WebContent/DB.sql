@@ -159,7 +159,8 @@ VALUES(post_seq.nextval,'테스트용 제목입니다.', '테스트용 더미 게시글 입니다. 게
 select * from POST;
 
 INSERT INTO REPLY
-VALUES(reply_seq.nextval,1,'test','테스트용 더미 댓글 입니다. 댓글의 내용이 들어갑니다.');
+VALUES(reply_seq.nextval,1,'manager','테스트용 더미 댓글 입니다. 댓글의 내용이 들어갑니다.');
+select * from REPLY;
 
 --INSERT INTO SERVICE
 --VALUES(serv_seq.nextval,'test',sysdate,1);

@@ -12,12 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.controller.InsertAnalysisResult;
 import com.controller.InsertCounselCon;
 import com.controller.InsertPostCon;
+import com.controller.InsertReplyCon;
 import com.controller.JoinCon;
 import com.controller.LoginCon;
 import com.controller.JoinCon;
 import com.controller.LoginCon;
 import com.controller.LogoutCon;
 import com.controller.ReadPostCon;
+import com.controller.ReadReplyCon;
 import com.controller.UpdateUserCon;
 
 /**
@@ -34,10 +36,12 @@ private static final long serialVersionUID = 1L;
 		map.put("LoginService.do", new LoginCon());
 		map.put("LogoutService.do", new LogoutCon());
 		map.put("UpdateUserService.do", new UpdateUserCon());
-		map.put("InsertPostCon.do", new InsertPostCon());
-		map.put("ReadPostCon.do", new ReadPostCon());
+		map.put("InsertPost.do", new InsertPostCon());
+		map.put("ReadPost.do", new ReadPostCon());
 		map.put("InsertCounselCon.do",new InsertCounselCon());
 		map.put("InsertAnalysisResult.do",new InsertAnalysisResult());
+		map.put("InsertReply.do",new InsertReplyCon());
+		map.put("ReadReply.do",new ReadReplyCon());
 		//map.put("UpdateManagerService.do", new UpdateManagerCon());
 		//map.put("InsertPostService.do", new InsertPostCon());
 	}
@@ -58,6 +62,16 @@ private static final long serialVersionUID = 1L;
 		putData();
 		ICommand iCommand = map.get(resultURL);
 		moveURL = iCommand.execute(request, response);
+		
+		if(resultURL.equals("ReadPost.do")) {
+			response.getWriter().print(moveURL);
+			return;
+		}
+		if(resultURL.equals("ReadReply.do")) {
+			response.getWriter().print(moveURL);
+			return;
+		}
+		
 		if(!(moveURL==null))
 			response.sendRedirect(moveURL);
 	}

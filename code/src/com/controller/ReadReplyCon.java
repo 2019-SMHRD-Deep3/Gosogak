@@ -15,30 +15,25 @@ import javax.servlet.jsp.PageContext;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.model.MemberDTO;
-import com.model.PostDAO;
-import com.model.PostDTO;
+import com.model.ReplyDAO;
+import com.model.ReplyDTO;
 
 import front.ICommand;
 
-public class ReadPostCon implements ICommand {
+public class ReadReplyCon implements ICommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		int post_cd = Integer.parseInt(request.getParameter("num"));
-		
 //		System.out.println(post_cd);
-		
-		PostDAO dao = new PostDAO();
-		PostDTO click_p_info = dao.selectOne(post_cd);
-		
+		ReplyDAO dao = new ReplyDAO();
+		ArrayList<ReplyDTO> click_p_reply = dao.selectReply(post_cd);
 //		HttpSession session = request.getSession();
-//		
 //		session.removeAttribute("click_p_info_id");
 //		session.setAttribute("click_p_info_id", click_p_info_id);
 		
 		Gson gson = new Gson();
-		String value = gson.toJson(click_p_info);
+		String value = gson.toJson(click_p_reply);
 		
 		return value;
 	}

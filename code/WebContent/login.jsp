@@ -92,6 +92,11 @@
 					<button type="submit" class="btn btn-primary" name="counsel"
 						value="result">Login</button>
 					<%
+						} else if (request.getParameter("write") != null) {
+					%>
+					<button type="submit" class="btn btn-primary" name="write"
+						value="community">Login</button>	
+					<%
 						} else {
 					%>
 					<button type="submit" class="btn btn-primary">Login</button>

@@ -35,6 +35,15 @@ th {
 	text-align: center;
 	background-color: lightgray;
 }
+
+.reply_load {
+	display:none;
+}
+
+.reply_ido{
+	display:none;
+}
+
 </style>
 
 </head>
@@ -135,6 +144,60 @@ th {
             })
          });
       }
+      
+      $(function(){
+    	  $('.btn-reply').on('click',function(){
+        	  var str = ""
+    		       var tdArr2 = new Array();    // 배열 선언
+    		        // 현재 클릭된 Row(<tr>)
+    		        var tr2 = $('.posttr');
+    		        var td2 = tr2.children();
+    		        // 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
+    		        td2.each(function(i){
+    		            tdArr2.push(td2.eq(i).text());
+    		        });
+    		        var num = td2.eq(0).text();
+    		        console.log(num);
+         	 	$.ajax({
+    				url : "InsertReply.do.do",
+    				type : "POST",
+    				cache : false,
+    				dataType : "json",
+    				data : "num="+num,
+    				success : function(result) {
+    					/* console.log("성공");
+    					console.log(result); */
+    					var reply = $(".reply");
+    					var reply_list;
+    					reply.empty();
+    					reply.append(reply_ido);
+    					reply_load.append(reply);
+    					if(result.length != 0){
+    						/* console.log("조건문"); */
+    						for (var i = 0; i < result.length; i++) {
+    							/* console.log("반복"); */
+    							var reply_id = result[i].reply_id;
+    							var reply_content = result[i].reply_content;
+    							reply_list = '<tr><td class="reply_list">' + reply_id + '</td><td>'
+    							+ reply_content + '</td></tr>';
+    							reply.append(reply_list);
+    							reply_load.append(reply);
+    						}
+    					}
+    					else{
+    						/* reply.remove(reply_list); */
+    						/* reply.empty(); */
+    						/* reply.remove(reply_list); */
+    						/* console.log("조건문밖"); */
+    					}
+    				},
+    				error : function() {
+    				console.log("error");
+    				}
+    			});
+          	});
+      });      
+      
    </script>
 	<section class="profile-detail">
 
@@ -147,9 +210,23 @@ th {
 						<!-- 게시판 영역  시작-->
 						<div id="wrap">
 
-							<!-- 글목록 위 부분-->
+							<!-- 게시글 출력 부분-->
 							<br>
 							<div class="post_load"></div>
+							<!--  댓글 출력 부분 -->
+							<br>
+							<form action="InsertReply.do">
+							<div class="reply_load">
+							<table class="reply" style="width:700px;, border:3px;, bordercolor:lightgray;, align:center;">
+							<% if (info != null) {%>
+								<tr class="reply_ido"><td class="ido" style="width:200px;"><%=info.getId()%></td>
+								<td><input style="width:500px;" type="text" name="reply_content"></td><td><button type="submit" class="btn-reply">등록</button></td></tr>
+							<% }else{%>
+							<tr class="reply_ido"><td class="ido" colspan="3">로그인이 필요합니다.</td></tr>
+							<%} %>
+							</table>
+							</div>
+							</form>
 							<!-- 게시글 목록 부분 -->
 							<br>
 							<div id="board">
@@ -164,13 +241,12 @@ th {
 										PostDAO dao = new PostDAO();
 										ArrayList<PostDTO> list = dao.selectAll();
 									%>
-									<c:forEach var="board">
 
 										<%
 											for (int i = list.size() - 1; i >= 0; i--) {
 										%>
 										<tr class="post_read">
-											<td class="post_cd"><%=i + 1%></td>
+											<td class="post_cd"><%=list.get(i).getPost_cd()%></td>
 											<td class="post_title"><%=list.get(i).getPost_title()%></td>
 											<td class="post_id"><%=list.get(i).getPost_id()%></td>
 											<td class="post_dt"><%=list.get(i).getPost_dt()%></td>
@@ -178,8 +254,6 @@ th {
 										<%
 											}
 										%>
-
-									</c:forEach>
 								</table>
 							</div>
 
@@ -190,182 +264,11 @@ th {
 								<%
 									}
 								%>
-								<button type="submit" class="btn brows-btn" name="detail"
+								<button type="submit" class="btn brows-btn" name="write"
 									value="community">글쓰기</button>
 
 							</form>
-							<!-- 페이지 넘버 부분 -->
-							<%-- <br>
-                     <div id="pageForm">
-                        <c:if test="${startPage != 1}">
-                           <a href='BoardListAction.bo?page=${startPage-1}'>[ 이전 ]</a>
-                        </c:if>
-
-                        <c:forEach var="pageNum" begin="${startPage}" end="${endPage}">
-                           <c:if test="${pageNum == spage}">${pageNum}&nbsp;</c:if>
-                           <c:if test="${pageNum != spage}">
-                              <a href='BoardListAction.bo?page=${pageNum}'>${pageNum}&nbsp;</a>
-                           </c:if>
-                        </c:forEach>
-
-                        <c:if test="${endPage != maxPage }">
-                           <a href='BoardListAction.bo?page=${endPage+1 }'>[다음]</a>
-                        </c:if>
-                     </div>
-
-                     <!--  검색 부분 -->
-                     <br>
-                     <div id="searchForm">
-                        <form>
-                           <select name="opt">
-                              <option value="0">제목</option>
-                              <option value="1">내용</option>
-                              <option value="2">제목+내용</option>
-                              <option value="3">글쓴이</option>
-                           </select> <input type="text" size="20" name="condition" />&nbsp; <input
-                              type="submit" value="검색" />
-                        </form>
-                     </div> --%>
 						</div>
-						<!-- 게시판 영역 종료 -->
-
-						<!-- <div class="col-md-3 col-sm-3">
-                     <img src="img/microsoft.png" alt="" class="img-responsive">
-                  </div>
-                  <div class="col-md-9 col-sm-9">
-                     <div class="profile-content">
-                        <h2>
-                           Microsoft<span>Internet and computer software</span>
-                        </h2>
-                        <p>Now Hiring(102)</p>
-                        <ul class="information">
-                           <li><span>Address:</span>Menlo Park, CA</li>
-                           <li><span>Website:</span>Google.com</li>
-                           <li><span>Employee:</span>50,000 - 70,000 employer</li>
-                           <li><span>Mail:</span>info@google.com</li>
-                           <li><span>From:</span>1998</li>
-                        </ul>
-                     </div>
-                  </div>
-                  <ul class="social">
-                     <li><a href="" class="facebook"><i
-                           class="fa fa-facebook"></i>Facebook</a></li>
-                     <li><a href="" class="google"><i
-                           class="fa fa-google-plus"></i>Google Plus</a></li>
-                     <li><a href="" class="twitter"><i class="fa fa-twitter"></i>Twitter</a></li>
-                     <li><a href="" class="linkedin"><i
-                           class="fa fa-linkedin"></i>Linked In</a></li>
-                     <li><a href="" class="instagram"><i
-                           class="fa fa-instagram"></i>Instagram</a></li>
-                  </ul>
-                  <div class="panel panel-default">
-                     <div class="panel-heading">
-                        <i class="fa fa-user fa-fw"></i> About Microsoft
-                     </div>
-                     /.panel-heading
-                     <div class="panel-body">
-                        <p>The front end is the part that users see and interact
-                           with, includes the User Interface, the animations, and usually
-                           a bunch of logic to talk to the backend. It is the visual bit
-                           that the user interacts with.</p>
-                     </div>
-                  </div>
-
-                  <div class="panel panel-default">
-                     <div class="panel-heading">
-                        <i class="fa fa-leaf fa-fw"></i> Responsibilities:
-                     </div>
-                     /.panel-heading
-                     <div class="panel-body">
-                        <p>Rapid growth since incorporation has triggered a chain of
-                           products, acquisitions and partnerships beyond Google's core
-                           search engine (Google Search).</p>
-                        <ul>
-                           <li>Software testing in a Web Applications/Mobile
-                              environment.</li>
-                           <li>Software Test Plans from Business Requirement
-                              Specifications for test engineering group.</li>
-                           <li>Software testing in a Web Applications environment.</li>
-                           <li>Translate designs into responsive web interfaces</li>
-                           <li>Software testing in a Web Applications/Mobile
-                              environment.</li>
-                           <li>Software testing in a Web Applications environment.</li>
-                           <li>Translate designs into responsive web interfaces</li>
-                           <li>Software Test Plans from Business Requirement
-                              Specifications for test engineering group.</li>
-                           <li>Run production tests as part of software
-                              implementation; Create, deliver and support test plans for
-                              testing group to execute.</li>
-                           <li>Run production tests as part of software
-                              implementation; Create, deliver and support test plans for
-                              testing group to execute.</li>
-                        </ul>
-                     </div>
-                  </div>
-
-                  <div class="panel panel-default">
-                     <div class="panel-heading">
-                        <i class="fa fa-coffee fa-fw"></i> Minimum qualifications:
-                     </div>
-                     /.panel-heading
-                     <div class="panel-body">
-                        <p>Rapid growth since incorporation has triggered a chain of
-                           products.</p>
-                        <ul>
-                           <li>Software testing in a Web Applications/Mobile
-                              environment.</li>
-                           <li>Software Test Plans from Business Requirement
-                              Specifications for test engineering group.</li>
-                           <li>Software testing in a Web Applications environment.</li>
-                           <li>Translate designs into responsive web interfaces</li>
-                           <li>Software testing in a Web Applications/Mobile
-                              environment.</li>
-                           <li>Software testing in a Web Applications environment.</li>
-                           <li>Translate designs into responsive web interfaces</li>
-                           <li>Software Test Plans from Business Requirement
-                              Specifications for test engineering group.</li>
-                           <li>Run production tests as part of software
-                              implementation; Create, deliver and support test plans for
-                              testing group to execute.</li>
-                           <li>Run production tests as part of software
-                              implementation; Create, deliver and support test plans for
-                              testing group to execute.</li>
-                        </ul>
-                     </div>
-                  </div>
-
-                  <div class="panel panel-default">
-                     <div class="panel-heading">
-                        <i class="fa fa-graduation-cap fa-fw"></i> Preferred
-                        qualifications:
-                     </div>
-                     /.panel-heading
-                     <div class="panel-body">
-                        <ul>
-                           <li>Software testing in a Web Applications/Mobile
-                              environment.</li>
-                           <li>Software Test Plans from Business Requirement
-                              Specifications for test engineering group.</li>
-                           <li>Software testing in a Web Applications environment.</li>
-                           <li>Translate designs into responsive web interfaces</li>
-                           <li>Software testing in a Web Applications/Mobile
-                              environment.</li>
-                           <li>Software testing in a Web Applications environment.</li>
-                           <li>Translate designs into responsive web interfaces</li>
-                           <li>Software Test Plans from Business Requirement
-                              Specifications for test engineering group.</li>
-                           <li>Run production tests as part of software
-                              implementation; Create, deliver and support test plans for
-                              testing group to execute.</li>
-                           <li>Run production tests as part of software
-                              implementation; Create, deliver and support test plans for
-                              testing group to execute.</li>
-                        </ul>
-                     </div>
-                  </div> -->
-
-
-
 					</div>
 				</div>
 			</div>
@@ -442,8 +345,18 @@ th {
 	<script src="js/bootsnav.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/jquery-3.4.1.min.js"></script>
+	
 	<script type="text/javascript">
 		$('.post_read').on('click',function(){
+			var reply_load = $(".reply_load");
+			reply_load.css('display',"none");
+			reply_load.css('display',"inline");
+			var reply_ido = $(".reply_ido");
+			reply_ido.css('display',"none");
+			reply_ido.css('display',"inline");
+			
+/* 			reply_load.style.display = "none";
+			reply_load.style.display = "inline"; */
 			var str = ""
 		        var tdArr = new Array();    // 배열 선언
 		        // 현재 클릭된 Row(<tr>)
@@ -455,26 +368,71 @@ th {
 		        });
 		        
 		        var num = td.eq(0).text();
-		      
+		        /* console.log(num); */
+				
 				$.ajax({
-					url : "ReadPostCon.do",
+					url : "ReadPost.do",
 					type : "POST",
-					dataType : "text",
+					cache : false,
+					dataType : "json",
 					data : "num="+num,
-					success : function() {
-						console.log("성공");
-						var p_id = '${click_p_info_id}';
-						alert(p_id);
-						/* $('.post').remove(load);
-						var post = '<table class="post" width="700" border="3" bordercolor="lightgray" align="center"></table>';
-						$('.post_load').append(post);
-						var load = '<tr class="posttr"><td>'+ '글번호' + '</td><td>' + num + '</td></tr>'
-						+'<tr class="posttr"><td>'+ '작성자' + '</td><td>' + p_id + '</td></tr>'
-						+'<tr class="posttr"><td>'+ '작성날짜' + '</td><td>' + 'writeDate' + '</td></tr>'
-						+'<tr class="posttr"><td>'+ '제목' + '</td><td>' + 'title' + '</td></tr>'
-						+'<tr class="posttr"><td>'+ '내용' + '</td><td>' + 'content' + '</td></tr>';
-						$('.post').append(load); */
+					success : function(result) {
+						/* console.log("성공"); */
+						/* console.log(result); */
+						var post_id = result.post_cd;
+						var post_dt = result.post_dt;
+						var post_title = result.post_title;
+						var post_content = result.post_content;
 						
+	                        $('.post').remove(load);
+							var post = '<table class="post" style="width:700px;, border:3px;, bordercolor:lightgray;, align:center;"></table>';
+							$('.post_load').append(post);
+							var load = '<tr class="posttr"><td>'+ '글번호' + '</td><td>' + num + '</td></tr>'
+							+'<tr class="posttr"><td>'+ '작성자' + '</td><td>' + post_id + '</td></tr>'
+							+'<tr class="posttr"><td>'+ '작성날짜' + '</td><td>' + post_dt + '</td></tr>'
+							+'<tr class="posttr"><td>'+ '제목' + '</td><td>' + post_title + '</td></tr>'
+							+'<tr class="posttr"><td>'+ '내용' + '</td><td>' + post_content + '</td></tr><br>';
+							$('.post').append(load);
+							
+					},
+					error : function() {
+						console.log("error");
+					}
+				});
+				
+				$.ajax({
+					url : "ReadReply.do",
+					type : "POST",
+					cache : false,
+					dataType : "json",
+					data : "num="+num,
+					success : function(result) {
+						/* console.log("성공");
+						console.log(result); */
+						var reply = $(".reply");
+						var reply_list;
+						reply.empty();
+						reply.append(reply_ido);
+						reply_load.append(reply);
+						if(result.length != 0){
+							/* console.log("조건문"); */
+							for (var i = 0; i < result.length; i++) {
+								/* console.log("반복"); */
+								var reply_id = result[i].reply_id;
+								var reply_content = result[i].reply_content;
+								reply_list = '<tr><td class="reply_list">' + reply_id + '</td><td>'
+								+ reply_content + '</td></tr>';
+								reply.append(reply_list);
+								reply_load.append(reply);
+							}
+							
+						}
+						else{
+							/* reply.remove(reply_list); */
+							/* reply.empty(); */
+							/* reply.remove(reply_list); */
+							/* console.log("조건문밖"); */
+						}
 					},
 					error : function() {
 						console.log("error");
