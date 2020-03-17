@@ -147,9 +147,9 @@ background:#bc2610;
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
 		<div class="container">
 			<div class="caption">
-				<h2>내정보/분석리스트</h2>
+				<h2>내정보</h2>
 				<p>
-					<span>내정보/분석리스트</span>
+					<span>확인 / 수정 </span>
 				</p>
 			</div>
 		</div>
