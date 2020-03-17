@@ -129,7 +129,7 @@ MAXVALUE 100000 ;
 INSERT INTO MEMBER
 VALUES('test','1111','김예시','test@test.com','user');
 INSERT INTO MEMBER
-VALUES('안인태','1111','안인태','gosomi2@naver.com','manager');
+VALUES('안인태','111','안인태','gosomi2@naver.com','manager');
 INSERT INTO MEMBER
 VALUES('박병관','1111','박병관','Walnutlove@naver.com','manager');
 INSERT INTO MEMBER
