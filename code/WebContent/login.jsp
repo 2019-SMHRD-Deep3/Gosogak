@@ -48,7 +48,7 @@
                %>
                <li><a href="login.jsp">로그인</a></li>
                <%
-                  } else {
+                  } else { 
                %>
                <li><a href="LogoutService.do">로그아웃</a></li>
                <%
@@ -72,7 +72,15 @@
       </div>
    </nav>
    <!-- Navigation End  -->
+<!--  로그인 실패 판단여부 -->
+	<script language=javascript>
+      if ("<%=request.getParameter("success")%>"=="False") {
+                 alert('로그인 실패');
 
+      } 
+   </script>
+   
+   
 	<!-- 로그인 섹션 -->
 	<section class="login-wrapper">
 		<div class="container">
@@ -87,22 +95,36 @@
 					%>
 					<button type="submit" class="btn btn-primary" name="detail"
 						value="result">Login</button>
+						
 					<%
 						} else if (request.getParameter("counsel") != null) {
 					%>
 					<button type="submit" class="btn btn-primary" name="counsel"
 						value="result">Login</button>
+
 					<%
 						} else {
 					%>
 					<button type="submit" class="btn btn-primary">Login</button>
+					
 					<%
 						}
 					%>
+
 				</form>
 			</div>
 		</div>
 	</section>
+	
+	<!-- 회원가입 성공 판단여부   -->
+	<script language=javascript>
+
+    if ("<%=request.getParameter("joinsuccess")%>"=="False") {
+                 alert('회원가입 실패');
+      }
+   </script>
+	
+	
 	<!-- login section End -->
 	<section class="join-wrapper">
 		<div class="container">

@@ -21,9 +21,13 @@ public class JoinCon implements ICommand{
 		
 		MemberDTO dto = new MemberDTO(id, pw, name, email);
 		MemberDAO dao = MemberDAO.getDAO();
-		dao.join(dto);
+		int cnt = dao.join(dto);
 		
-		moveURL = "index.jsp";
+		if(cnt == 0) {
+			moveURL = "login.jsp?joinsuccess=False";
+		}else {
+			moveURL = "index.jsp";
+		}
 		
 		return moveURL;
 	}
