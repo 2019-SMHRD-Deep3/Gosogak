@@ -229,7 +229,7 @@ border-bottom:1px dotted lightgray;
 						<!-- 게시판 영역  시작-->
 						<div id="wrap">
 
-							<!-- 게시글 출력 부분-->
+							<!-- 게시글 출력 부분 ㅋㅋ-->
 							<br>
 							<div class="post_load"></div>
 							<!--  댓글 출력 부분 -->
