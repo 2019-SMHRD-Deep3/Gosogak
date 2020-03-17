@@ -420,9 +420,13 @@ margin-bottom:0px;}
 										insultScore += 1;
 										totalScore += 1;
 										ins.innerHTML = '있음';
+										$(ins).css({
+										color : 'red'})
 									}else{
 										console.log('모욕성:0')
 										ins.innerHTML = '없음';
+										$(ins).css({
+											color : 'black'})
 									}
 									
 									// 공연성 판별
@@ -431,9 +435,13 @@ margin-bottom:0px;}
 										publicScore += 1;
 										totalScore += 1;
 										pub.innerHTML = '있음';
+										$(pub).css({
+										color : 'red'})
 									}else{
 										console.log('공연성:0')
 										pub.innerHTML = '없음';
+										$(pub).css({
+											color : 'black'})
 									}
 									
 									// 특정성 판별
@@ -442,9 +450,13 @@ margin-bottom:0px;}
 										specScore += 1;
 										totalScore += 1;
 										spe.innerHTML = '있음';
+										$(spe).css({
+										color : 'red'})
 									}else{
 										console.log('특정성:0')
 										spe.innerHTML = '없음';
+										$(spe).css({
+											color : 'black'})
 									}
 									
 									console.log('총합:'+totalScore);
