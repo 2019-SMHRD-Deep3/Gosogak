@@ -137,7 +137,13 @@ color:red;
 }
 hr{
 margin-bottom:0px;}
-
+.basic-information{
+width:48%;
+float:left;
+}
+#con{
+color:blue;
+}
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -276,16 +282,16 @@ margin-bottom:0px;}
 			<div class="container">
 				<div class="col-md-12">
 					<div class="row">
-						<div class="basic-information">
+						<div class="basic-information" >
 							<div class="col-md-9 col-sm-9">
 								<div class="profile-content">
 									<div class="panel-heading">
 									
 								
 									<h2>
-										상세 분석 결과</h2><hr></div><span id="warn"> : 본 분석결과는 법적효력이 없으며, 참고용도로만 사용하시기 바랍니다.</span>
-									<br>
-									<p></p>
+										상세 분석 결과</h2><hr></div><span id="warn"> : 본 분석결과는 법적효력이 없으며, 참고만 사용하시기 바랍니다.</span>
+									<br><br><br>
+									
 									<ul class="information">
 										<li><span>모욕성:</span><span id="insult"></span></li>
 										<li><span>공연성:</span><span id="public"></span></li>
@@ -302,6 +308,24 @@ margin-bottom:0px;}
 										a bunch of logic to talk to the backend. It is the visual bit
 										that the user interacts with.</p>
 								</div> -->
+							</div>
+						</div>
+						<div class="basic-information" style="float:right;">
+							<div class="col-md-9 col-sm-9">
+								<div class="profile-content">
+									<div class="panel-heading">
+									
+								
+									<h2>
+										고소각 성립 조건</h2><hr></div><span id="con"> : 다음 세가지 조건을 <b>모두</b> 만족해야만 고소가 가능합니다.</span>
+									<br><br><br>
+									<ul class="information">
+										
+										<li><b>모욕성 : </b> 모욕적이거나 경멸적인 표현이 포함되어 있음</li>
+										<li><b>공연성 : </b> 불특정 다수나 특정 집단에서 표현된 상황<</li>
+										<li><b>특정성 : </b> 제 3자가 피해자를 특정할 수 있는 댓글</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
