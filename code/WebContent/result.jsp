@@ -317,7 +317,7 @@ color:blue;
 									
 								
 									<h2>
-										고소각 성립 조건</h2><hr></div><span id="con"> : 다음 세가지 조건을 <b>모두</b> 만족해야만 고소가 가능합니다.</span>
+										고소각 성립 조건</h2><hr></div><span id="con"> : 다음 세가지 조건을 <b>모두</b> 만족해야만 승소확률이 높습니다.</span>
 									<br><br><br>
 									<ul class="information">
 										
