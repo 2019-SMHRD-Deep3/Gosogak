@@ -45,8 +45,9 @@ th {
 }
 
 .post_title:hover{	
+	text-decoration: underline;
 	cursor:pointer;
-	color:black;
+	
 }
 </style>
 
