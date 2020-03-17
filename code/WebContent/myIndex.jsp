@@ -82,7 +82,6 @@ left:0;
 right:0;
 position:absolute;
 background:#bc2610;
-
 }
 </style>
 
