@@ -34,7 +34,7 @@
                <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-               class="logo" alt=""></a>
+                alt=""></a>
          </div>
          <!-- End Header Navigation -->
 
@@ -48,7 +48,7 @@
                %>
                <li><a href="login.jsp">로그인</a></li>
                <%
-                  } else {
+                  } else { 
                %>
                <li><a href="LogoutService.do">로그아웃</a></li>
                <%
@@ -62,6 +62,7 @@
                      <li class="active"><a href="myIndex.jsp">내 정보</a></li>
                      <li><a href="community.jsp">커뮤니티</a></li>
                      <li><a href="counsel.jsp">상담 신청</a></li>
+                     <li><a href="myResult.jsp">나의 분석내역/상담내역</a></li>
                   </ul></li>
                   <li><div style="float: right; margin-top:15%;margin-right:-50%;"><%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
 					<%}else {%><%} %></div></li>
@@ -71,7 +72,15 @@
       </div>
    </nav>
    <!-- Navigation End  -->
+<!--  로그인 실패 판단여부 -->
+	<script language=javascript>
+      if ("<%=request.getParameter("success")%>"=="False") {
+                 alert('로그인 실패');
 
+      } 
+   </script>
+   
+   
 	<!-- 로그인 섹션 -->
 	<section class="login-wrapper">
 		<div class="container">
@@ -86,11 +95,13 @@
 					%>
 					<button type="submit" class="btn btn-primary" name="detail"
 						value="result">Login</button>
+						
 					<%
 						} else if (request.getParameter("counsel") != null) {
 					%>
 					<button type="submit" class="btn btn-primary" name="counsel"
 						value="result">Login</button>
+
 					<%
 						} else if (request.getParameter("write") != null) {
 					%>
@@ -100,13 +111,25 @@
 						} else {
 					%>
 					<button type="submit" class="btn btn-primary">Login</button>
+					
 					<%
 						}
 					%>
+
 				</form>
 			</div>
 		</div>
 	</section>
+	
+	<!-- 회원가입 성공 판단여부   -->
+	<script language=javascript>
+
+    if ("<%=request.getParameter("joinsuccess")%>"=="False") {
+                 alert('회원가입 실패');
+      }
+   </script>
+	
+	
 	<!-- login section End -->
 	<section class="join-wrapper">
 		<div class="container">

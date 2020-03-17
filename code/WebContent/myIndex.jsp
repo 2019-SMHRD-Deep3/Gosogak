@@ -25,6 +25,7 @@
 
 <style>
 .basic-information {
+	margin:auto;
 	position: relative;
 	z-index: 1;
 	background-color: #ffffff;
@@ -34,7 +35,6 @@
 	border: 1px solid #eaecf1;
 	display: table;
 	width: 50%;
-	float: left;
 	height: 373px;
 }
 
@@ -54,7 +54,36 @@ td {
 	padding: 1px;
 	border-bottom: 1px solid lightgray;
 }
+.inner-banner .caption{
+position:relative;
+}
+.inner-banner h2{
+color:#white;
+font-weight:400;
+display: block;
+ margin-bottom: 25px;
+}
+.inner-banner p{
+color:#white;
+font-weight:300;
+display: block;
+font-size:20px;
+margin-top:15px;
+}
+.inner-banner p span{
+color:white;
+}
+.inner-banner:before{
+content:"";
+display:block;
+top:0;
+bottom:0;
+left:0;
+right:0;
+position:absolute;
+background:#bc2610;
 
+}
 </style>
 
 </head>
@@ -64,72 +93,63 @@ td {
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
 	<!-- Navigation Start  -->
-	<nav class="navbar navbar-default navbar-sticky bootsnav">
+   <nav class="navbar navbar-default navbar-sticky bootsnav">
 
-		<div class="container">
-			<!-- Start Header Navigation -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#navbar-menu">
-					<i class="fa fa-bars"></i>
-				</button>
-				<a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-					class="logo" alt=""></a>
-			</div>
-			<!-- End Header Navigation -->
+      <div class="container">
+         <!-- Start Header Navigation -->
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+               data-target="#navbar-menu">
+               <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
+                alt=""></a>
+         </div>
+         <!-- End Header Navigation -->
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="navbar-menu">
-				<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
-					data-out="fadeOutUp">
-					<li><a href="index.jsp">메인 화면</a></li>
-					<%
-						if (info == null) {
-					%>
-					<li><a href="login.jsp">로그인</a></li>
-					<%
-						} else {
-					%>
-					<li><a href="LogoutService.do">로그아웃</a></li>
-					<%
-						}
-					%>
-					<li><a href="result.jsp">분석 하기</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">메뉴</a>
-						<ul class="dropdown-menu animated fadeOutUp"
-							style="display: none; opacity: 1;">
-							<li class="active"><a href="myIndex.jsp">내 정보</a></li>
-							<li><a href="community.jsp">커뮤니티</a></li>
-							<li><a href="counsel.jsp">상담 신청</a></li>
-						</ul></li>
-					<li><div
-							style="float: right; margin-top: 15%; margin-right: -50%;">
-							<%
-								if (info != null) {
-							%><%=info.getNm()%>님 환영합니다.
-							<%
-								} else {
-							%>
-							<%
-								}
-							%>
-						</div></li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-	</nav>
-	<!-- Navigation End  -->
+         <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
+               data-out="fadeOutUp">
+               <li><a href="index.jsp">메인 화면</a></li>
+               <%
+                  if (info == null) {
+               %>
+               <li><a href="login.jsp">로그인</a></li>
+               <%
+                  } else {
+               %>
+               <li><a href="LogoutService.do">로그아웃</a></li>
+               <%
+                  }
+               %>
+               <li><a href="result.jsp">분석 하기</a></li>
+               <li class="dropdown"><a href="#" class="dropdown-toggle"
+                  data-toggle="dropdown">메뉴</a>
+                  <ul class="dropdown-menu animated fadeOutUp"
+                     style="display: none; opacity: 1;">
+                     <li class="active"><a href="myIndex.jsp">내 정보</a></li>
+                     <li><a href="community.jsp">커뮤니티</a></li>
+                     <li><a href="counsel.jsp">상담 신청</a></li>
+                     <li><a href="myResult.jsp">나의 분석내역/상담내역</a></li>
+                  </ul></li>
+                  <li><div style="float: right; margin-top:15%;margin-right:-50%;"><%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
+					<%}else {%><%} %></div></li>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+   <!-- Navigation End  -->
 
 	<!-- Inner Banner -->
 	<section class="inner-banner"
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
 		<div class="container">
 			<div class="caption">
-				<h2>내정보/분석리스트</h2>
+				<h2>내정보</h2>
 				<p>
-					<span>내정보/분석리스트</span>
+					<span>확인 / 수정 </span>
 				</p>
 			</div>
 		</div>
@@ -159,6 +179,7 @@ td {
 						<button type="submit" class="btn btn-primary" name="myinfo">Login</button>
 					</div>
 				</form>
+			</div>
 
 
 				<!-- 	<div>
@@ -190,42 +211,12 @@ td {
 					</ul>
 
 				</div>
-				<div class="basic-information">
-					<ul class="information">
-						<h3>나의 상담 내역</h3>
-						<table>
-							<tr>
-								<th></th>
-								<th>상담사</th>
-								<th>제목</th>
-								<th>내용</th>
-								<th>날짜</th>
-							</tr>
-
-							<%
-								CounselDAO counseldao = new CounselDAO();
-									ArrayList<CounselDTO> list = counseldao.selectCounsel(info.getId());
-									for (int i = list.size() - 1; i >= 0; i--) {
-							%>
-							<tr>
-								<td><%=list.get(i).getCounsel_cd()%>.</td>
-								<td><%=list.get(i).getCounsel_manager()%></td>
-								<td><%=list.get(i).getCounsel_title()%></td>
-								<td><%=list.get(i).getCounsel_content()%></td>
-								<td><%=list.get(i).getCounsel_dt()%></td>
-							</tr>
-							<%
-								}
-							%>
-						</table>
-					</ul>
-				</div>
+				
 				<%
 					}
 				%>
 				<!-- 			</div> -->
 				<!-- </div> -->
-			</div>
 			<!-- 	</section> -->
 		</div>
 	</section>

@@ -23,6 +23,9 @@ border:none;}
 table {
 	border-collapse: separate;
 }
+td{
+padding:1%;
+}
 #title{
 padding:0.5%;
 width:10%;
@@ -58,6 +61,37 @@ height:100%;
 .btn2:hover {
 	background: #da0833;
 }
+
+.inner-banner .caption{
+position:relative;
+}
+.inner-banner h2{
+color:#white;
+font-weight:400;
+display: block;
+ margin-bottom: 25px;
+}
+.inner-banner p{
+color:#white;
+font-weight:300;
+display: block;
+font-size:20px;
+margin-top:15px;
+}
+.inner-banner p span{
+color:white;
+}
+.inner-banner:before{
+content:"";
+display:block;
+top:0;
+bottom:0;
+left:0;
+right:0;
+position:absolute;
+background:#bc2610;
+
+}
 </style>
 </head>
 
@@ -76,7 +110,7 @@ height:100%;
                <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-               class="logo" alt=""></a>
+                alt=""></a>
          </div>
          <!-- End Header Navigation -->
 
@@ -104,6 +138,7 @@ height:100%;
                      <li class="active"><a href="myIndex.jsp">내 정보</a></li>
                      <li><a href="community.jsp">커뮤니티</a></li>
                      <li><a href="counsel.jsp">상담 신청</a></li>
+                     <li><a href="myResult.jsp">나의 분석내역/상담내역</a></li>
                   </ul></li>
                   <li><div style="float: right; margin-top:15%;margin-right:-50%;"><%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
 					<%}else {%><%} %></div></li>
@@ -119,9 +154,9 @@ height:100%;
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
 		<div class="container">
 			<div class="caption">
-				<h2>Get your jobs</h2>
+				<h2>공개 상담 게시판</h2>
 				<p>
-					Get your Popular jobs <span>202 New job</span>
+					건전한 인터넷 문화를 만들어 갑시다 <span>/욕설,타인비방,악성루머,성적 게시글 무통보 삭제</span>
 				</p>
 			</div>
 		</div>
@@ -149,7 +184,7 @@ height:100%;
 								</tr>
 								<tr>
 									<td id="title">제 목</td>
-									<td><input name="post_title" size="90%"/></td>
+									<td><input name="post_title" size="90%" placeholder="제목을 입력해 주세요"/></td>
 								</tr>
 								<tr>
 									<td id="title">내 용</td>
@@ -162,9 +197,9 @@ height:100%;
 								</tr> -->
 
 								<tr align="center" valign="middle">
-									<td colspan="5"><input class="btn2" type="reset" value="취소">
-										<input class="btn2" type="button"value="목록">
-										<input class="btn2" type="submit" value="등록"> </td>
+									<td colspan="5"><input class="btn2" type="reset" value="다시쓰기">
+										<input class="btn2" type="button"value="돌아가기" onClick="location.href='community.jsp'">
+										<input class="btn2" type="submit" value="등록하기"> </td>
 								</tr>
 							</table>
 						</form>

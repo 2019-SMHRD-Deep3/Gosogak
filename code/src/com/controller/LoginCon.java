@@ -46,7 +46,13 @@ public class LoginCon implements ICommand {
 			moveURL = "myIndex.jsp";
 		} else if(request.getParameter("counsel") != null) {
 			moveURL = "counsel.jsp";
-		} else {
+
+		}else if(request.getParameter("myResult")!=null) {
+			moveURL="myResult.jsp";
+		}
+		else if(info == null){
+			moveURL = "login.jsp?success=False";
+		}else {
 			moveURL = "index.jsp";
 		}
 

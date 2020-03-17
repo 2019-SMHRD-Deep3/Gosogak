@@ -32,6 +32,37 @@
 	float: center;
 	margin:auto;
 }
+
+.inner-banner .caption{
+position:relative;
+}
+.inner-banner h2{
+color:#white;
+font-weight:400;
+display: block;
+ margin-bottom: 25px;
+}
+.inner-banner p{
+color:#white;
+font-weight:300;
+display: block;
+font-size:20px;
+margin-top:15px;
+}
+.inner-banner p span{
+color:white;
+}
+.inner-banner:before{
+content:"";
+display:block;
+top:0;
+bottom:0;
+left:0;
+right:0;
+position:absolute;
+background:#bc2610;
+
+}
 td{
 width:40%;
 }
@@ -53,7 +84,7 @@ width:40%;
                <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-               class="logo" alt=""></a>
+                alt=""></a>
          </div>
          <!-- End Header Navigation -->
 
@@ -81,6 +112,7 @@ width:40%;
                      <li class="active"><a href="myIndex.jsp">내 정보</a></li>
                      <li><a href="community.jsp">커뮤니티</a></li>
                      <li><a href="counsel.jsp">상담 신청</a></li>
+                     <li><a href="myResult.jsp">나의 분석내역/상담내역</a></li>
                   </ul></li>
                   <li><div style="float: right; margin-top:15%;margin-right:-50%;"><%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
 					<%}else {%><%} %></div></li>
@@ -96,7 +128,7 @@ width:40%;
 		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
 		<div class="container">
 			<div class="caption">
-				<h2>Get your jobs</h2>
+				<h2>내 정보/정보 수정</h2>
 				<p>
 					Get your Popular jobs <span>202 New job</span>
 				</p>
@@ -107,8 +139,8 @@ width:40%;
 	<section class="jobs" >
 		<div class="container">
 						<div class="basic-information">
-							<form action="UpdateUserService.do" method="post">
-						<h3>나의정보</h3><hr><br>
+							<form action="UpdateUserService.do">
+						<h3>내 정보</h3><hr><br>
 						<table>
 					<tr><td><h5>아이디</h5></td><td><%=info.getId() %></td></tr>
 					<tr><td><h5>비밀번호</h5></td><td><input name="pw" type="password"  class="form-control input-lg" placeholder="비밀번호를 입력하세요"></td></tr>

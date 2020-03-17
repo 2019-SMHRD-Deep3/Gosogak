@@ -27,11 +27,11 @@ public class InsertCounselCon implements ICommand {
 		String counsel_content = request.getParameter("counsel_content");
 		String counsel_name=null;
 		if(counselor.equals("안인태")) {
-			counsel_name="an";
-		}else if(counselor.equals("방세미")){
-			counsel_name="bang";
-		}else if(counselor.equals("천승현")) {
-			counsel_name="cheon";
+			counsel_name="안인태";
+		}else if(counselor.equals("박병관")){
+			counsel_name="박병관";
+		}else if(counselor.equals("이기성")) {
+			counsel_name="이기성";
 		}
 		/* System.out.println(counsel_name); */
 		CounselDTO dto = new CounselDTO(counsel_id, counsel_name, counsel_title, counsel_content);
@@ -44,7 +44,7 @@ public class InsertCounselCon implements ICommand {
 			System.out.println("실패");
 		}
 
-		moveURL = "index.jsp";
+		moveURL = "myResult.jsp";
 		return moveURL;
 	}
 

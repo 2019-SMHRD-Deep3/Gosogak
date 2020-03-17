@@ -30,9 +30,8 @@
 }
 
 .col-md-2 {
-	width: 14%;
-	padding-right: 15px;
-	margin-left: 2% !important;
+	width: 16%;
+	padding-right: 15px;	
 }
 
 .link:hover {
@@ -104,6 +103,83 @@
 .caption p {
 	margin-bottom: 50px;
 }
+
+#btn1{
+	margin: 0px auto;
+	width: 85%;
+	margin-right: 0.5%;
+	padding-bottom: 11%;
+	padding-top: 11%;	
+}
+
+#video {
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     min-width: 100%;
+     min-height: 100%;
+     width: 100%;
+     height: 100%;
+     z-index: -1;
+     overflow: hidden;
+     object-fit: fill;
+}
+
+.panel.panel-default{
+	text-align: center;
+}
+
+.col-md-9{
+width:95%;
+}
+#warn{
+	color:red;
+}
+hr{
+margin-bottom:0px;}
+
+
+.resultImg{
+/*   -webkit-animation: spin 4s infinite linear;
+  -o-animation: spin 4s infinite linear;
+  -moz-animation: spin 4s infinite linear;
+  animation: spin 4s infinite linear; */
+    -webkit-animation: spin 1s linear;
+  -o-animation: spin 1s linear;
+  -moz-animation: spin 1s linear;
+  animation: spin 1s linear;
+}
+ 
+@-webkit-keyframes spin {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}
+ 
+@-moz-keyframes spin {
+   0%  {-moz-transform: rotate(0deg);}
+    100% {-moz-transform: rotate(360deg);}
+}
+@keyframes spin {
+    0%  {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.resultImgStop{    
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -ms-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+
+.basic-information{
+width:48%;
+float:left;
+}
+#con{
+color:blue;
+}
+
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -120,73 +196,66 @@
 	var specScore = 0;
 </script>
 <!-- Navigation Start  -->
-<nav class="navbar navbar-default navbar-sticky bootsnav">
+   <nav class="navbar navbar-default navbar-sticky bootsnav">
 
-	<div class="container">
-		<!-- Start Header Navigation -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#navbar-menu">
-				<i class="fa fa-bars"></i>
-			</button>
-			<a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
-				class="logo" alt=""></a>
-		</div>
-		<!-- End Header Navigation -->
+      <div class="container">
+         <!-- Start Header Navigation -->
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+               data-target="#navbar-menu">
+               <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
+                alt=""></a>
+         </div>
+         <!-- End Header Navigation -->
 
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="navbar-menu">
-			<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
-				data-out="fadeOutUp">
-				<li><a href="index.jsp">메인 화면</a></li>
-				<%
-					if (info == null) {
-				%>
-				<li><a href="login.jsp">로그인</a></li>
-				<%
-					} else {
-				%>
-				<li><a href="LogoutService.do">로그아웃</a></li>
-				<%
-					}
-				%>
-				<li><a href="result.jsp">분석 하기</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">메뉴</a>
-					<ul class="dropdown-menu animated fadeOutUp"
-						style="display: none; opacity: 1;">
-						<li class="active"><a href="myIndex.jsp">내 정보</a></li>
-						<li><a href="community.jsp">커뮤니티</a></li>
-						<li><a href="counsel.jsp">상담 신청</a></li>
-					</ul></li>
-				<li><div
-						style="float: right; margin-top: 15%; margin-right: -50%;">
-						<%
-							if (info != null) {
-						%><%=info.getNm()%>님 환영합니다.
-						<%
-							} else {
-						%>
-						<%
-							}
-						%>
-					</div></li>
-			</ul>
-		</div>
-		<!-- /.navbar-collapse -->
-	</div>
-</nav>
-<!-- Navigation End  -->
+         <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
+               data-out="fadeOutUp">
+               <li><a href="index.jsp">메인 화면</a></li>
+               <%
+                  if (info == null) {
+               %>
+               <li><a href="login.jsp">로그인</a></li>
+               <%
+                  } else {
+               %>
+               <li><a href="LogoutService.do">로그아웃</a></li>
+               <%
+                  }
+               %>
+               <li><a href="result.jsp">분석 하기</a></li>
+               <li class="dropdown"><a href="#" class="dropdown-toggle"
+                  data-toggle="dropdown">메뉴</a>
+                  <ul class="dropdown-menu animated fadeOutUp"
+                     style="display: none; opacity: 1;">
+                     <li class="active"><a href="myIndex.jsp">내 정보</a></li>
+                     <li><a href="community.jsp">커뮤니티</a></li>
+                     <li><a href="counsel.jsp">상담 신청</a></li>
+                     <li><a href="myResult.jsp">나의 분석내역/상담내역</a></li>
+                  </ul></li>
+                  <li><div style="float: right; margin-top:15%;margin-right:-50%;"><%if(info!=null){ %><%=info.getNm()%>님 환영합니다.
+					<%}else {%><%} %></div></li>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+   <!-- Navigation End  -->
 
 <!-- Main jumbotron for a primary marketing message or call to action -->
 
 
-<section class="main-banner"
-	style="background: #242c36 url(img/main3.jpg) no-repeat">
+<section class="main-banner">
+	<video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+      <source src="img/coverr-sparks.mp4">
+	 </video>
+	<!--  style="background: #242c36 url(img/main3.jpg) no-repeat">-->
 	<div class="container">
 		<div class="caption">
-			<h2><b>이거.. 고소 각?</b></h2>
+			<h2><b>이거.. 고소 각?</b></h2>			
 			<fieldset>
 				
 				<div class="col-md-5 col-sm-5 no-pad">
@@ -208,7 +277,7 @@
 						placeholder="텍스트 입력" />
 				</div>
 				<div class="col-md-2 col-sm-2 no-pad">
-					<button onclick="myClick()" class="btn brows-btn">click</button>
+					<button onclick="myClick()" class="btn brows-btn" id="btn1">click</button>
 
 
 
@@ -218,15 +287,16 @@
 		</div>
 	</div>
 </section>
-<div>
-	<h5 id=warning>※  경 고 :  해당 서비스는 법적 효력이 없으며 악용시 처벌을 받을 수 있습니다.  ※</h5>
+<div class="warning">
+	<h4 class="warning1">※  경 고 :  해당 서비스는 법적 효력이 없으며 악용시 처벌을 받을 수 있습니다.  ※</h4>
 </div>
-
+<br><br><br><br><br>
 <section>
 	<div class="row heading">
 		<h2 id="result"></h2>
 
 	</div>
+	<br><br><br><br><br><br>
 	<div class="row">
 		<%
 			if (info == null) {
@@ -235,9 +305,9 @@
 			<%
 				}
 			%>
-			<p align=center>
+			<p id="more" align="center">
 				자세한 분석결과를 보려면
-				<자세히 보기> 를 눌러주세요 
+				<자세히 보기> 를 눌러주세요. 
 			</p>
 			<button type="submit" class="btn brows-btn detail" name="detail"
 				value="result">자세히 보기</button>
@@ -249,13 +319,16 @@
 			<div class="container">
 				<div class="col-md-12">
 					<div class="row">
-						<div class="basic-information">
+						<div class="basic-information" >
 							<div class="col-md-9 col-sm-9">
 								<div class="profile-content">
+									<div class="panel-heading">
+									
+								
 									<h2>
-										상세 분석 결과<span>본 분석결과는 법적효력이 없으며, 참고용도로만 사용하시기 바랍니다.</span>
-									</h2>
-									<p>Now Hiring(102)</p>
+										상세 분석 결과</h2><hr></div><span id="warn"> : 본 분석결과는 법적효력이 없으며, 참고만 사용하시기 바랍니다.</span>
+									<br><br><br>
+									
 									<ul class="information">
 										<li><span>모욕성:</span><span id="insult"></span></li>
 										<li><span>공연성:</span><span id="public"></span></li>
@@ -264,15 +337,31 @@
 								</div>
 							</div>
 							<div class="panel panel-default">
-								<div class="panel-heading">
-									<i class="fa fa-user fa-fw"></i> About Microsoft
-								</div>
+								
 								<!-- /.panel-heading -->
-								<div class="panel-body">
+								<!-- <div class="panel-body">
 									<p>The front end is the part that users see and interact
 										with, includes the User Interface, the animations, and usually
 										a bunch of logic to talk to the backend. It is the visual bit
 										that the user interacts with.</p>
+								</div> -->
+							</div>
+						</div>
+						<div class="basic-information" style="float:right;">
+							<div class="col-md-9 col-sm-9">
+								<div class="profile-content">
+									<div class="panel-heading">
+									
+								
+									<h2>
+										고소각 성립 조건</h2><hr></div><span id="con"> : 다음 세가지 조건을 <b>모두</b> 만족해야만 승소확률이 높습니다.</span>
+									<br><br><br>
+									<ul class="information">
+										
+										<li><b>모욕성 : </b> 모욕적이거나 경멸적인 표현이 포함되어 있음</li>
+										<li><b>공연성 : </b> 불특정 다수나 특정 집단에서 표현된 상황<</li>
+										<li><b>특정성 : </b> 제 3자가 피해자를 특정할 수 있는 댓글</li>
+									</ul>
 								</div>
 							</div>
 						</div>
@@ -280,11 +369,12 @@
 				</div>
 			</div>
 			<section align=center>
-				<button onclick="myInsert()" class="btn2">분석결과 저장</button>
-				<form action="counsel.jsp">
-				<input type="submit" class="btn2" value="1 : 1 상담 매칭" />
-				</form>
+				<div>					
+				<button onclick="myInsert()" class="btn2" >분석결과 저장</button>			
+				<button onclick="location='counsel.jsp'" class="btn2" >1 : 1 상담 매칭</button>
+				<!--<input type="submit" class="btn2" value="1 : 1 상담 매칭" />-->			
 				
+				</div>							
 			</section>
 		</div>
 	</section>
@@ -357,6 +447,8 @@
 </footer>
 <script type="text/javascript">
 						function myClick() {
+							$(".row").show();
+							window.scrollTo(200,700);
 							insultScore =0;
 							publicScore = 0;
 							specScore = 0;
@@ -389,9 +481,13 @@
 										insultScore += 1;
 										totalScore += 1;
 										ins.innerHTML = '있음';
+										$(ins).css({
+										color : 'red'})
 									}else{
 										console.log('모욕성:0')
 										ins.innerHTML = '없음';
+										$(ins).css({
+											color : 'black'})
 									}
 									
 									// 공연성 판별
@@ -400,9 +496,13 @@
 										publicScore += 1;
 										totalScore += 1;
 										pub.innerHTML = '있음';
+										$(pub).css({
+										color : 'red'})
 									}else{
 										console.log('공연성:0')
 										pub.innerHTML = '없음';
+										$(pub).css({
+											color : 'black'})
 									}
 									
 									// 특정성 판별
@@ -411,17 +511,26 @@
 										specScore += 1;
 										totalScore += 1;
 										spe.innerHTML = '있음';
+										$(spe).css({
+										color : 'red'})
 									}else{
 										console.log('특정성:0')
 										spe.innerHTML = '없음';
+										$(spe).css({
+											color : 'black'})
 									}
 									
 									console.log('총합:'+totalScore);
-	
+									// 이미지 적용부분
 									if(totalScore>=3){
-										$('#result').text('고소..각!')
+										$('.resultImg').remove();
+										$('#result').append('<img id="im" class="resultImg" style="width: 550px;" src="img/sue.png">');										
+									}else if(totalScore == 2){
+										$('.resultImg').remove();
+										$('#result').append('<img id="im" class="resultImg" style="width: 550px;" src="img/neutral.png">');
 									}else{
-										$('#result').text('애매한데...')
+										$('.resultImg').remove();
+										$('#result').append('<img id="im" class="resultImg" style="width: 550px;" src="img/no.png">');
 									}
 								}
 							});
@@ -433,6 +542,9 @@
 
 <script type="text/javascript" src=js/jquery.min.js></script>
 <script>
+$(function(){
+	$(".row").hide();
+});
 		$(function() {
 			$(".resultHide").hide();
 		});
@@ -440,15 +552,13 @@
 		$(function() {
 			$(".btn.brows-btn.detail").on("click", function() {
 				var check = confirm('로그인이 필요한 서비스입니다.');
-				if (check) {
-					location.href = "login.jsp";
-				}
 			});
 		});
 	} else {
 		$(function() {
 			$(".btn.brows-btn.detail").on("click", function() {
 				$(".btn.brows-btn.detail").hide()
+				$("#more").hide()
 				$(".resultHide").slideDown()
 			});
 		});
