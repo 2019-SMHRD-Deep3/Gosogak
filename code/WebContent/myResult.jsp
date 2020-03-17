@@ -232,10 +232,10 @@ td {
 					<table>
 						<tr>
 							<th width="5%"></th>
-							<th width="10%">상담사</th>
+							<th width="9%">상담사</th>
 							<th width="20%">제목</th>
 							<th width="49%">내용</th>
-							<th width="16%">날짜</th>
+							<th width="17%">날짜</th>
 						</tr>
 
 						<%
