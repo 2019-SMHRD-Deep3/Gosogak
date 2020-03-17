@@ -387,6 +387,7 @@ margin-bottom:0px;}
 <script type="text/javascript">
 						function myClick() {
 							$(".row").show();
+							window.scrollTo(200,500);
 							insultScore =0;
 							publicScore = 0;
 							specScore = 0;
