@@ -451,9 +451,12 @@ margin-bottom:0px;}
 									if(totalScore>=3){
 										$('.resultImg').remove();
 										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/sue.png">');
-									}else{
+									}else if(totalScore == 2){
 										$('.resultImg').remove();
 										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/neutral.png">');
+									}else{
+										$('.resultImg').remove();
+										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/no.png">');
 									}
 								}
 							});
