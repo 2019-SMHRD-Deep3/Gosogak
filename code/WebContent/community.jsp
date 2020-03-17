@@ -44,6 +44,10 @@ th {
 	display:none;
 }
 
+.post_title:hover{	
+	cursor:pointer;
+	color:black;
+}
 </style>
 
 </head>
