@@ -451,7 +451,7 @@ margin-bottom:0px;}
 	
 									if(totalScore>=3){
 										$('.resultImg').remove();
-										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/sue.png">');
+										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/sue.png">').animate({rotate:'30deg',scale:'2'},7000);										
 									}else if(totalScore == 2){
 										$('.resultImg').remove();
 										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/neutral.png">');
