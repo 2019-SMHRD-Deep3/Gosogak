@@ -44,7 +44,7 @@ public class InsertCounselCon implements ICommand {
 			System.out.println("½ÇÆÐ");
 		}
 
-		moveURL = "index.jsp";
+		moveURL = "myResult.jsp";
 		return moveURL;
 	}
 

@@ -244,7 +244,7 @@ td {
 								for (int i = list.size() - 1; i >= 0; i--) {
 						%>
 						<tr>
-							<td><%=list.get(i).getCounsel_cd()%></td>
+							<td><%=i+1%></td>
 							<td><%=list.get(i).getCounsel_manager()%></td>
 							<td><%=list.get(i).getCounsel_title()%></td>
 							<td><%=list.get(i).getCounsel_content()%></td>

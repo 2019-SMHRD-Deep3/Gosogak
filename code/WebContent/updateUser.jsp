@@ -139,7 +139,7 @@ width:40%;
 	<section class="jobs" >
 		<div class="container">
 						<div class="basic-information">
-							<form action="UpdateUserService.do" method="post">
+							<form action="UpdateUserService.do">
 						<h3>내 정보</h3><hr><br>
 						<table>
 					<tr><td><h5>아이디</h5></td><td><%=info.getId() %></td></tr>
