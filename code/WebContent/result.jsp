@@ -133,10 +133,42 @@
 width:95%;
 }
 #warn{
-color:red;
+	color:red;
 }
 hr{
 margin-bottom:0px;}
+
+.resultImg{
+/*   -webkit-animation: spin 4s infinite linear;
+  -o-animation: spin 4s infinite linear;
+  -moz-animation: spin 4s infinite linear;
+  animation: spin 4s infinite linear; */
+    -webkit-animation: spin 1s linear;
+  -o-animation: spin 1s linear;
+  -moz-animation: spin 1s linear;
+  animation: spin 1s linear;
+}
+ 
+@-webkit-keyframes spin {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
+}
+ 
+@-moz-keyframes spin {
+   0%  {-moz-transform: rotate(0deg);}
+    100% {-moz-transform: rotate(360deg);}
+}
+@keyframes spin {
+    0%  {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.resultImgStop{    
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -ms-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
 
 </style>
 <script
@@ -248,12 +280,13 @@ margin-bottom:0px;}
 <div class="warning">
 	<h4 class="warning1">※  경 고 :  해당 서비스는 법적 효력이 없으며 악용시 처벌을 받을 수 있습니다.  ※</h4>
 </div>
-
+<br><br><br><br><br>
 <section>
 	<div class="row heading">
 		<h2 id="result"></h2>
 
 	</div>
+	<br><br><br><br><br><br>
 	<div class="row">
 		<%
 			if (info == null) {
@@ -387,7 +420,7 @@ margin-bottom:0px;}
 <script type="text/javascript">
 						function myClick() {
 							$(".row").show();
-							window.scrollTo(200,500);
+							window.scrollTo(200,700);
 							insultScore =0;
 							publicScore = 0;
 							specScore = 0;
@@ -448,16 +481,16 @@ margin-bottom:0px;}
 									}
 									
 									console.log('총합:'+totalScore);
-	
+									// 이미지 적용부분
 									if(totalScore>=3){
 										$('.resultImg').remove();
-										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/sue.png">').animate({rotate:'30deg',scale:'2'},7000);										
+										$('#result').append('<img id="im" class="resultImg" style="width: 550px;" src="img/sue.png">');										
 									}else if(totalScore == 2){
 										$('.resultImg').remove();
-										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/neutral.png">');
+										$('#result').append('<img id="im" class="resultImg" style="width: 550px;" src="img/neutral.png">');
 									}else{
 										$('.resultImg').remove();
-										$('#result').append('<img class="resultImg" style="width: 550px;" src="img/no.png">');
+										$('#result').append('<img id="im" class="resultImg" style="width: 550px;" src="img/no.png">');
 									}
 								}
 							});
