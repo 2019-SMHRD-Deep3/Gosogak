@@ -30,8 +30,8 @@ public class InsertCounselCon implements ICommand {
 			counsel_name="안인태";
 		}else if(counselor.equals("박병관")){
 			counsel_name="박병관";
-		}else if(counselor.equals("리기성")) {
-			counsel_name="리기성";
+		}else if(counselor.equals("이기성")) {
+			counsel_name="이기성";
 		}
 		/* System.out.println(counsel_name); */
 		CounselDTO dto = new CounselDTO(counsel_id, counsel_name, counsel_title, counsel_content);

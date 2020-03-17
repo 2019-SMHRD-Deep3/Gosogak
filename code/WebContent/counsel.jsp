@@ -506,7 +506,7 @@ padding:40px 0px 60px 0px;
 							}
 						%>
 						<button type="submit" class="btn brows-btn" name="counsel"
-							value="리기성">상담하기</button>
+							value="이기성">상담하기</button>
 
 				
 					</form>

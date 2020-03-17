@@ -133,7 +133,7 @@ VALUES('안인태','111','안인태','gosomi2@naver.com','manager');
 INSERT INTO MEMBER
 VALUES('박병관','1111','박병관','Walnutlove@naver.com','manager');
 INSERT INTO MEMBER
-VALUES('리기성','1111','리기성','Stretching@naver.com','manager');
+VALUES('이기성','1111','이기성','Stretching@naver.com','manager');
 INSERT INTO MEMBER
 VALUES('manager','1111','김관리','manager@test.com','manager')
 
