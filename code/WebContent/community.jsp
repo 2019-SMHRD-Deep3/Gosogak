@@ -199,8 +199,7 @@ border-bottom:1px dotted lightgray;
 
 	<script type="text/javascript" src=js/jquery.min.js></script>
 	<script language=javascript>
-      if ('<%=info%>
-		' == 'null') {
+      if ('<%=info%>' == 'null') {
 			$(function() {
 				$(".btn.brows-btn").on("click", function() {
 					var check = confirm('로그인이 필요한 서비스입니다.');
