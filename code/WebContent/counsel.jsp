@@ -344,22 +344,6 @@ padding:40px 0px 60px 0px;
 					
 					</form>
 <br>
-			<!-- <ul class="social"> -->
-			<!-- <li><a href="" class="facebook1"><i class="fa fa-facebook"></i></a></li> -->
-			<!-- 	<li><a href="" class="google"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="" class="twitter"><i class="fa fa-twitter"></i></a></li> -->
-			<!-- 		<li><a href="" class="linkedin"><i class="fa fa-linkedin"></i>Linked In</a></li> -->
-			<!-- <li><a href="" class="instagram"><i class="fa fa-instagram"></i></a></li> -->
-			<!-- </ul> -->
-			<!-- <div class="panel panel-default">
-								<div class="panel-heading">
-									<i class="fa fa-user fa-fw"></i> About Me
-								</div>
-													/.panel-heading
-								<div class="panel-body">
-								<p>The front end is the part that users see and interact with, includes the User Interface, the animations, and usually a bunch of logic to talk to the backend. It is the visual bit that the user interacts with. This includes the design, images, colours, buttons, forms, typography, animations and content. It¡¯s basically everything that you as a user of the website can see.</p>	
-								</div>
-							</div> -->
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -377,15 +361,6 @@ padding:40px 0px 60px 0px;
 			</div>
 		</div>
 		
-		<!-- 	</div> -->
-		<!-- 				</div>
-			</div> -->
-		<!-- 		</section> -->
-
-		<!-- 		<section class="profile-detail">
-			<div class="container"> -->
-		<!-- 				<div class="col-md-12">
-					<div class="row"> -->
 		<div class="basic-information"> 
 			<div align="center" class="col-md-31 col-sm-3">
 				<img src="img/park.PNG" alt="" class="img-responsive" style="width:200px; height:250px;">
@@ -428,22 +403,6 @@ padding:40px 0px 60px 0px;
 					
 					</form>
 				<br>
-				<!-- <ul class="social">
-								<li><a href="" class="facebook1"><i class="fa fa-facebook"></i></a></li> -->
-				<!-- 		<li><a href="" class="google"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="" class="twitter"><i class="fa fa-twitter"></i></a></li> -->
-				<!-- 		<li><a href="" class="linkedin"><i class="fa fa-linkedin"></i>Linked In</a></li> -->
-				<!-- 		<li><a href="" class="instagram"><i class="fa fa-instagram"></i></a></li> -->
-				<!-- </ul> -->
-				<!-- <div class="panel panel-default">
-								<div class="panel-heading">
-									<i class="fa fa-user fa-fw"></i> About Me
-								</div>
-													/.panel-heading
-								<div class="panel-body">
-								<p>The front end is the part that users see and interact with, includes the User Interface, the animations, and usually a bunch of logic to talk to the backend. It is the visual bit that the user interacts with. This includes the design, images, colours, buttons, forms, typography, animations and content. It¡¯s basically everything that you as a user of the website can see.</p>	
-								</div>
-							</div> -->
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -460,16 +419,8 @@ padding:40px 0px 60px 0px;
 					</div>
 				</div>
 	</div>			
-		<!-- </div> -->
-		<!-- 					</div> -->
-		<!-- 				</div>
-			</div> -->
-		<!-- 		</section> -->
 
-		<!-- <section class="profile-detail"> -->
 		<div class="container">
-			<!-- 				<div class="col-md-12">
-					<div class="row"> -->
 			<div class="basic-information"> 
 				<div align="center" class="col-md-31 col-sm-3">
 					<img src="img/lee.PNG" alt="" class="img-responsive" style="width:200px; height:250px;">
@@ -511,22 +462,6 @@ padding:40px 0px 60px 0px;
 				
 					</form>
 					<br>
-					<!-- 			<ul class="social">
-								<li><a href="" class="facebook1"><i class="fa fa-facebook"></i></a></li> -->
-					<!-- 			<li><a href="" class="google"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="" class="twitter"><i class="fa fa-twitter"></i></a></li> -->
-					<!-- 		<li><a href="" class="linkedin"><i class="fa fa-linkedin"></i>Linked In</a></li> -->
-					<!-- 	<li><a href="" class="instagram"><i class="fa fa-instagram"></i></a></li> -->
-					<!-- 	</ul> -->
-					<!-- <div class="panel panel-default">
-								<div class="panel-heading">
-									<i class="fa fa-user fa-fw"></i> About Me
-								</div>
-													/.panel-heading
-								<div class="panel-body">
-								<p>The front end is the part that users see and interact with, includes the User Interface, the animations, and usually a bunch of logic to talk to the backend. It is the visual bit that the user interacts with. This includes the design, images, colours, buttons, forms, typography, animations and content. It¡¯s basically everything that you as a user of the website can see.</p>	
-								</div>
-							</div> -->
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
