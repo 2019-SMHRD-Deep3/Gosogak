@@ -18,7 +18,6 @@ public class JoinCon implements ICommand{
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("nm");
 		String email = request.getParameter("email");
-		
 		MemberDTO dto = new MemberDTO(id, pw, name, email);
 		MemberDAO dao = MemberDAO.getDAO();
 		int cnt = dao.join(dto);
