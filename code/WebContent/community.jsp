@@ -515,6 +515,7 @@ border-bottom:1px dotted lightgray;
 					var first_value = result[Object.keys(result)[0]];
 					console.log(first_key);
 					console.log(first_value); */
+					$(".reply_content").val("");
 					var ip = result[result.length - 1];
 					var ipid = ip.reply_id;
 					var ipct = ip.reply_content;
