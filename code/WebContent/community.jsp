@@ -509,8 +509,8 @@ border-bottom:1px dotted lightgray;
 				dataType : "json",
 				data : "num=" + num + "&reply_content=" + reply_content,
 				success : function(result) {
-					console.log("성공");
-					console.log(result);
+					//console.log("성공");
+					//console.log(result);
 					/* var first_key = Object.keys(result)[0];
 					var first_value = result[Object.keys(result)[0]];
 					console.log(first_key);
