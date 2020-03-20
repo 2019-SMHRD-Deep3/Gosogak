@@ -71,7 +71,10 @@ private static final long serialVersionUID = 1L;
 			response.getWriter().print(moveURL);
 			return;
 		}
-		
+		if(resultURL.equals("InsertReply.do")) {
+			response.getWriter().print(moveURL);
+			return;
+		}
 		if(!(moveURL==null))
 			response.sendRedirect(moveURL);
 	}

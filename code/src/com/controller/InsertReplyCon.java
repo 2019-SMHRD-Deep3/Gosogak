@@ -25,7 +25,6 @@ public class InsertReplyCon implements ICommand {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		String moveURL = null;
 		int post_cd = Integer.parseInt(request.getParameter("num"));
 		String reply_content = request.getParameter("reply_content");
 		System.out.println(post_cd);
@@ -38,8 +37,11 @@ public class InsertReplyCon implements ICommand {
 		ReplyDAO dao = new ReplyDAO();
 		dao.insertReply(dto);
 		
-		
-		return moveURL;
+		ArrayList<ReplyDTO> click_p_reply = dao.selectReply(post_cd);
+		Gson gson = new Gson();
+		String value = gson.toJson(click_p_reply);
+				
+		return value;
 		
 	}
 

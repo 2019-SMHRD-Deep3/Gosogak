@@ -459,8 +459,8 @@ border-bottom:1px dotted lightgray;
 										dataType : "json",
 										data : "num=" + num,
 										success : function(result) {
-											/* console.log("성공");
-											console.log(result); */
+											// console.log("성공");
+											// console.log(result);
 											var reply = $(".reply");
 											var reply_list;
 											reply.empty();
@@ -499,24 +499,40 @@ border-bottom:1px dotted lightgray;
 	<script type="text/javascript">
 		function insertreply() {
 			var reply_content = $('.reply_content').val();
+			
 			/* console.log(reply_content); */
 			/* console.log(num); */
 			$.ajax({
 				url : "InsertReply.do",
 				type : "POST",
 				cache : false,
-				dataType : "text",
+				dataType : "json",
 				data : "num=" + num + "&reply_content=" + reply_content,
-				success : function() {
+				success : function(result) {
 					console.log("성공");
-					location.href = "community.jsp"
-
+					console.log(result);
+					/* var first_key = Object.keys(result)[0];
+					var first_value = result[Object.keys(result)[0]];
+					console.log(first_key);
+					console.log(first_value); */
+					var ip = result[result.length - 1];
+					var ipid = ip.reply_id;
+					var ipct = ip.reply_content;
+					var reply_load = $(".reply_load");
+					var reply = $(".reply");
+					var reply_list = '<tr><td class="reply_list" width="15%">'
+						+ ipid
+						+ '</td><td class="reply_list" colspan="2">'
+						+ ipct
+						+ '</td></tr>';
+					reply.append(reply_list);
+					reply_load.append(reply);
+						
 				},
 				error : function() {
 					console.log("error");
 				}
 			});
-
 		}
 	</script>
 </body>
